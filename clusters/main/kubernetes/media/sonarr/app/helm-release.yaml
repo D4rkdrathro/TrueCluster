@@ -63,7 +63,7 @@ spec:
         loadBalancerIP: ""
         ports:
           main:
-            port: 7878
+            port: 8989
         type: LoadBalancer
     persistence:
       media:
