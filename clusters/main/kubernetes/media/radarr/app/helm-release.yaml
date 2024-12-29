@@ -69,6 +69,6 @@ spec:
       media:
         enabled: true
         type: nfs
-        path: ${NAS_MEDIA_PATH}
+        path: /mnt/Ottvault/Media
         mountPath: /Media
         server: ${NAS_IP}
