@@ -79,4 +79,4 @@ spec:
           SERVER_HOSTNAMES: ${OPENVPN_HOSTNAME}
           SERVER_REGIONS: ${OPENVPN_REGION}
           VPN_SERVICE_PROVIDER: ${OPENVPN_PROVIDER}
-          VPN_TYPE: openvpn
+          VPN_TYPE: "openvpn"
