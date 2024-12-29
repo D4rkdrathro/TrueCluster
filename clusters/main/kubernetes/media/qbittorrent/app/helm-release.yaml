@@ -64,6 +64,12 @@ spec:
         path: /mnt/Ottvault/Media
         mountPath: /Media
         server: ${NAS_IP}
+      skins:
+        enabled: true
+        type: nfs
+        path: /mnt/Ottvault/appdata/qbit/
+        mountPath: /skins
+        server: ${NAS_IP}
     workload:
       qbitportforward:
         enabled: false
