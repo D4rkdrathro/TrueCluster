@@ -26,7 +26,7 @@ spec:
             retries: 3
     values:
         cloudflareddns:
-            user: ${DOMAIN_0_EMAIL}
+            #user: ${DOMAIN_0_EMAIL}
             api_token: ${CLOUDFLARE_DDNS_TOKEN}
             #detect_mode: dig-whoami.cloudflare
             host_zone_record:
