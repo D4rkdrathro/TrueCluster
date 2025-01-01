@@ -7,4 +7,3 @@ resources:
   - sonarr/ks.yaml
   - qbittorrent/ks.yaml
   - jellyfin/ks.yaml
-  - jellyseer/ks.yaml
