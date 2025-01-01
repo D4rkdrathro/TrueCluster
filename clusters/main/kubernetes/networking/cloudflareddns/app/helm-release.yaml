@@ -28,7 +28,7 @@ spec:
         cloudflareddns:
             user: ${DOMAIN_0_EMAIL}
             api_token: ${CLOUDFLARE_DDNS_TOKEN}
-            detect_mode: dig-whoami.cloudflare
+            #detect_mode: dig-whoami.cloudflare
             host_zone_record:
               - domain: ${DOMAIN_0}
                 record: A
