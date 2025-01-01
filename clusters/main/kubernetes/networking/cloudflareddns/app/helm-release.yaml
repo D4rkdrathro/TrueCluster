@@ -25,12 +25,13 @@ spec:
         remediation:
             retries: 3
     values:
-      cloudflareddns:
-        api_token: ${CLOUDFLARE_DDNS_TOKEN}
-        detect_mode: dig-whoami.cloudflare
-        host_zone_record:
-        - domain: ${DOMAIN_0}
-          record: A
-          zone: ${ZONE_0}
-        interval: 300
-        log_level: 3
+        cloudflareddns:
+            user: ${DOMAIN_0_EMAIL}
+            api_token: ${CLOUDFLARE_DDNS_TOKEN}
+            detect_mode: dig-whoami.cloudflare
+            host_zone_record:
+              - domain: ${DOMAIN_0}
+                record: A
+                zone: ${ZONE_0}
+            interval: 300
+            log_level: 3
