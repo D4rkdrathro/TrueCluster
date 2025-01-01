@@ -58,7 +58,7 @@ spec:
       config:
         volsync:
         - name: volsync
-          type: s3
+          type: restic
           cleanupTempPVC: true
           cleanupCachePVC: true
           credentials: s3
