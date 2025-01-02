@@ -1,0 +1,99 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: ntfy
+  namespace: ntfy
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://charts.truechartsoci.org
+      chart: ntfy
+      version: 11.4.0
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+      interval: 5m
+  install:
+    createNamespace: true
+    crds: CreateReplace
+    remediation:
+      retries: 3
+  upgrade:
+    crds: CreateReplace
+    remediation:
+      retries: 3
+  timeout: 20m
+  values:
+    portal:
+      open:
+        enabled: false
+    global:
+      stopAll: false
+    credentials:
+      s3:
+        type: s3
+        url: ${S3_ENDPOINT_URL}
+        bucket: "${S3_BUCKET}-ntfy"
+        accessKey: "${S3_ACCESS_KEY}"
+        secretKey: "${S3_SECRET_KEY}"
+        encrKey: "${S3_ENCRYPTION_KEY}"
+    ingress:
+      main:
+        enabled: true
+        integrations:
+          traefik:
+            enabled: true
+          certManager:
+          enabled: true
+          certificateIssuer: domain-0-le-prod
+        hosts:
+        - host: ntfy.${DOMAIN_0}
+          paths:
+          - path: /
+            pathType: Prefix
+    persistence:
+      config:
+        volsync:
+        - name: config
+          type: restic
+          #cleanupTempPVC: true
+          #cleanupCachePVC: true
+          credentials: s3
+          dest:
+            enabled: true
+          src:
+            enabled: true
+            trigger:
+              schedule: 30 0 * * *
+      cache:
+        volsync:
+        - name: cache
+          type: restic
+          #cleanupTempPVC: true
+          #cleanupCachePVC: true
+          credentials: s3
+          dest:
+            enabled: true
+          src:
+            enabled: true
+            trigger:
+              schedule: 30 0 * * *
+    configmap:
+      ntfy:
+        enabled: true
+        data:
+          NTFY_ATTACHMENT_CACHE_DIR: '{{ ternary "/var/cache/ntfy/attachments" "" .Values.workload.main.podSpec.containers.main.env.ENABLE_ATTACHMENT_CACHE_DIR }}'
+          NTFY_CACHE_FILE: '{{ ternary "/var/cache/ntfy/cache.db" "" .Values.workload.main.podSpec.containers.main.env.ENABLE_CACHE_FILE }}'
+          NTFY_AUTH_FILE: '{{ ternary "/etc/ntfy/user.db" "" .Values.workload.main.podSpec.containers.main.env.ENABLE_AUTH_FILE }}'
+          NTFY_FIREBASE_KEY_FILE: '{{ ternary "/etc/ntfy/firebase-key.json" "" .Values.workload.main.podSpec.containers.main.env.ENABLE_FIREBASE_FILE }}'
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                ENABLE_ATTACHMENT_CACHE_DIR: true
+                ENABLE_AUTH_FILE: true
+                NTFY_UPSTREAM_BASE_URL: https://ntfy.sh

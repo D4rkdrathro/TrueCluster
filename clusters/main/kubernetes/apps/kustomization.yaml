@@ -4,3 +4,4 @@ resources:
   - kubernetes-dashboard/ks.yaml
   - ext-unifi/ks.yaml
   - mealie/ks.yaml
+  - ntfy/ks.yaml
