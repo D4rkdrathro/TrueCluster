@@ -37,7 +37,7 @@ spec:
         externalIP: "192.168.1.134"
         ports:
           main:
-            protocol: https
+            protocol: http
             port: 8123
 
     ingress:
