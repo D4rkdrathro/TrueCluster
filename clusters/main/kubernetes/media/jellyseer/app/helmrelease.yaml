@@ -61,8 +61,8 @@ spec:
           #cleanupTempPVC: true
           #cleanupCachePVC: true
           credentials: s3
-          #          dest:
-          #            enabled: true
+          dest:
+            enabled: true
           src:
             enabled: true
             trigger:
