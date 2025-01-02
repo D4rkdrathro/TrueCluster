@@ -30,9 +30,6 @@ spec:
   uninstall:
     keepHistory: false
   values:
-
-    TZ: Europe/Amsterdam
-
     service:
       main:
         type: ExternalIP
@@ -50,11 +47,11 @@ spec:
             enabled: true
             middlewares:
         tls:
-          - hosts:
-              - unifi.${DOMAIN_0}
-            clusterIssuer: domain-0-wildcard
+        - hosts:
+          - unifi.${DOMAIN_0}
+          clusterIssuer: domain-0-wildcard
         hosts:
-          - host: unifi.${DOMAIN_0}
-            paths:
-              - path: /
-                pathType: Prefix
+        - host: unifi.${DOMAIN_0}
+          paths:
+          - path: /
+            pathType: Prefix
