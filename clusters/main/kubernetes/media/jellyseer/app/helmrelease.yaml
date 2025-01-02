@@ -54,19 +54,19 @@ spec:
           - path: /
             pathType: Prefix
     persistence:
-      #config:
-      #volsync:
-      #- name: volsync
-      #type: restic
-      #cleanupTempPVC: true
-      #cleanupCachePVC: true
-      #credentials: s3
-      #dest:
-      #enabled: true
-      #src:
-      #enabled: true
-      #trigger:
-      #schedule: 30 0 * * *
+      config:
+        volsync:
+        - name: volsync
+          type: restic
+          #cleanupTempPVC: true
+          #cleanupCachePVC: true
+          credentials: s3
+          #          dest:
+          #            enabled: true
+          src:
+            enabled: true
+            trigger:
+              schedule: 30 0 * * *
       media:
         enabled: true
         type: nfs
