@@ -45,19 +45,20 @@ spec:
             #entrypoints:
             #- websecure
         tls:
-          - hosts:
-              - prowlarr.${DOMAIN_0}
-            clusterIssuer: domain-0-wildcard
+        - hosts:
+          - prowlarr.${DOMAIN_0}
+          clusterIssuer: domain-0-wildcard
         hosts:
-          - host: prowlarr.${DOMAIN_0}
-            paths:
-              - path: /
-                pathType: Prefix
-    service:
-      main:
-          enabled: true
-          loadBalancerIP: ""
-          ports:
-              main:
-                  port: 9696
-          type: LoadBalancer
+        - host: prowlarr.${DOMAIN_0}
+          paths:
+          - path: /
+            pathType: Prefix
+
+#    service:
+#      main:
+#          enabled: true
+#          loadBalancerIP: ""
+#          ports:
+#              main:
+#                  port: 9696
+#          type: LoadBalancer
