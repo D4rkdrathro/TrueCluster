@@ -38,7 +38,7 @@ spec:
         ports:
           main:
             protocol: http
-            port: 30041
+            port: 8123
 
     ingress:
       main:
