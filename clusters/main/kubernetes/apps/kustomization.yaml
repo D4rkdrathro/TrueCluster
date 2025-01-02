@@ -5,3 +5,4 @@ resources:
   - ext-unifi/ks.yaml
   - mealie/ks.yaml
   - ntfy/ks.yaml
+  - ext-immich/ks.yaml
