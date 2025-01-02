@@ -45,12 +45,11 @@ spec:
         integrations:
           traefik:
             enabled: true
-        tls:
-        - hosts:
-          - jellyseerr.${DOMAIN_0}
-          clusterIssuer: domain-0-wildcard
+          certManager:
+          enabled: true
+          certificateIssuer: domain-0-le-prod
         hosts:
-        - host: jellyseerr.${DOMAIN_0}
+        - host: mediareq.${DOMAIN_0}
           paths:
           - path: /
             pathType: Prefix
