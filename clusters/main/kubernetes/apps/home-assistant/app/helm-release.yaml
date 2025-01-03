@@ -97,9 +97,4 @@ spec:
       hostNetwork: true
     securityContext:
       container:
-        UMASK: '0022'
-        readOnlyRootFilesystem: false
-        runAsGroup: 0
-        runAsNonRoot: false
-        runAsUser: 0
         privileged: true
