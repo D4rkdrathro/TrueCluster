@@ -95,14 +95,11 @@ spec:
           #revision: "1"
     securityContext:
       container:
-        PUID: 568
         UMASK: '0022'
-        advanced: false
         capabilities:
           add:
-          - NET_ADMIN
+          - BIND_SERVICE
           - NET_RAW
-          - SYS_MODULE
         readOnlyRootFilesystem: false
         runAsGroup: 0
         runAsNonRoot: false
