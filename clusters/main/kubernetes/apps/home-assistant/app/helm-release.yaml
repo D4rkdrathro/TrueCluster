@@ -78,7 +78,7 @@ spec:
         zigbee:
           enabled: true
           type: device
-          hostPath: /dev/ttyACM0
+          hostPath: /dev/ttyUSB0
 
         cnpg:
           main:
