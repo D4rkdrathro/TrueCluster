@@ -75,10 +75,10 @@ spec:
           src:
             #VolSync Source (Backup)
             enabled: true
-      zigbee:
-        enabled: true
-        type: device
-        hostPath: /dev/ttyACM0
+    #      zigbee:
+    #        enabled: true
+    #        type: device
+    #        hostPath: /dev/ttyACM0
 
     cnpg:
       main:
