@@ -89,7 +89,7 @@ spec:
           enabled: true
           credentials: backblaze
           retentionPolicy: "14d"
-          revision: "1"
+          revision: "2"
         recovery:
           credentials: backblaze
           #revision: "1"
