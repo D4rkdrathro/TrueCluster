@@ -6,4 +6,3 @@ resources:
   - mealie/ks.yaml
   - ntfy/ks.yaml
   - ext-immich/ks.yaml
-  - home-assistant/ks.yaml
