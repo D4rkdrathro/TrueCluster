@@ -93,6 +93,8 @@ spec:
     #        recovery:
     #          credentials: backblaze
     #          revision: "1"
+    podOptions:
+      hostNetwork: true
     securityContext:
       container:
         UMASK: '0022'
