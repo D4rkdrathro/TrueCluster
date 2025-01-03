@@ -7,3 +7,4 @@ resources:
   - ntfy/ks.yaml
   - ext-immich/ks.yaml
   - ext-hass/ks.yaml
+  - home-assistant/ks.yaml
