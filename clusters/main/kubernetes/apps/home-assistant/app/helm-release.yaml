@@ -80,19 +80,19 @@ spec:
     #        type: device
     #        hostPath: /dev/ttyACM0
 
-    cnpg:
-      main:
-        cluster:
-          singleNode: true
-        mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
-        backups:
-          enabled: true
-          credentials: backblaze
-          retentionPolicy: "14d"
-          revision: "2"
-        recovery:
-          credentials: backblaze
-          #revision: "1"
+    #    cnpg:
+    #      main:
+    #        cluster:
+    #          singleNode: true
+    #        mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
+    #        backups:
+    #          enabled: true
+    #          credentials: backblaze
+    #          retentionPolicy: "14d"
+    #          revision: "2"
+    #        recovery:
+    #          credentials: backblaze
+    #          revision: "1"
     securityContext:
       container:
         UMASK: '0022'
