@@ -96,10 +96,6 @@ spec:
     securityContext:
       container:
         UMASK: '0022'
-        capabilities:
-          add:
-          - BIND_SERVICE
-          - NET_RAW
         readOnlyRootFilesystem: false
         runAsGroup: 0
         runAsNonRoot: false
