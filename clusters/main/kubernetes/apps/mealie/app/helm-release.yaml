@@ -28,7 +28,20 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
+
   values:
+    global:
+      stopAll: false
+
+    credentials:
+      backblaze:
+        type: s3
+        url: "${S3_ENDPOINT_URL}"
+        bucket: "${S3_BUCKET}-mealie"
+        accessKey: "${S3_ACCESS_KEY}"
+        secretKey: "${S3_SECRET_KEY}"
+        encrKey: "${S3_ENCRYPTION_KEY}"
+
     metrics:
       main:
         enabled: false
@@ -46,6 +59,19 @@ spec:
           paths:
           - path: /
             pathType: Prefix
+
+    persistence:
+      data:
+        volsync:
+        - name: data
+          type: restic
+          credentials: backblaze
+          dest:
+            #VolSync Destination (Restore)
+            enabled: true
+          src:
+            #VolSync Source (Backup)
+            enabled: true
         #service:
         #main:
         #enabled: true
@@ -54,3 +80,16 @@ spec:
         #main:
         #port: 10018
         #type: LoadBalancer
+        cnpg:
+          main:
+            cluster:
+              singleNode: true
+            # mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
+            backups:
+              enabled: true
+              credentials: backblaze
+              retentionPolicy: "14d"
+              revision: "2"
+            recovery:
+              credentials: backblaze
+              #revision: "1"

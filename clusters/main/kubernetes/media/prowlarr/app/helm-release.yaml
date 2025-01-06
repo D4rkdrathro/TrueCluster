@@ -29,6 +29,18 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    global:
+      stopAll: false
+
+    credentials:
+      backblaze:
+        type: s3
+        url: "${S3_ENDPOINT_URL}"
+        bucket: "${S3_BUCKET}-mealie"
+        accessKey: "${S3_ACCESS_KEY}"
+        secretKey: "${S3_SECRET_KEY}"
+        encrKey: "${S3_ENCRYPTION_KEY}"
+
     workload:
       main:
         podSpec:
@@ -53,6 +65,19 @@ spec:
           paths:
           - path: /
             pathType: Prefix
+
+    persistence:
+      config:
+        volsync:
+        - name: prowlarr-config
+          type: restic
+          credentials: backblaze
+          dest:
+            #VolSync Destination (Restore)
+            enabled: true
+          src:
+            #VolSync Source (Backup)
+            enabled: true
 
 #    service:
 #      main:
