@@ -88,6 +88,8 @@ spec:
           src:
             #VolSync Source (Backup)
             enabled: true
+            trigger:
+              schedule: 40 1 * * *
         coralai:
           enabled: true
           type: device

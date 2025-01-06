@@ -78,6 +78,8 @@ spec:
           src:
             #VolSync Source (Backup)
             enabled: true
+            trigger:
+              schedule: 40 1 * * *
       media:
         enabled: true
         type: nfs

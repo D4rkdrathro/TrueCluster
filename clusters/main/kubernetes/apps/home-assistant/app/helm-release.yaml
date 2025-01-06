@@ -77,6 +77,8 @@ spec:
           src:
             #VolSync Source (Backup)
             enabled: true
+            trigger:
+              schedule: 20 1 * * *
         zigbee:
           enabled: true
           type: device
