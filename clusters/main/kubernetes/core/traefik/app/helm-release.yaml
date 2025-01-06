@@ -38,3 +38,26 @@ spec:
     service:
       tcp:
         loadBalancerIP: ${TRAEFIK_IP}
+
+    middlewares:
+      forwardAuth:
+      - address: http://authentik-http.ix-authentik.svc.cluster.local:10230/outpost.goauthentik.io/auth/traefik
+        authRequestHeaders: []
+        authResponseHeaders:
+        - authorization
+        - x-authentik-username
+        - x-authentik-groups
+        - x-authentik-email
+        - x-authentik-name
+        - x-authentik-uid
+        - x-authentik-jwt
+        - x-authentik-meta-jwk
+        - x-authentik-meta-outpost
+        - x-authentik-meta-provider
+        - x-authentik-meta-app
+        - x-authentik-meta-version
+        authResponseHeadersRegex: ""
+        name: auth
+        tls:
+          insecureSkipVerify: true
+        trustForwardHeader: true
