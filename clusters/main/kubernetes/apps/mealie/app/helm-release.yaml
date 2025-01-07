@@ -45,18 +45,18 @@ spec:
       api:
         general:
           allow_signup: false
-      smtp:
-        user: ${CONFIG_EMAIL}
-        password: ${CONFIG_EMAIL_PASS}
-        host: ${CONFIG_EMAIL_SMTP}
-        from_email: ${CONFIG_EMAIL}
-        from_name: Mealie
-      oidc:
-        auth_enabled: true
-        signup_enabled: false
-        configuration_url: https://${AUTH_ADDRESS}/.well-known/openid-configuration
-        client_id: "mealie"
-        provider_name: "OAuth"
+        smtp:
+          user: ${CONFIG_EMAIL}
+          password: ${CONFIG_EMAIL_PASS}
+          host: ${CONFIG_EMAIL_SMTP}
+          from_email: ${CONFIG_EMAIL}
+          from_name: Mealie
+        oidc:
+          auth_enabled: true
+          signup_enabled: false
+          configuration_url: https://${AUTH_ADDRESS}/.well-known/openid-configuration
+          client_id: "mealie"
+          provider_name: "OAuth"
     metrics:
       main:
         enabled: false
