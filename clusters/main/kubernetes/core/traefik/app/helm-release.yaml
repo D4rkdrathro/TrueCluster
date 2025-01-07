@@ -41,7 +41,7 @@ spec:
 
     middlewares:
       forwardAuth:
-      - address: http://authentik-http.ix-authentik.svc.cluster.local:10230/outpost.goauthentik.io/auth/traefik
+      - address: http://authentik-http.authentik.svc.cluster.local:10230/outpost.goauthentik.io/auth/traefik
         authRequestHeaders: []
         authResponseHeaders:
         - authorization
