@@ -72,96 +72,95 @@ spec:
           paths:
           - path: /
             pathType: Prefix
-
-    persistence:
-      media:
-        volsync:
-        - name: media
-          type: restic
-          cleanupTempPVC: true
-          cleanupCachePVC: true
-          credentials: backblaze
-          dest:
+            #    persistence:
+            #      media:
+            #        volsync:
+            #        - name: media
+            #          type: restic
+            #          cleanupTempPVC: true
+            #          cleanupCachePVC: true
+            #          credentials: backblaze
+            #          dest:
             #VolSync Destination (Restore)
-            enabled: true
-          src:
+            #            enabled: true
+            #          src:
             #VolSync Source (Backup)
-            enabled: true
-            trigger:
-              schedule: 20 1 * * *
-      templates:
-        volsync:
-        - name: templates
-          type: restic
-          cleanupTempPVC: true
-          cleanupCachePVC: true
-          credentials: backblaze
-          dest:
+            #            enabled: true
+            #            trigger:
+            #              schedule: 20 1 * * *
+            #      templates:
+            #        volsync:
+            #        - name: templates
+            #          type: restic
+            #          cleanupTempPVC: true
+            #          cleanupCachePVC: true
+            #          credentials: backblaze
+            #          dest:
             #VolSync Destination (Restore)
-            enabled: true
-          src:
+            #            enabled: true
+            #          src:
             #VolSync Source (Backup)
-            enabled: true
-            trigger:
-              schedule: 20 1 * * *
-      blueprints:
-        volsync:
-        - name: blueprints
-          type: restic
-          cleanupTempPVC: true
-          cleanupCachePVC: true
-          credentials: backblaze
-          dest:
+            #            enabled: true
+            #            trigger:
+            #              schedule: 20 1 * * *
+            #      blueprints:
+            #        volsync:
+            #        - name: blueprints
+            #          type: restic
+            #          cleanupTempPVC: true
+            #          cleanupCachePVC: true
+            #          credentials: backblaze
+            #          dest:
             #VolSync Destination (Restore)
-            enabled: true
-          src:
+            #            enabled: true
+            #          src:
             #VolSync Source (Backup)
-            enabled: true
-            trigger:
-              schedule: 20 1 * * *
-      certs:
-        volsync:
-        - name: certs
-          type: restic
-          cleanupTempPVC: true
-          cleanupCachePVC: true
-          credentials: backblaze
-          dest:
+            #            enabled: true
+            #            trigger:
+            #              schedule: 20 1 * * *
+            #      certs:
+            #        volsync:
+            #        - name: certs
+            #          type: restic
+            #          cleanupTempPVC: true
+            #         cleanupCachePVC: true
+            #         credentials: backblaze
+            #         dest:
             #VolSync Destination (Restore)
-            enabled: true
-          src:
+            #            enabled: true
+            #          src:
             #VolSync Source (Backup)
-            enabled: true
-            trigger:
-              schedule: 20 1 * * *
-      geoip:
-        volsync:
-        - name: media
-          type: restic
-          cleanupTempPVC: true
-          cleanupCachePVC: true
-          credentials: backblaze
-          dest:
+            #           enabled: true
+            #            trigger:
+            #             schedule: 20 1 * * *
+            #      geoip:
+            #        volsync:
+            #        - name: media
+            #          type: restic
+            #          cleanupTempPVC: true
+            #          cleanupCachePVC: true
+            #          credentials: backblaze
+            #          dest:
             #VolSync Destination (Restore)
-            enabled: true
-          src:
+            #            enabled: true
+            #         src:
             #VolSync Source (Backup)
-            enabled: true
-            trigger:
-              schedule: 20 1 * * *
-    #    cnpg:
-    #      main:
-    #        cluster:
-    #          singleNode: true
-    #        mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
-    #        backups:
-    #          enabled: true
-    #          credentials: backblaze
-    #          retentionPolicy: "14d"
-    #          revision: "1"
-    #        recovery:
-    #          credentials: backblaze
-    #          revision: "1"
+            #            enabled: true
+            #            trigger:
+            #              schedule: 20 1 * * *
+            #    cnpg:
+            #      main:
+            #        cluster:
+            #          singleNode: true
+            #        mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
+            #        backups:
+            #          enabled: true
+            #          credentials: backblaze
+            #          retentionPolicy: "14d"
+            #          revision: "1"
+            #        recovery:
+            #          credentials: backblaze
+            #          revision: "1"
 
     securityContext:
       container:
