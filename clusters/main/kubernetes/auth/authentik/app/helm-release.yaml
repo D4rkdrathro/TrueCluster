@@ -158,7 +158,7 @@ spec:
           enabled: true
           credentials: backblaze
           retentionPolicy: "14d"
-          revision: "2"
+          revision: "1"
         recovery:
           credentials: backblaze
           #revision: "1"
