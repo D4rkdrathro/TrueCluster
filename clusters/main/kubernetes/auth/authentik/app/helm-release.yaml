@@ -161,7 +161,8 @@ spec:
           revision: "2"
         recovery:
           credentials: backblaze
-          revision: "1"
+
+#          revision: "1"
 
 #    podOptions:
 #      hostNetwork: true
