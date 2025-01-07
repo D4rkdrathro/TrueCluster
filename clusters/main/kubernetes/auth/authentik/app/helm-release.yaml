@@ -161,7 +161,7 @@ spec:
           revision: "1"
         recovery:
           credentials: backblaze
-          #revision: "1"
+          revision: "1"
 
     securityContext:
       container:
