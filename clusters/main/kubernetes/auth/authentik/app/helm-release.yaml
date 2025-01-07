@@ -163,8 +163,6 @@ spec:
           credentials: backblaze
           revision: "1"
 
-#    podOptions:
-#      hostNetwork: true
-#    securityContext:
-#      container:
-#        privileged: true
+    securityContext:
+      container:
+        privileged: true
