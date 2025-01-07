@@ -1,0 +1,168 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: authentik
+  namespace: authentik
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: authentik
+      version: 27.15.0
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+      interval: 15m
+  timeout: 20m
+  maxHistory: 3
+  driftDetection:
+    mode: warn
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+
+    global:
+      stopAll: false
+
+    credentials:
+      backblaze:
+        type: s3
+        url: "${S3_ENDPOINT_URL}"
+        bucket: "${S3_BUCKET}-authentik"
+        accessKey: "${S3_ACCESS_KEY}"
+        secretKey: "${S3_SECRET_KEY}"
+        encrKey: "${S3_ENCRYPTION_KEY}"
+    authentik:
+      credentials:
+        # Only works on initial install
+        email: ${CONFIG_EMAIL}
+        password: ${AUTH_PASS}
+      email:
+        host: ${CONFIG_EMAIL_SMTP}
+        port: 587
+        username: ${CONFIG_EMAIL}
+        password: ${ONFIG_EMAIL_PASS}
+        useTLS: true
+        useSSL: false
+        timeout: 10
+        from: "Authentik"
+    ingress:
+      main:
+        enabled: true
+        integrations:
+          traefik:
+            enabled: true
+            entrypoints:
+            - websecure
+          certManager:
+          enabled: true
+          certificateIssuer: domain-0-le-prod
+        hosts:
+        - host: ${AUTH_ADDRESS}
+          paths:
+          - path: /
+            pathType: Prefix
+
+    persistence:
+      media:
+        volsync:
+        - name: media
+          type: restic
+          cleanupTempPVC: true
+          cleanupCachePVC: true
+          credentials: backblaze
+          dest:
+            #VolSync Destination (Restore)
+            enabled: true
+          src:
+            #VolSync Source (Backup)
+            enabled: true
+            trigger:
+              schedule: 20 1 * * *
+      templates:
+        volsync:
+        - name: templates
+          type: restic
+          cleanupTempPVC: true
+          cleanupCachePVC: true
+          credentials: backblaze
+          dest:
+            #VolSync Destination (Restore)
+            enabled: true
+          src:
+            #VolSync Source (Backup)
+            enabled: true
+            trigger:
+              schedule: 20 1 * * *
+      blueprints:
+        volsync:
+        - name: blueprints
+          type: restic
+          cleanupTempPVC: true
+          cleanupCachePVC: true
+          credentials: backblaze
+          dest:
+            #VolSync Destination (Restore)
+            enabled: true
+          src:
+            #VolSync Source (Backup)
+            enabled: true
+            trigger:
+              schedule: 20 1 * * *
+      certs:
+        volsync:
+        - name: certs
+          type: restic
+          cleanupTempPVC: true
+          cleanupCachePVC: true
+          credentials: backblaze
+          dest:
+            #VolSync Destination (Restore)
+            enabled: true
+          src:
+            #VolSync Source (Backup)
+            enabled: true
+            trigger:
+              schedule: 20 1 * * *
+      geoip:
+        volsync:
+        - name: media
+          type: restic
+          cleanupTempPVC: true
+          cleanupCachePVC: true
+          credentials: backblaze
+          dest:
+            #VolSync Destination (Restore)
+            enabled: true
+          src:
+            #VolSync Source (Backup)
+            enabled: true
+            trigger:
+              schedule: 20 1 * * *
+    #    cnpg:
+    #      main:
+    #        cluster:
+    #          singleNode: true
+    #        mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
+    #        backups:
+    #          enabled: true
+    #          credentials: backblaze
+    #          retentionPolicy: "14d"
+    #          revision: "1"
+    #        recovery:
+    #          credentials: backblaze
+    #          revision: "1"
+
+    securityContext:
+      container:
+        privileged: true
