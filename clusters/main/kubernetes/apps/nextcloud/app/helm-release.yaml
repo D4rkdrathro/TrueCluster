@@ -55,6 +55,13 @@ spec:
         enabled: true
         username: ${NC_USER}
         password: ${NC_PASS}
+      php:
+        memory_limit: 4G
+        pm_max_children: 180
+        pm_max_spare_servers: 30
+        pm_min_spare_servers: 12
+        pm_start_servers: 18
+        upload_limit: 10G
     ingress:
       main:
         enabled: true
@@ -112,3 +119,7 @@ spec:
         recovery:
           credentials: backblaze
           #revision: "1"
+    resources:
+      limits:
+        cpu: 6000m
+        memory: 10Gi
