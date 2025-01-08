@@ -50,40 +50,39 @@ spec:
 
     middlewares:
       forwardAuth:
-        - name: auth
-        - address: http://authentik-http.authentik.svc.cluster.local:10230/outpost.goauthentik.io/auth/traefik
-          authRequestHeaders: []
-          authResponseHeaders:
-          - authorization
-          - x-authentik-username
-          - x-authentik-groups
-          - x-authentik-email
-          - x-authentik-name
-          - x-authentik-uid
-          - x-authentik-jwt
-          - x-authentik-meta-jwk
-          - x-authentik-meta-outpost
-          - x-authentik-meta-provider
-          - x-authentik-meta-app
-          - x-authentik-meta-version
-          authResponseHeadersRegex: ""
-          tls:
-            insecureSkipVerify: true
-          trustForwardHeader: true
+      - name: auth
+        address: http://authentik-http.authentik.svc.cluster.local:10230/outpost.goauthentik.io/auth/traefik
+        authRequestHeaders: []
+        authResponseHeaders:
+        - authorization
+        - x-authentik-username
+        - x-authentik-groups
+        - x-authentik-email
+        - x-authentik-name
+        - x-authentik-uid
+        - x-authentik-jwt
+        - x-authentik-meta-jwk
+        - x-authentik-meta-outpost
+        - x-authentik-meta-provider
+        - x-authentik-meta-app
+        - x-authentik-meta-version
+        authResponseHeadersRegex: ""
+        tls:
+          insecureSkipVerify: true
+        trustForwardHeader: true
       geoBlock:
-        - allowLocalRequests: true
-          allowUnknownCountries: false
-          api: https://get.geojs.io/v1/ip/country/{ip}
-          apiTimeoutMs: 500
-          blackListMode: false
-          cacheSize: 25
-          countries:
-          - US
-          - CA
-          forceMonthlyUpdate: true
-          logAllowedRequests: false
-          logApiRequests: false
-          logLocalRequests: false
-        - name: geoip
-          unknownCountryApiResponse: nil
-
+      - name: geoip
+        allowLocalRequests: true
+        allowUnknownCountries: false
+        api: https://get.geojs.io/v1/ip/country/{ip}
+        apiTimeoutMs: 500
+        blackListMode: false
+        cacheSize: 25
+        countries:
+        - US
+        - CA
+        forceMonthlyUpdate: true
+        logAllowedRequests: false
+        logApiRequests: false
+        logLocalRequests: false
+        unknownCountryApiResponse: nil
