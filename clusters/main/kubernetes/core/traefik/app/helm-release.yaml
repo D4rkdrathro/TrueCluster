@@ -78,11 +78,11 @@ spec:
         apiTimeoutMs: 500
         blackListMode: false
         cacheSize: 25
-        countries:
-        - US
-        - CA
         forceMonthlyUpdate: true
         logAllowedRequests: false
         logApiRequests: false
         logLocalRequests: false
         unknownCountryApiResponse: nil
+        countries:
+        - US
+        - CA
