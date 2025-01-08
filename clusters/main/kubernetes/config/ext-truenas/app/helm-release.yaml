@@ -45,9 +45,11 @@ spec:
         integrations:
           traefik:
             enabled: true
+            entrypoints:
+            - websecure
             middlewares:
             - name: auth
-            namespace: traefik
+              namespace: traefik
         tls:
         - hosts:
           - tnas.${DOMAIN_0}
