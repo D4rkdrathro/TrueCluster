@@ -45,6 +45,8 @@ spec:
         integrations:
           traefik:
             enabled: true
+            entrypoints:
+            - websecure
             middlewares:
         tls:
         - hosts:
