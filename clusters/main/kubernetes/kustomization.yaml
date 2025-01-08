@@ -10,3 +10,4 @@ resources:
   - media
   - networking
   - auth
+  - config
