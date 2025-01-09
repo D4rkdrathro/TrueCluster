@@ -54,7 +54,7 @@ spec:
         oidc:
           auth_enabled: true
           signup_enabled: false
-          configuration_url: https://${AUTH_ADDRESS}/.well-known/openid-configuration
+          configuration_url: https://${AUTH_ADDRESS}/o/applications/.well-known/openid-configuration
           client_id: "mealie"
           provider_name: "OAuth"
     metrics:

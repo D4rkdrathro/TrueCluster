@@ -47,7 +47,6 @@ spec:
             enabled: true
             entrypoints:
             - websecure
-            middlewares:
         tls:
         - hosts:
           - unifi.${DOMAIN_0}
