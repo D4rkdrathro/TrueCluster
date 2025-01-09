@@ -55,8 +55,8 @@ spec:
           auth_enabled: true
           signup_enabled: false
           configuration_url: https://${AUTH_ADDRESS}/application/o/mealie/.well-known/openid-configuration
-          client_id: "mealie"
-          provider_name: "mealie"
+          client_id: ${MEALIE_AUTHENTIK_ID}
+          provider_name: "Oauth"
           user_group: "mealie users"
           admin_group: "mealie admins"
           remember_me: true
