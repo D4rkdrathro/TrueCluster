@@ -57,6 +57,8 @@ spec:
           configuration_url: https://${AUTH_ADDRESS}/application/o/mealie/.well-known/openid-configuration
           client_id: "mealie"
           provider_name: "mealie"
+          user_group: "mealie users"
+          admin_group: "mealie admins"
     metrics:
       main:
         enabled: false
