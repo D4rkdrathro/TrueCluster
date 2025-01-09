@@ -56,7 +56,7 @@ spec:
           signup_enabled: false
           configuration_url: https://${AUTH_ADDRESS}/application/o/mealie/.well-known/openid-configuration
           client_id: "mealie"
-          provider_name: "OAuth"
+          provider_name: "mealie"
     metrics:
       main:
         enabled: false
