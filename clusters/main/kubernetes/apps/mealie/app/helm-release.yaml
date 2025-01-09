@@ -59,6 +59,7 @@ spec:
           provider_name: "mealie"
           user_group: "mealie users"
           admin_group: "mealie admins"
+          remember_me: true
     metrics:
       main:
         enabled: false
