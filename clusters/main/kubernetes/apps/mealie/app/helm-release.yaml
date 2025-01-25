@@ -31,7 +31,7 @@ spec:
 
   values:
     global:
-      stopAll: true
+      stopAll: false
 
     credentials:
       backblaze:
@@ -100,16 +100,16 @@ spec:
         #main:
         #port: 10018
         #type: LoadBalancer
-      cnpg:
-        main:
-          cluster:
-            singleNode: true
-          # mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
-          backups:
-            enabled: true
-            credentials: backblaze
-            retentionPolicy: "14d"
-            revision: "1"
-          recovery:
-            credentials: backblaze
-            #revision: "1"
+    cnpg:
+      main:
+        cluster:
+          singleNode: true
+        # mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
+        backups:
+          enabled: true
+          credentials: backblaze
+          retentionPolicy: "14d"
+          revision: "1"
+        recovery:
+          credentials: backblaze
+          #revision: "1"
