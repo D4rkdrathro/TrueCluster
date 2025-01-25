@@ -58,11 +58,11 @@ spec:
         volsync:
         - name: config
           type: restic
-          #cleanupTempPVC: true
-          #cleanupCachePVC: true
+          cleanupTempPVC: true
+          cleanupCachePVC: true
           credentials: s3
           dest:
-            enabled: true
+            enabled: false
           src:
             enabled: true
             trigger:
@@ -71,11 +71,11 @@ spec:
         volsync:
         - name: cache
           type: restic
-          #cleanupTempPVC: true
-          #cleanupCachePVC: true
+          cleanupTempPVC: true
+          cleanupCachePVC: true
           credentials: s3
           dest:
-            enabled: true
+            enabled: false
           src:
             enabled: true
             trigger:
