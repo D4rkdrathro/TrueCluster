@@ -69,7 +69,7 @@ spec:
     persistence:
       config:
         volsync:
-        - name: qbit-config
+        - name: config
           type: restic
           cleanupTempPVC: true
           cleanupCachePVC: true

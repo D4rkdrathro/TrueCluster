@@ -82,15 +82,17 @@ spec:
         volsync:
         - name: sonarr-config
           type: restic
+          credentials: backblaze
           cleanupTempPVC: true
           cleanupCachePVC: true
-          credentials: backblaze
           dest:
             #VolSync Destination (Restore)
             enabled: false
           src:
             #VolSync Source (Backup)
             enabled: true
+            trigger:
+              schedule: 20 1 * * *
       media:
         enabled: true
         type: nfs
