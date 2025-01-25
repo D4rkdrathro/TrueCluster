@@ -71,7 +71,7 @@ spec:
           cleanupCachePVC: true
           credentials: s3
           dest:
-            enabled: true
+            enabled: false
           src:
             enabled: true
             trigger:
