@@ -50,7 +50,7 @@ spec:
           containers:
             main:
               env:
-                RADARR__AUTH__METHOD: external
+                SONARR__AUTH__METHOD: external
       exportarr:
         enabled: false
     ingress:
