@@ -80,7 +80,7 @@ spec:
     persistence:
       config:
         volsync:
-        - name: sonarr-config
+        - name: config
           type: restic
           credentials: backblaze
           cleanupTempPVC: true
