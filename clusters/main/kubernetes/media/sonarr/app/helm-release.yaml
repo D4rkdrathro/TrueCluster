@@ -90,7 +90,7 @@ spec:
             enabled: false
           src:
             #VolSync Source (Backup)
-            enabled: false
+            enabled: true
       media:
         enabled: true
         type: nfs
