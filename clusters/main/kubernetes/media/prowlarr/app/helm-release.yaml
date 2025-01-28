@@ -76,7 +76,7 @@ spec:
           credentials: backblaze
           dest:
             #VolSync Destination (Restore)
-            enabled: false
+            enabled: true
           src:
             #VolSync Source (Backup)
             enabled: true
