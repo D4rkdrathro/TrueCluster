@@ -106,7 +106,7 @@ spec:
           singleNode: true
         mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
         backups:
-          enabled: true
+          enabled: false
           credentials: backblaze
           retentionPolicy: "14d"
           revision: "2"
