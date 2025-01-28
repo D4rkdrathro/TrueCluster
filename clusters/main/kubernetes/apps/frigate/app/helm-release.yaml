@@ -77,21 +77,21 @@ spec:
         path: /mnt/Ottvault/Media
         mountPath: /Media
         server: ${NAS_IP}
-      config:
-        volsync:
-        - name: config
-          type: restic
-          cleanupTempPVC: true
-          cleanupCachePVC: true
-          credentials: backblaze
-          dest:
-            #VolSync Destination (Restore)
-            enabled: false
-          src:
-            #VolSync Source (Backup)
-            enabled: false
-            trigger:
-              schedule: 40 1 * * *
+        #      config:
+        #        volsync:
+        #        - name: config
+        #          type: restic
+        #          cleanupTempPVC: true
+        #         cleanupCachePVC: true
+        #          credentials: backblaze
+        #         dest:
+        #VolSync Destination (Restore)
+        #            enabled: false
+        #          src:
+        #VolSync Source (Backup)
+        #            enabled: false
+        #            trigger:
+        #              schedule: 40 1 * * *
         coralai:
           enabled: true
           type: device
