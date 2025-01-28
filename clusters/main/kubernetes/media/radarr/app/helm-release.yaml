@@ -80,17 +80,17 @@ spec:
     persistence:
       config:
         volsync:
-        - name: config
+        - name: radarr-config
           type: restic
           credentials: backblaze
-          cleanupTempPVC: true
-          cleanupCachePVC: true
+          #cleanupTempPVC: true
+          #cleanupCachePVC: true
           dest:
             #VolSync Destination (Restore)
-            enabled: false
+            enabled: true
           src:
             #VolSync Source (Backup)
-            enabled: true
+            enabled: false
             trigger:
               schedule: 10 1 * * *
       media:
