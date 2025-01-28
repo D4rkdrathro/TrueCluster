@@ -93,10 +93,10 @@ spec:
           enabled: false
           credentials: backblaze
           retentionPolicy: "14d"
-          revision: "2"
+          revision: "3"
         recovery:
           credentials: backblaze
-          revision: "1"
+          revision: "2"
     podOptions:
       hostNetwork: true
     securityContext:
