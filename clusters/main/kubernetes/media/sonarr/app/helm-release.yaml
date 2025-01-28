@@ -83,14 +83,14 @@ spec:
         - name: config
           type: restic
           credentials: backblaze
-          #cleanupTempPVC: true
-          #cleanupCachePVC: true
+          cleanupTempPVC: true
+          cleanupCachePVC: true
           dest:
             #VolSync Destination (Restore)
-            enabled: true
+            enabled: false
           src:
             #VolSync Source (Backup)
-            enabled: false
+            enabled: true
             trigger:
               schedule: 20 1 * * *
       media:
