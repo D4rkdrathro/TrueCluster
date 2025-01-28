@@ -68,8 +68,8 @@ spec:
         volsync:
         - name: volsync
           type: restic
-          cleanupTempPVC: true
-          cleanupCachePVC: true
+          #cleanupTempPVC: true
+          #cleanupCachePVC: true
           credentials: backblaze
           dest:
             #VolSync Destination (Restore)
@@ -79,10 +79,10 @@ spec:
             enabled: false
             trigger:
               schedule: 20 1 * * *
-        zigbee:
-          enabled: true
-          type: device
-          hostPath: /dev/ttyUSB0
+      zigbee:
+        enabled: true
+        type: device
+        hostPath: /dev/ttyUSB0
 
     cnpg:
       main:
