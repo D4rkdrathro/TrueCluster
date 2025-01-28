@@ -69,17 +69,17 @@ spec:
     persistence:
       config:
         volsync:
-        - name: config
+        - name: prowlarr-config
           type: restic
           cleanupTempPVC: true
           cleanupCachePVC: true
           credentials: backblaze
           dest:
             #VolSync Destination (Restore)
-            enabled: true
+            enabled: false
           src:
             #VolSync Source (Backup)
-            enabled: false
+            enabled: true
 
 #    service:
 #      main:
