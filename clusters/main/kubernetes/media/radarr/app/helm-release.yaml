@@ -80,7 +80,7 @@ spec:
     persistence:
       config:
         volsync:
-        - name: radarr-config
+        - name: "radarr-config"
           type: restic
           credentials: backblaze
           cleanupTempPVC: true
