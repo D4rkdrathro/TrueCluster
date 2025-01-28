@@ -8,5 +8,4 @@ resources:
 - home-assistant/ks.yaml
 - mosquitto/ks.yaml
 - frigate/ks.yaml
-
-#- nextcloud/ks.yaml
+- nextcloud/ks.yaml
