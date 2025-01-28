@@ -79,7 +79,7 @@ spec:
             enabled: true
           src:
             #VolSync Source (Backup)
-            enabled: true
+            enabled: false
 
 #    service:
 #      main:
