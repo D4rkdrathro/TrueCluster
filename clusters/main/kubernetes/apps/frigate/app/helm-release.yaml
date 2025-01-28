@@ -96,6 +96,7 @@ spec:
         enabled: true
         type: device
         hostPath: /dev/ttyACM0
+
     securityContext:
       container:
         privileged: true

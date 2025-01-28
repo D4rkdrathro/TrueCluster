@@ -79,10 +79,10 @@ spec:
             enabled: false
             trigger:
               schedule: 20 1 * * *
-      zigbee:
-        enabled: true
-        type: device
-        hostPath: /dev/ttyUSB0
+      #zigbee:
+      #  enabled: true
+      #  type: device
+      #  hostPath: /dev/ttyUSB0
 
     cnpg:
       main:
