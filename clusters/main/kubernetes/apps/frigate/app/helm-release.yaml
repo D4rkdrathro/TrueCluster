@@ -55,9 +55,6 @@ spec:
           homepage:
             enabled: true
             group: "Home"
-            widget:
-              custom:
-                enableRecentEvents: true
         tls:
         - hosts:
           - frigate.${DOMAIN_0}
