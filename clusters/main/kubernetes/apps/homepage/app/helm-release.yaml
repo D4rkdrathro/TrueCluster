@@ -41,14 +41,8 @@ spec:
         integrations:
           traefik:
             enabled: true
-            entrypoints:
-            - websecure
-          homepage:
-            enabled: true
-            group: "Arr"
-            widget:
-              custom:
-                key: "${HP_API_PROWLARR}"
+            #entrypoints:
+            #- websecure
         tls:
         - hosts:
           - home.${DOMAIN_0}
