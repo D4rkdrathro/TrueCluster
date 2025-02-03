@@ -52,7 +52,7 @@ spec:
             widget:
               enabled: true
               type: "immich"
-              url: https://photos.ottvault.net
+              url: "http://192.168.1.134:30041"
               customkv:
                 key: "${HP_API_IMMICH}"
                 version: 2
