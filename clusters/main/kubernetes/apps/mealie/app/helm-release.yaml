@@ -69,6 +69,12 @@ spec:
         integrations:
           traefik:
             enabled: true
+          homepage:
+            enabled: true
+            group: "Home"
+            widget:
+              custom:
+                key: "${HP_API_MEALIE}"
           certManager:
           enabled: true
           certificateIssuer: domain-0-le-prod
