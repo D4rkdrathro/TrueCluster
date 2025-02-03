@@ -46,16 +46,6 @@ spec:
         integrations:
           traefik:
             enabled: true
-          homepage:
-            enabled: true
-            group: "Home"
-            widget:
-              enabled: true
-              type: "immich"
-              url: "http://192.168.1.134:30041"
-              customkv:
-                key: "${HP_API_IMMICH}"
-                version: 2
           certManager:
           enabled: true
           certificateIssuer: domain-0-le-prod
