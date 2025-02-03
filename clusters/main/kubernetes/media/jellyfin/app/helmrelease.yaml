@@ -63,7 +63,7 @@ spec:
     service:
       main:
         enabled: true
-        loadBalancerIP: ""
+        loadBalancerIP: "${JELLYFIN_IP}"
         ports:
           main:
             port: 8096
