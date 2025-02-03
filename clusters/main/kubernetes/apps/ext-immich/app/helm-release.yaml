@@ -52,9 +52,10 @@ spec:
             widget:
               enabled: true
               type: "immich"
-              url: photos.ottvault.net
-              custom:
+              url: https://photos.ottvault.net
+              customkv:
                 key: "${HP_API_IMMICH}"
+                version: 2
           certManager:
           enabled: true
           certificateIssuer: domain-0-le-prod
