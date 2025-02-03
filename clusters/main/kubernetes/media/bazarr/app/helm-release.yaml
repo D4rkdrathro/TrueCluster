@@ -47,7 +47,12 @@ spec:
         integrations:
           traefik:
             enabled: true
-            middlewares:
+          homepage:
+            enabled: true
+            group: "Arr"
+            widget:
+              custom:
+                key: "${HP_API_BAZARR}"
         tls:
         - hosts:
           - bazarr.${DOMAIN_0}

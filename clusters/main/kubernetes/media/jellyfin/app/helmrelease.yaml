@@ -46,6 +46,12 @@ spec:
           traefik:
             allowCors: true
             enabled: true
+          homepage:
+            enabled: true
+            group: "Media"
+            widget:
+              custom:
+                key: "${HP_API_JELLYFIN}"
           certManager:
           enabled: true
           certificateIssuer: domain-0-le-prod
