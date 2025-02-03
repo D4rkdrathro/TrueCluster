@@ -57,6 +57,13 @@ spec:
           traefik:
             enabled: true
             middlewares:
+          homepage:
+            enabled: true
+            group: "Arr"
+            widget:
+              custom:
+                username: "${QBIT_USER}"
+                password: "${QBIT_PASS}"
         tls:
         - hosts:
           - qbit.${DOMAIN_0}
