@@ -52,6 +52,24 @@ spec:
           paths:
           - path: /
             pathType: Prefix
+    addons:
+      codeserver:
+        enabled: true
+        ingress:
+          enabled: true
+          hosts:
+          - host: homepage.code.${DOMAIN_0}
+            paths:
+            - path: /
+              pathType: Prefix
+          integrations:
+            certManager:
+              certificateIssuer: domain-0-wildcard
+              enabled: true
+            traefik:
+              enabled: true
+              entrypoints:
+              - websecure
     persistence:
       config:
         volsync:
