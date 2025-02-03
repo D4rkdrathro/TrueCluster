@@ -64,10 +64,10 @@ spec:
                 #- websecure
           tls:
           - hosts:
-            - homepageconf.${DOMAIN_0}
+            - homepage.code${DOMAIN_0}
             clusterIssuer: domain-0-wildcard
           hosts:
-          - host: homepageconf.${DOMAIN_0}
+          - host: homepage.code.${DOMAIN_0}
             paths:
             - path: /
               pathType: Prefix
