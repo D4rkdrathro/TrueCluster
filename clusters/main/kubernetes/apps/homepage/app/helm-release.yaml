@@ -1,61 +1,48 @@
----
-# yaml-language-server: $schema=https://kubernetes-schemas.zinn.ca/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: prowlarr
-  namespace: prowlarr
+  name: homepage
+  namespace: homepage
 spec:
-  interval: 15m
+  interval: 5m
   chart:
     spec:
-      chart: prowlarr
-      version: 18.14.3
+      # renovate: registryUrl=https://charts.truechartsoci.org
+      chart: homepage
+      version: 9.7.1
       sourceRef:
         kind: HelmRepository
         name: truecharts
         namespace: flux-system
-      interval: 15m
-  timeout: 20m
-  maxHistory: 3
+      interval: 5m
   install:
     createNamespace: true
+    crds: CreateReplace
     remediation:
       retries: 3
   upgrade:
-    cleanupOnFail: true
+    crds: CreateReplace
     remediation:
       retries: 3
-  uninstall:
-    keepHistory: false
   values:
     global:
       stopAll: false
-
     credentials:
       backblaze:
         type: s3
         url: "${S3_ENDPOINT_URL}"
-        bucket: "${S3_BUCKET}-arrs"
+        bucket: "${S3_BUCKET}-homepage"
         accessKey: "${S3_ACCESS_KEY}"
         secretKey: "${S3_SECRET_KEY}"
         encrKey: "${S3_ENCRYPTION_KEY}"
-
-    workload:
-      main:
-        podSpec:
-          containers:
-            main:
-              env:
-                PROWLARR__AUTH__METHOD: external
     ingress:
       main:
         enabled: true
         integrations:
           traefik:
             enabled: true
-            #entrypoints:
-            #- websecure
+            entrypoints:
+            - websecure
           homepage:
             enabled: true
             group: "Arr"
@@ -64,14 +51,13 @@ spec:
                 key: "${HP_API_PROWLARR}"
         tls:
         - hosts:
-          - prowlarr.${DOMAIN_0}
+          - home.${DOMAIN_0}
           clusterIssuer: domain-0-wildcard
         hosts:
-        - host: prowlarr.${DOMAIN_0}
+        - host: home.${DOMAIN_0}
           paths:
           - path: /
             pathType: Prefix
-
     persistence:
       config:
         volsync:
@@ -81,17 +67,8 @@ spec:
           cleanupCachePVC: true
           credentials: backblaze
           dest:
-            #VolSync Destination (Restore)
             enabled: false
           src:
-            #VolSync Source (Backup)
             enabled: true
-
-#    service:
-#      main:
-#          enabled: true
-#          loadBalancerIP: ""
-#          ports:
-#              main:
-#                  port: 9696
-#          type: LoadBalancer
+            trigger:
+              schedule: 10 0 * * *

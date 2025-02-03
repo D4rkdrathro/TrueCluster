@@ -9,3 +9,4 @@ resources:
 - mosquitto/ks.yaml
 - frigate/ks.yaml
 - nextcloud/ks.yaml
+  - homepage/ks.yaml

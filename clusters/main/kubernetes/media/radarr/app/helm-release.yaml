@@ -60,6 +60,12 @@ spec:
           traefik:
             enabled: true
             middlewares:
+          homepage:
+            enabled: true
+            group: "Arr"
+            widget:
+              custom:
+                key: "${HP_API_RADARR}"
         tls:
         - hosts:
           - radarr.${DOMAIN_0}
