@@ -66,14 +66,14 @@ spec:
           paths:
           - path: /
             pathType: Prefix
-        service:
-          main:
-            enabled: true
-            loadBalancerIP: ""
-            ports:
-              main:
-                port: 10500
-            type: LoadBalancer
+      service:
+        main:
+          enabled: true
+          loadBalancerIP: ""
+          ports:
+            main:
+              port: 10500
+          type: LoadBalancer
     persistence:
       media:
         enabled: true
