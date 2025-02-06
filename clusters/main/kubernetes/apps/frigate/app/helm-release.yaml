@@ -73,6 +73,16 @@ spec:
         ports:
           main:
             port: 10500
+            protocol: http
+        type: LoadBalancer
+      rtsp:
+        enabled: true
+        loadBalancerIP: ""
+        ports:
+          rtsp:
+            enabled: true
+            port: 8554
+            targetPort: 8554
         type: LoadBalancer
     persistence:
       media:
