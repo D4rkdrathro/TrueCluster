@@ -10,4 +10,5 @@ resources:
 - frigate/ks.yaml
 - nextcloud/ks.yaml
 - homepage/ks.yaml
-- ext-mumble/ks.yaml
+
+#- ext-mumble/ks.yaml
