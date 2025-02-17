@@ -3,5 +3,8 @@
   "extends": [
     "config:recommended",
     "github>truecharts/public//.github/renovate/main.json5"
+  ],
+  "automergeSchedule": [
+    "* 0-3 * * *"
   ]
 }
