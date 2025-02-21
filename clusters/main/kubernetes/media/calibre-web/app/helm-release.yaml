@@ -56,9 +56,9 @@ spec:
     #            port: 7878
     #        type: LoadBalancer
     persistence:
-      media:
+      books:
         enabled: true
         type: nfs
-        path: /mnt/Ottvault/Media
-        mountPath: /Media
+        path: /mnt/Ottvault/Media/calibre
+        mountPath: /books
         server: ${NAS_IP}
