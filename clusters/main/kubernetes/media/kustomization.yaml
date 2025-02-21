@@ -10,3 +10,4 @@ resources:
 - jellyseer/ks.yaml
 - bazarr/ks.yaml
 - calibre/ks.yaml
+- calibre-web/ks.yaml
