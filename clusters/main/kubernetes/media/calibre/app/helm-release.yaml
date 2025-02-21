@@ -32,21 +32,21 @@ spec:
     metrics:
       main:
         enabled: false
-    #    ingress:
-    #      main:
-    #        enabled: true
-    #        integrations:
-    #          traefik:
-    #            enabled: true
-    #        tls:
-    #        - hosts:
-    #          - calibre.${DOMAIN_0}
-    #          clusterIssuer: domain-0-wildcard
-    #        hosts:
-    #        - host: calibre.${DOMAIN_0}
-    #          paths:
-    #          - path: /
-    #            pathType: Prefix
+    ingress:
+      main:
+        enabled: true
+        integrations:
+          traefik:
+            enabled: true
+        tls:
+        - hosts:
+          - calserv.${DOMAIN_0}
+          clusterIssuer: domain-0-wildcard
+        hosts:
+        - host: calserv.${DOMAIN_0}
+          paths:
+          - path: /
+            pathType: Prefix
     #    service:
     #      main:
     #        enabled: true
