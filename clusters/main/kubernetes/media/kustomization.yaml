@@ -11,5 +11,5 @@ resources:
 - bazarr/ks.yaml
 - calibre/ks.yaml
 - calibre-web/ks.yaml
-- kavita/ks.yaml
+#- kavita/ks.yaml
 - readarr/ks.yaml

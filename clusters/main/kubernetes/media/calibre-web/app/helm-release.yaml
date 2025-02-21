@@ -59,6 +59,6 @@ spec:
       books:
         enabled: true
         type: nfs
-        path: /mnt/Ottvault/Media
+        path: /mnt/Ottvault/Media/calibre
         mountPath: /books
         server: ${NAS_IP}
