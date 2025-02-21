@@ -47,6 +47,20 @@ spec:
           paths:
           - path: /
             pathType: Prefix
+      webserver:
+        enabled: true
+        integrations:
+          traefik:
+            enabled: true
+        tls:
+        - hosts:
+          - calibreserv.${DOMAIN_0}
+          clusterIssuer: domain-0-wildcard
+        hosts:
+        - host: calibreserv.${DOMAIN_0}
+          paths:
+          - path: /
+            pathType: Prefix
     #    service:
     #      main:
     #        enabled: true
