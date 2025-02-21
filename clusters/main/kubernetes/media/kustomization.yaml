@@ -9,3 +9,4 @@ resources:
 - jellyfin/ks.yaml
 - jellyseer/ks.yaml
 - bazarr/ks.yaml
+- calibre/ks.yaml
