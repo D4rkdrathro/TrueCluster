@@ -61,3 +61,6 @@ spec:
         server: ${NAS_IP}
     podOptions:
       hostNetwork: true
+    securityContext:
+      container:
+        privileged: true
