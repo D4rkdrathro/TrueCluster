@@ -13,3 +13,4 @@ resources:
   #- calibre-web/ks.yaml
   #- kavita/ks.yaml
   - readarr/ks.yaml
+  - music-assistant/ks.yaml
