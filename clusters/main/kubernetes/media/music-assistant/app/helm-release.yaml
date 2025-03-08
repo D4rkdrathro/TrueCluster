@@ -51,6 +51,7 @@ spec:
             type: LoadBalancer
     persistence:
       data:
+        enabled: true
         mountPath: "/data"
       media:
         enabled: true
