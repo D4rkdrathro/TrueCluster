@@ -41,10 +41,10 @@ spec:
           paths:
           - path: /
             pathType: Prefix
-        service:
-          main:
-            enabled: true
-            loadBalancerIP: ""
+      service:
+        main:
+          enabled: true
+          loadBalancerIP: ""
           ports:
             main:
               port: 8095
