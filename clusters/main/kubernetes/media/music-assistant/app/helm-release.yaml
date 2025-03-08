@@ -41,14 +41,14 @@ spec:
           paths:
           - path: /
             pathType: Prefix
-      service:
-        main:
-          enabled: true
-          loadBalancerIP: ""
-          ports:
-            main:
-              port: 8095
-          type: LoadBalancer
+    service:
+      main:
+        enabled: true
+        loadBalancerIP: ""
+        ports:
+          main:
+            port: 8095
+        type: LoadBalancer
     persistence:
       data:
         enabled: true
