@@ -63,7 +63,7 @@ spec:
         enabled: true
         type: nfs
         path: /mnt/Ottvault/Media/audio/music
-        mountPath: /media/videovault
+        mountPath: /media/music
         server: ${NAS_IP}
     podOptions:
       hostNetwork: true
