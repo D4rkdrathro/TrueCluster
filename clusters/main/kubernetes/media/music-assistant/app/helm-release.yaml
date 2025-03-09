@@ -28,7 +28,7 @@ spec:
   values:
     image:
       repository: ghcr.io/music-assistant/server
-      tag: 2.4.3
+      tag: 2.4.4
       pullPolicy: IfNotPresent
     ingress:
       main:
