@@ -82,8 +82,6 @@ spec:
         volsync:
         - name: html
           type: restic
-          cleanupTempPVC: true
-          cleanupCachePVC: true
           credentials: backblaze
           dest:
             #VolSync Destination (Restore)
@@ -95,8 +93,6 @@ spec:
         volsync:
         - name: config
           type: restic
-          cleanupTempPVC: true
-          cleanupCachePVC: true
           credentials: backblaze
           dest:
             #VolSync Destination (Restore)

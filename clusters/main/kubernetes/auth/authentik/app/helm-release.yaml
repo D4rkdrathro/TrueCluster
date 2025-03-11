@@ -75,8 +75,6 @@ spec:
         volsync:
         - name: media
           type: restic
-          cleanupTempPVC: true
-          cleanupCachePVC: true
           credentials: backblaze
           dest:
             #VolSync Destination (Restore)

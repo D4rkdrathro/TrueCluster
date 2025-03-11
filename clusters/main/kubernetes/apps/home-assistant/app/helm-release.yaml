@@ -68,8 +68,6 @@ spec:
         volsync:
         - name: volsync
           type: restic
-          cleanupTempPVC: true
-          cleanupCachePVC: true
           credentials: backblaze
           dest:
             #VolSync Destination (Restore)
