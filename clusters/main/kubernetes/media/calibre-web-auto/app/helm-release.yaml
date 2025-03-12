@@ -70,5 +70,7 @@ spec:
         server: ${NAS_IP}
     securityContext:
       container:
-        runAsUser: 1000
-        runAsGroup: 1000
+        runAsUser: 568
+        runAsGroup: 568
+        readOnlyRootFilesystem: false
+        allowPrivilegeEscalation: true
