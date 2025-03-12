@@ -65,6 +65,6 @@ spec:
       ingest:
         enabled: true
         type: nfs
-        path: /mnt/Ottvault/Media/books
+        path: /mnt/Ottvault/Media/calibre
         mountPath: /cwa-book-ingest
         server: ${NAS_IP}
