@@ -68,3 +68,7 @@ spec:
         path: /mnt/Ottvault/Media/calibre
         mountPath: /cwa-book-ingest
         server: ${NAS_IP}
+    securityContext:
+      container:
+        runAsUser: 568
+        runAsGroup: 568
