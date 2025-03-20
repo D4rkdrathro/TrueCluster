@@ -40,9 +40,14 @@ spec:
         tls:
         - hosts:
           - jukebox.${DOMAIN_0}
+          - snapcast.${DOMAIN_0}
           clusterIssuer: domain-0-wildcard
         hosts:
         - host: jukebox.${DOMAIN_0}
+          paths:
+          - path: /
+            pathType: Prefix
+        - host: snapcast.${DOMAIN_0}
           paths:
           - path: /
             pathType: Prefix
@@ -54,6 +59,9 @@ spec:
           main:
             port: 8095
             targetPort: 8095
+          snapcast:
+            port: 1780
+            targetPort: 1780
         type: LoadBalancer
     persistence:
       data:
