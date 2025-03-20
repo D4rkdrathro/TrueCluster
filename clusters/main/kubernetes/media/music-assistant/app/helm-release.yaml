@@ -71,6 +71,7 @@ spec:
             pathType: Prefix
             overrideService:
               name: snapcast
+              port: 443
     service:
       main:
         enabled: true
