@@ -50,6 +50,25 @@ spec:
           paths:
           - path: /
             pathType: Prefix
+      snapcast:
+        enabled: true
+        integrations:
+          traefik:
+            allowCors: true
+            enabled: true
+            entrypoints:
+            - websecure
+            middlewares:
+            - name: auth
+              namespace: traefik
+          certManager:
+          enabled: true
+          certificateIssuer: domain-0-le-prod
+        hosts:
+        - host: snapcast.${DOMAIN_0}
+          paths:
+          - path: /
+            pathType: Prefix
     service:
       main:
         enabled: true
@@ -58,6 +77,11 @@ spec:
           main:
             port: 8095
             targetPort: 8095
+        type: LoadBalancer
+      snapcast:
+        enabled: true
+        loadBalancerIP: ""
+        ports:
           snapcast:
             port: 1780
             targetPort: 1780
