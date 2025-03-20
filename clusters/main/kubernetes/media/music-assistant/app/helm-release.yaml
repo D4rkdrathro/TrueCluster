@@ -69,6 +69,8 @@ spec:
           paths:
           - path: /
             pathType: Prefix
+            overrideService:
+              name: snapcast
     service:
       main:
         enabled: true
@@ -82,7 +84,7 @@ spec:
         enabled: true
         loadBalancerIP: ""
         ports:
-          main:
+          snapcast:
             port: 1780
             targetPort: 1780
         type: LoadBalancer
