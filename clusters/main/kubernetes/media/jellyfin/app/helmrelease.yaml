@@ -80,6 +80,10 @@ spec:
             enabled: true
             trigger:
               schedule: 30 0 * * *
+      transcode:
+        enabled: true
+        mountPath: "/config/transcodes"
+        type: "pvc"
       media:
         enabled: true
         type: nfs
