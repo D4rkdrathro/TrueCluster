@@ -27,6 +27,13 @@ spec:
   values:
     global:
       stopAll: false
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                HOMEPAGE_ALLOWED_HOSTS: "home.${DOMAIN_0}"
     credentials:
       backblaze:
         type: s3
