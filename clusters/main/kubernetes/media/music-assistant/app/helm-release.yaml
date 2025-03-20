@@ -85,7 +85,7 @@ spec:
         enabled: true
         loadBalancerIP: ""
         ports:
-          main:
+          snapcast:
             enabled: true
             port: 1780
             targetPort: 1780
