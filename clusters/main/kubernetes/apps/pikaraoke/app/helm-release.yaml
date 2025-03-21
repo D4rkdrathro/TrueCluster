@@ -58,13 +58,8 @@ spec:
         enabled: true
         mountPath: "/app/pikaraoke-songs"
     workload:
-      pikaraoke:
-        enabled: true
-        primary: true
-        type: Deployment
+      main:
         podSpec:
           containers:
-            pikaraoke-host:
-              enabled: true
-              primary: true
+            main:
               command: "--url https://karaoke.${DOMAIN_0}"
