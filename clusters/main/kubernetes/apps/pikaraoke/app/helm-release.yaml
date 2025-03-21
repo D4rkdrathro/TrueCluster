@@ -54,20 +54,20 @@ spec:
             targetPort: 5555
         type: LoadBalancer
 
-    #    persistence:
-    #      data:
-    #        enabled: true
-    #        mountPath: "/app/pikaraoke-songs"
+    persistence:
+      data:
+        enabled: true
+        mountPath: "/app/pikaraoke-songs"
+
     securityContext:
       container:
-        readOnlyRootFilesystem: false
         runAsUser: 0
         runAsGroup: 0
 
-#    workload:
-#      main:
-#        podSpec:
-#          containers:
-#            main:
-#              env:
-#                url: https://karaoke.${DOMAIN_0}
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                args: --url https://karaoke.${DOMAIN_0}
