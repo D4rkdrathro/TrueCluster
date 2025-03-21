@@ -70,5 +70,4 @@ spec:
         podSpec:
           containers:
             main:
-              env:
-                url: https://karaoke.${DOMAIN_0}
+              command: --url https://karaoke.${DOMAIN_0}
