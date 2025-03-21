@@ -70,4 +70,5 @@ spec:
         podSpec:
           containers:
             main:
-              args: --url https://karaoke.${DOMAIN_0}
+              env:
+                url: https://karaoke.${DOMAIN_0}
