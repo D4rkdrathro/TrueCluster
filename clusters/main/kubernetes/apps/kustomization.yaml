@@ -12,3 +12,4 @@ resources:
 - homepage/ks.yaml
 
 #- ext-mumble/ks.yaml
+- pikaraoke/ks.yaml
