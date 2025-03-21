@@ -54,10 +54,13 @@ spec:
             targetPort: 5555
         type: LoadBalancer
 
-#    persistence:
-#      data:
-#        enabled: true
-#        mountPath: "/app/pikaraoke-songs"
+    #    persistence:
+    #      data:
+    #        enabled: true
+    #        mountPath: "/app/pikaraoke-songs"
+    securityContext:
+      container:
+        readOnlyRootFilesystem: false
 
 #    workload:
 #      main:
