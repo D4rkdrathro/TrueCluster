@@ -73,4 +73,4 @@ spec:
           containers:
             main:
               args:
-              - --url https://karaoke.${DOMAIN_0}
+              - u https://karaoke.${DOMAIN_0}
