@@ -58,9 +58,10 @@ spec:
         enabled: true
         mountPath: "/app/pikaraoke-songs"
     workload:
-      workload-name:
+      pikaraoke:
         enabled: true
         primary: true
+        type: Deployment
         podSpec:
           containers:
             pikaraoke-host:
