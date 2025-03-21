@@ -63,6 +63,7 @@ spec:
       container:
         runAsUser: 0
         runAsGroup: 0
+        readOnlyRootFilesystem: false
 
     workload:
       main:
