@@ -73,4 +73,4 @@ spec:
           containers:
             main:
               args:
-              - "-u https://karaoke.${DOMAIN_0}"
+              - "-u http://192.168.1.216:5555"
