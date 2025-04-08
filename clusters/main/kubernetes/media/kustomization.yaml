@@ -9,10 +9,7 @@ resources:
 - jellyfin/ks.yaml
 - jellyseer/ks.yaml
 - bazarr/ks.yaml
-#- calibre/ks.yaml
-#- calibre-web/ks.yaml
-#- kavita/ks.yaml
 - readarr/ks.yaml
 - music-assistant/ks.yaml
 
-- calibre-web-auto/ks.yaml
+#- calibre-web-auto/ks.yaml
