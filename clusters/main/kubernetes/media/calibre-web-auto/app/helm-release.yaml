@@ -60,10 +60,6 @@ spec:
       container:
         runAsGroup: 0
         runAsUser: 0
-        capabilities:
-          add:
-          - SETUID
-          - SETGID
 
     persistence:
       config:
