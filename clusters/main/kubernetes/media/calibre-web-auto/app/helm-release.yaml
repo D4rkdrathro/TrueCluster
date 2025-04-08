@@ -56,16 +56,25 @@ spec:
             targetPort: 8083
         type: LoadBalancer
 
-#    persistence:
-#      config:
-#        enabled: true
-#        mountPath: "/config"
-#      library:
-#        enabled: true
-#        mountPath: "/calibre-library"
-#      ingest:
-#        enabled: true
-#        type: nfs
-#        path: /mnt/Ottvault/Media/calibre
-#        mountPath: /cwa-book-ingest
-#        server: ${NAS_IP}
+    securityContext:
+      container:
+        runAsGroup: 0
+        runAsUser: 0
+        capabilities:
+          add:
+          - SETUID
+          - SETGID
+
+    persistence:
+      config:
+        enabled: true
+        mountPath: "/config"
+      library:
+        enabled: true
+        mountPath: "/calibre-library"
+      ingest:
+        enabled: true
+        type: nfs
+        path: /mnt/Ottvault/Media/calibre
+        mountPath: /cwa-book-ingest
+        server: ${NAS_IP}
