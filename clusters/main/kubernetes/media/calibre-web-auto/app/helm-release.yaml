@@ -66,9 +66,9 @@ spec:
         podSpec:
           containers:
             main:
-              env:
-                PUID: 1000
-                GUID: 1000
+              fixedEnv:
+                PUID: 568
+                GUID: 568
     persistence:
       config:
         enabled: true
