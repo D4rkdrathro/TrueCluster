@@ -11,5 +11,4 @@ resources:
 - bazarr/ks.yaml
 - readarr/ks.yaml
 - music-assistant/ks.yaml
-
-#- calibre-web-auto/ks.yaml
+- calibre-web-auto/ks.yaml
