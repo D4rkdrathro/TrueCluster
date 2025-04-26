@@ -28,7 +28,7 @@ spec:
   values:
     image:
       repository: vicwomg/pikaraoke
-      tag: 1.11.0
+      tag: 1.11.1
       pullPolicy: IfNotPresent
     global:
       stoapAll: true
