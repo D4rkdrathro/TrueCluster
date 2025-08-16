@@ -56,21 +56,15 @@ spec:
       codeserver:
         enabled: true
         ingress:
-          enabled: true
-          integrations:
-            traefik:
-              enabled: true
-                #entrypoints:
-                #- websecure
-          tls:
-          - hosts:
-            - homepage.code${DOMAIN_0}
-            clusterIssuer: domain-0-wildcard
-          hosts:
-          - host: homepage.code.${DOMAIN_0}
-            paths:
-            - path: /
-              pathType: Prefix
+          main:
+            enabled: true
+            ingressClassName: internal
+            hosts:
+            - prowlarr.${DOMAIN_0}
+            integrations:
+              certManager:
+                enabled: true
+                certificateIssuer: domain-0-le-prod
     persistence:
       config:
         volsync:
