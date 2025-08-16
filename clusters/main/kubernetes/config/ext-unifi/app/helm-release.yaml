@@ -42,17 +42,10 @@ spec:
     ingress:
       main:
         enabled: true
-        integrations:
-          traefik:
-            enabled: true
-            entrypoints:
-            - websecure
-        tls:
-        - hosts:
-          - unifi.${DOMAIN_0}
-          clusterIssuer: domain-0-wildcard
+        ingressClassName: internal
         hosts:
         - host: unifi.${DOMAIN_0}
-          paths:
-          - path: /
-            pathType: Prefix
+        integrations:
+          certManager:
+            enabled: true
+            certificateIssuer: domain-0-le-prod

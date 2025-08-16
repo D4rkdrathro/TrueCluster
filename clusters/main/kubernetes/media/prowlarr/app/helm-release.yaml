@@ -51,26 +51,19 @@ spec:
     ingress:
       main:
         enabled: true
+        ingressClassName: internal
+        hosts:
+        - prowlarr.${DOMAIN_0}
         integrations:
-          traefik:
+          certManager:
             enabled: true
-            #entrypoints:
-            #- websecure
+            certificateIssuer: domain-0-le-prod
           homepage:
             enabled: true
             group: "Arr"
             widget:
               custom:
                 key: "${HP_API_PROWLARR}"
-        tls:
-        - hosts:
-          - prowlarr.${DOMAIN_0}
-          clusterIssuer: domain-0-wildcard
-        hosts:
-        - host: prowlarr.${DOMAIN_0}
-          paths:
-          - path: /
-            pathType: Prefix
 
     persistence:
       config:

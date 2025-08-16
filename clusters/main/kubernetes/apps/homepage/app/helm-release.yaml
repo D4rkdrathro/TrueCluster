@@ -45,20 +45,13 @@ spec:
     ingress:
       main:
         enabled: true
-        integrations:
-          traefik:
-            enabled: true
-            #entrypoints:
-            #- websecure
-        tls:
-        - hosts:
-          - home.${DOMAIN_0}
-          clusterIssuer: domain-0-wildcard
+        ingressClassName: internal
         hosts:
-        - host: home.${DOMAIN_0}
-          paths:
-          - path: /
-            pathType: Prefix
+        - home.${DOMAIN_0}
+        integrations:
+          certManager:
+            enabled: true
+            certificateIssuer: domain-0-le-prod
     addons:
       codeserver:
         enabled: true

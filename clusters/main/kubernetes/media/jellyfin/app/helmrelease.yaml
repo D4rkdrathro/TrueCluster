@@ -42,24 +42,19 @@ spec:
     ingress:
       main:
         enabled: true
+        ingressClassName: external
+        hosts:
+        - jelly.${DOMAIN_0}
         integrations:
-          traefik:
-            allowCors: true
+          certManager:
             enabled: true
+            certificateIssuer: domain-0-le-prod
           homepage:
             enabled: true
             group: "Media"
             widget:
               custom:
                 key: "${HP_API_JELLYFIN}"
-          certManager:
-          enabled: true
-          certificateIssuer: domain-0-le-prod
-        hosts:
-        - host: jelly.${DOMAIN_0}
-          paths:
-          - path: /
-            pathType: Prefix
     service:
       main:
         enabled: true

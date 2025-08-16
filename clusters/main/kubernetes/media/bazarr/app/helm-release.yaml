@@ -44,24 +44,19 @@ spec:
     ingress:
       main:
         enabled: true
+        ingressClassName: internal
+        hosts:
+        - bazarr.${DOMAIN_0}
         integrations:
-          traefik:
+          certManager:
             enabled: true
+            certificateIssuer: domain-0-le-prod
           homepage:
             enabled: true
             group: "Arr"
             widget:
               custom:
                 key: "${HP_API_BAZARR}"
-        tls:
-        - hosts:
-          - bazarr.${DOMAIN_0}
-          clusterIssuer: domain-0-wildcard
-        hosts:
-        - host: bazarr.${DOMAIN_0}
-          paths:
-          - path: /
-            pathType: Prefix
     #    service:
     #      main:
     #        enabled: true

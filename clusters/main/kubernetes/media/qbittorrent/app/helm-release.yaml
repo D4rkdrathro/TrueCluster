@@ -53,10 +53,13 @@ spec:
     ingress:
       main:
         enabled: true
+        ingressClassName: internal
+        hosts:
+        - qbit.${DOMAIN_0}
         integrations:
-          traefik:
+          certManager:
             enabled: true
-            middlewares:
+            certificateIssuer: domain-0-le-prod
           homepage:
             enabled: true
             group: "Arr"
@@ -64,15 +67,6 @@ spec:
               custom:
                 username: "${QBIT_USER}"
                 password: "${QBIT_PASS}"
-        tls:
-        - hosts:
-          - qbit.${DOMAIN_0}
-          clusterIssuer: domain-0-wildcard
-        hosts:
-        - host: qbit.${DOMAIN_0}
-          paths:
-          - path: /
-            pathType: Prefix
     persistence:
       config:
         volsync:

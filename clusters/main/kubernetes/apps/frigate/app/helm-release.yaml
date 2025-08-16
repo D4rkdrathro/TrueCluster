@@ -49,23 +49,18 @@ spec:
     ingress:
       main:
         enabled: true
+        ingressClassName: internal
+        hosts:
+        - mediareq.${DOMAIN_0}
         integrations:
-          traefik:
+          certManager:
             enabled: true
+            certificateIssuer: domain-0-le-prod
           homepage:
             enabled: true
             group: "Home"
             widget:
               enableRecentEvents: true
-        tls:
-        - hosts:
-          - frigate.${DOMAIN_0}
-          clusterIssuer: domain-0-wildcard
-        hosts:
-        - host: frigate.${DOMAIN_0}
-          paths:
-          - path: /
-            pathType: Prefix
     service:
       main:
         enabled: true

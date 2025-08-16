@@ -56,25 +56,19 @@ spec:
     ingress:
       main:
         enabled: true
+        ingressClassName: internal
+        hosts:
+        - radarr.${DOMAIN_0}
         integrations:
-          traefik:
+          certManager:
             enabled: true
-            middlewares:
+            certificateIssuer: domain-0-le-prod
           homepage:
             enabled: true
             group: "Arr"
             widget:
               custom:
                 key: "${HP_API_RADARR}"
-        tls:
-        - hosts:
-          - radarr.${DOMAIN_0}
-          clusterIssuer: domain-0-wildcard
-        hosts:
-        - host: radarr.${DOMAIN_0}
-          paths:
-          - path: /
-            pathType: Prefix
     #    service:
     #      main:
     #        enabled: true

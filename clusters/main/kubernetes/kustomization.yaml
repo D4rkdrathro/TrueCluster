@@ -6,8 +6,7 @@ resources:
   - flux-entry.yaml
   - flux-system
   - kube-system
-  - system
-  - media
   - networking
+  - system
   - auth
-  - config
+  - media

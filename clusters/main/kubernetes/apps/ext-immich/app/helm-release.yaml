@@ -43,14 +43,10 @@ spec:
     ingress:
       main:
         enabled: true
-        integrations:
-          traefik:
-            enabled: true
-          certManager:
-          enabled: true
-          certificateIssuer: domain-0-le-prod
+        ingressClassName: external
         hosts:
-        - host: photos.${DOMAIN_0}
-          paths:
-          - path: /
-            pathType: Prefix
+        - photos.${DOMAIN_0}
+        integrations:
+          certManager:
+            enabled: true
+            certificateIssuer: domain-0-le-prod

@@ -66,24 +66,19 @@ spec:
     ingress:
       main:
         enabled: true
+        ingressClassName: external
+        hosts:
+        - meals.${DOMAIN_0}
         integrations:
-          traefik:
+          certManager:
             enabled: true
+            certificateIssuer: domain-0-le-prod
           homepage:
             enabled: true
             group: "Home"
             widget:
               custom:
                 key: "${HP_API_MEALIE}"
-          certManager:
-          enabled: true
-          certificateIssuer: domain-0-le-prod
-        hosts:
-        - host: meals.${DOMAIN_0}
-          paths:
-          - path: /
-            pathType: Prefix
-
     persistence:
       data:
         volsync:

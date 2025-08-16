@@ -59,17 +59,20 @@ spec:
     ingress:
       main:
         enabled: true
+        ingressClassName: external
+        annotations:
+          nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+          nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+          nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
         integrations:
-          traefik:
-            enabled: true
           certManager:
           enabled: true
           certificateIssuer: domain-0-le-prod
         hosts:
         - host: ${AUTH_ADDRESS}
           paths:
-          - path: /
-            pathType: Prefix
+          - path: /outpost.goauthentik.io
+            pathType: ImplementationSpecific
     persistence:
       media:
         volsync:

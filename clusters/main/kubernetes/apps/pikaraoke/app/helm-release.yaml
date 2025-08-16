@@ -35,17 +35,13 @@ spec:
     ingress:
       main:
         enabled: true
-        integrations:
-          traefik:
-        tls:
-        - hosts:
-          - karaoke.${DOMAIN_0}
-          clusterIssuer: domain-0-wildcard
+        ingressClassName: internal
         hosts:
-        - host: karaoke.${DOMAIN_0}
-          paths:
-          - path: /
-            pathType: Prefix
+        - karaoke.${DOMAIN_0}
+        integrations:
+          certManager:
+            enabled: true
+            certificateIssuer: domain-0-le-prod
     service:
       main:
         enabled: true
