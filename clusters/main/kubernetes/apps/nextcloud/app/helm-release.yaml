@@ -80,10 +80,10 @@ spec:
           credentials: backblaze
           dest:
             #VolSync Destination (Restore)
-            enabled: false
+            enabled: true
           src:
             #VolSync Source (Backup)
-            enabled: true
+            enabled: false
       config:
         volsync:
         - name: config
@@ -91,10 +91,10 @@ spec:
           credentials: backblaze
           dest:
             #VolSync Destination (Restore)
-            enabled: false
+            enabled: true
           src:
             #VolSync Source (Backup)
-            enabled: true
+            enabled: false
       data:
         enabled: true
         type: nfs
@@ -105,15 +105,15 @@ spec:
       main:
         cluster:
           singleNode: true
-        #mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
+        mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
         backups:
-          enabled: true
+          enabled: false
           credentials: backblaze
           retentionPolicy: "14d"
-          revision: "3"
+          revision: "2"
         recovery:
           credentials: backblaze
-          revision: "2"
+          revision: "3"
     resources:
       limits:
         cpu: 6000m
