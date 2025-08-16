@@ -62,9 +62,9 @@ spec:
           type: restic
           credentials: s3
           dest:
-            enabled: true
-          src:
             enabled: false
+          src:
+            enabled: true
             trigger:
               schedule: 30 23 * * *
       media:
