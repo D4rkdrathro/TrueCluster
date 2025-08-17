@@ -108,7 +108,7 @@ spec:
             limits:
               truecharts.org/tun: 1
         env:
-          FIREWALL_OUTBOUND_SUBNETS: ${LOCAL_IP_EXCLUSIONS}
+          FIREWALL_OUTBOUND_SUBNETS: "${LOCAL_IP_EXCLUSIONS}"
           FIREWALL: "on"
           OPENVPN_PASSWORD: ${OPENVPN_PASSWORD}
           OPENVPN_USER: ${OPENVPN_USER}
