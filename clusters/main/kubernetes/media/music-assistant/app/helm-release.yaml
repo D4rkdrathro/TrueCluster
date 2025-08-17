@@ -50,6 +50,8 @@ spec:
             certificateIssuer: domain-0-le-prod
           nginx:
             enabled: true
+          traefik:
+            enabled: false
             auth:
               type: "authentik"
               internalHost: "authentik-http.authentik.svc.cluster.local:10230"

@@ -46,6 +46,10 @@ spec:
         hosts:
         - host: ntfy.${DOMAIN_0}
         integrations:
+          nginx:
+            enabled: true
+          traefik:
+            enabled: false
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
