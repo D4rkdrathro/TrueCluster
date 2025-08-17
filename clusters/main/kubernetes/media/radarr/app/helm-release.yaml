@@ -58,7 +58,7 @@ spec:
         enabled: true
         ingressClassName: internal
         hosts:
-        - radarr.${DOMAIN_0}
+        - host: radarr.${DOMAIN_0}
         integrations:
           certManager:
             enabled: true

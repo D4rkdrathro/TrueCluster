@@ -55,7 +55,7 @@ spec:
         enabled: true
         ingressClassName: internal
         hosts:
-        - qbit.${DOMAIN_0}
+        - host: qbit.${DOMAIN_0}
         integrations:
           certManager:
             enabled: true

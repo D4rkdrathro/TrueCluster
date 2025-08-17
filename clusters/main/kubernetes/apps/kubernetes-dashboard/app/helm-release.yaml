@@ -41,7 +41,7 @@ spec:
       main:
         enabled: true
         ingressClassName: internal
-        host:
+        hosts:
         - host: kdash.${DOMAIN_0}
         integrations:
           certManager:

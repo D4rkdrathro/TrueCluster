@@ -44,7 +44,7 @@ spec:
         enabled: true
         ingressClassName: external
         hosts:
-        - jelly.${DOMAIN_0}
+        -host: jelly.${DOMAIN_0}
         integrations:
           certManager:
             enabled: true

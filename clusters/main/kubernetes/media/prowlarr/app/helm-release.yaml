@@ -53,7 +53,7 @@ spec:
         enabled: true
         ingressClassName: internal
         hosts:
-        - prowlarr.${DOMAIN_0}
+        - host: prowlarr.${DOMAIN_0}
         integrations:
           certManager:
             enabled: true

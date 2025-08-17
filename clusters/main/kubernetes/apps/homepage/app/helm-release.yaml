@@ -47,7 +47,7 @@ spec:
         enabled: true
         ingressClassName: internal
         host:
-        - home.${DOMAIN_0}
+        - host: home.${DOMAIN_0}
         integrations:
           certManager:
             enabled: true

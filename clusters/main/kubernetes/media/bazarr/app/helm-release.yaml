@@ -46,7 +46,7 @@ spec:
         enabled: true
         ingressClassName: internal
         hosts:
-        - bazarr.${DOMAIN_0}
+        - host: bazarr.${DOMAIN_0}
         integrations:
           certManager:
             enabled: true

@@ -51,7 +51,7 @@ spec:
         enabled: true
         ingressClassName: internal
         hosts:
-        - mediareq.${DOMAIN_0}
+        - host: frigate.${DOMAIN_0}
         integrations:
           certManager:
             enabled: true
