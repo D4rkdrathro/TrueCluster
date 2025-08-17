@@ -68,6 +68,9 @@ spec:
         ingressClassName: external
         hosts:
         - host: cloud.${DOMAIN_0}
+          paths:
+          - path: /
+            pathType: Prefix
         integrations:
           nginx:
             enabled: true
