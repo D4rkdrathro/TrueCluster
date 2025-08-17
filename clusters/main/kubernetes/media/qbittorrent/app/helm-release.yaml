@@ -100,21 +100,16 @@ spec:
     workload:
       qbitportforward:
         enabled: false
-    service:
-      proxy:
-        enabled: true
-        ports:
-          gluetun:
-            enabled: true
-            port: 8888
-            protocol: "http"
-            targetPort: 8888
     addons:
       gluetun:
         enabled: true
         killSwitch: true
         excludedNetworks_IPv4:
         - ${LOCAL_IP_EXCLUSIONS}
+        container:
+          resources:
+            limits:
+              truecharts.org/tun: 1
         env:
           OPENVPN_PASSWORD: ${OPENVPN_PASSWORD}
           OPENVPN_USER: ${OPENVPN_USER}
