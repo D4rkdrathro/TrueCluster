@@ -93,9 +93,9 @@ spec:
       gluetun:
         enabled: true
         container:
-          resources:
-            limits:
-              truecharts.org/tun: 1
+          #resources:
+          #limits:
+          #truecharts.org/tun: 1
           env:
             FIREWALL_OUTBOUND_SUBNETS: "${LOCAL_IP_EXCLUSIONS}"
             FIREWALL: "on"
