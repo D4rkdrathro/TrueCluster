@@ -48,7 +48,7 @@ spec:
         initialAdminPassword: ${NC_PASS}
       general:
         default_phone_region: US
-        accessIP: ${TRAEFIK_IP}
+        accessIP: ${NGINX_EXTERNAL_IP}
       clamav:
         enabled: true
       collabora:
