@@ -9,7 +9,7 @@ spec:
     spec:
       # renovate: registryUrl=https://charts.truechartsoci.org
       chart: jellyseerr
-      version: 13.3.2
+      version: 13.3.1
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -62,9 +62,9 @@ spec:
           type: restic
           credentials: s3
           dest:
-            enabled: false
-          src:
             enabled: true
+          src:
+            enabled: false
             trigger:
               schedule: 30 23 * * *
       media:
