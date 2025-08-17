@@ -67,10 +67,10 @@ spec:
         integrations:
           nginx:
             enabled: true
-          #traefik:
-          #enabled: false
+          traefik:
+            enabled: false
           certManager:
-          enabled: true
+            enabled: true
           certificateIssuer: domain-0-le-prod
         hosts:
         - host: ${AUTH_ADDRESS}
