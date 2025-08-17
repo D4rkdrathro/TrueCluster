@@ -5,10 +5,11 @@ resources:
 - flaresolverr/ks.yaml
 - radarr/ks.yaml
 - sonarr/ks.yaml
-- qbittorrent/ks.yaml
+#- qbittorrent/ks.yaml
 - jellyfin/ks.yaml
 - jellyseer/ks.yaml
 - bazarr/ks.yaml
 - readarr/ks.yaml
 - music-assistant/ks.yaml
+
 #- calibre-web-auto/ks.yaml
