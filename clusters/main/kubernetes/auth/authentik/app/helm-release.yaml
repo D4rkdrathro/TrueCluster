@@ -65,10 +65,10 @@ spec:
           nginx.ingress.kubernetes.io/ssl-passthrough: "true"
           nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
         integrations:
-          nginx:
-            enabled: true
-          traefik:
-            enabled: false
+          #nginx:
+          #enabled: true
+          #traefik:
+          #enabled: false
           certManager:
           enabled: true
           certificateIssuer: domain-0-le-prod
