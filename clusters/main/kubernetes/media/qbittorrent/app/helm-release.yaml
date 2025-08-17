@@ -79,10 +79,10 @@ spec:
           credentials: backblaze
           dest:
             #VolSync Destination (Restore)
-            enabled: false
+            enabled: true
           src:
             #VolSync Source (Backup)
-            enabled: true
+            enabled: false
             trigger:
               schedule: 40 1 * * *
       media:
@@ -101,8 +101,8 @@ spec:
       qbitportforward:
         enabled: false
     addons:
-      vpn:
-        type: gluetun
+      gluetun:
+        enabled: true
         killSwitch: true
         excludedNetworks_IPv4:
         - ${LOCAL_IP_EXCLUSIONS}
