@@ -100,6 +100,15 @@ spec:
     workload:
       qbitportforward:
         enabled: false
+    service:
+      proxy:
+        enabled: true
+        ports:
+          gluetun:
+            enabled: true
+            port: 8888
+            protocol: "http"
+            targetPort: 8888
     addons:
       gluetun:
         enabled: true
