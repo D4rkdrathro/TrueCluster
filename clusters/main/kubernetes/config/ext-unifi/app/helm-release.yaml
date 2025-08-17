@@ -2,14 +2,14 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: kubernetes-dashboard
-  namespace: kubernetes-dashboard
+  name: ext-unifi
+  namespace: ext-unifi
 spec:
   interval: 15m
   chart:
     spec:
-      chart: kubernetes-dashboard
-      version: 1.16.3
+      chart: external-service
+      version: 16.3.1
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -32,17 +32,21 @@ spec:
   values:
     service:
       main:
-        type: LoadBalancer
-        loadBalancerIP: ${DASHBOARD_IP}
+        type: ExternalIP
+        externalIP: "192.168.1.134"
         ports:
           main:
-            port: 80
+            protocol: https
+            port: 30072
+
     ingress:
       main:
         enabled: true
         ingressClassName: internal
+        annotations:
+          nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
         hosts:
-        - host: kdash.${DOMAIN_0}
+        - host: unifi.${DOMAIN_0}
         integrations:
           certManager:
             enabled: true

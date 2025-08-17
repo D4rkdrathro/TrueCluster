@@ -1,0 +1,114 @@
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.zinn.ca/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: mealie
+  namespace: mealie
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: mealie
+      version: 26.2.1
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+      interval: 15m
+  timeout: 20m
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+
+  values:
+    global:
+      stopAll: false
+
+    credentials:
+      backblaze:
+        type: s3
+        url: "${S3_ENDPOINT_URL}"
+        bucket: "${S3_BUCKET}-mealie"
+        accessKey: "${S3_ACCESS_KEY}"
+        secretKey: "${S3_SECRET_KEY}"
+        encrKey: "${S3_ENCRYPTION_KEY}"
+    mealie:
+      api:
+        general:
+          allow_signup: false
+        smtp:
+          user: ${CONFIG_EMAIL}
+          password: ${CONFIG_EMAIL_PASS}
+          host: ${CONFIG_EMAIL_SMTP}
+          from_email: ${CONFIG_EMAIL}
+          from_name: Mealie
+        oidc:
+          auth_enabled: true
+          signup_enabled: false
+          configuration_url: https://${AUTH_ADDRESS}/application/o/mealie/.well-known/openid-configuration
+          client_id: ${MEALIE_AUTHENTIK_ID}
+          provider_name: "Oauth"
+          user_group: "mealie users"
+          admin_group: "mealie admins"
+          remember_me: true
+    metrics:
+      main:
+        enabled: false
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: external
+        hosts:
+        - meals.${DOMAIN_0}
+        integrations:
+          certManager:
+            enabled: true
+            certificateIssuer: domain-0-le-prod
+          homepage:
+            enabled: true
+            group: "Home"
+            widget:
+              custom:
+                key: "${HP_API_MEALIE}"
+    persistence:
+      data:
+        volsync:
+        - name: data
+          type: restic
+          credentials: backblaze
+          dest:
+            #VolSync Destination (Restore)
+            enabled: false
+          src:
+            #VolSync Source (Backup)
+            enabled: true
+        #service:
+        #main:
+        #enabled: true
+        #loadBalancerIP: ""
+        #ports:
+        #main:
+        #port: 10018
+        #type: LoadBalancer
+    cnpg:
+      main:
+        cluster:
+          singleNode: true
+        #mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
+        backups:
+          enabled: true
+          credentials: backblaze
+          retentionPolicy: "14d"
+          revision: "5"
+        recovery:
+          credentials: backblaze
+          revision: "4"
