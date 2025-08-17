@@ -103,7 +103,7 @@ spec:
     addons:
       gluetun:
         enabled: true
-        killSwitch: true
+        #killSwitch: true
         excludedNetworks_IPv4:
         - ${LOCAL_IP_EXCLUSIONS}
         container:
