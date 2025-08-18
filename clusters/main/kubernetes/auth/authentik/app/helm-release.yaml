@@ -79,6 +79,8 @@ spec:
           paths:
           - path: "/outpost.goauthentik.io"
             pathType: ImplementationSpecific
+          - path: /
+            pathType: Prefix
     persistence:
       media:
         volsync:
