@@ -56,6 +56,6 @@ spec:
             auth:
               type: "authentik"
               internalHost: "authentik-http.authentik.svc.cluster.local:10230"
-              externalHost: "${AUTH_ADDRESS}"
+              externalHost: "truly.${DOMAIN_0}"
         annotations:
           nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
