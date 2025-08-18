@@ -65,9 +65,11 @@ spec:
           paths:
           - path: /
             pathType: Prefix
-            overrideService:
-              name: snapcast
-              port: 1780
+
+        #            overrideService:
+        #              name: snapcast
+        #              port: 1780
+
         integrations:
           certManager:
             enabled: true
