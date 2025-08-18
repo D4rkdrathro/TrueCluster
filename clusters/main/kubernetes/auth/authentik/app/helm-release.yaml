@@ -74,7 +74,7 @@ spec:
             certificateIssuer: domain-0-le-prod
         hosts:
         - host: ${AUTH_ADDRESS}
-        - host: "*.${Domain_0}"
+        - host: "*.${DOMAIN_0}"
           paths:
           - path: "/outpost.goauthentik.io"
             pathType: ImplementationSpecific
