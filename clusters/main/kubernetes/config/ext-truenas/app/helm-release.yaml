@@ -45,9 +45,6 @@ spec:
         ingressClassName: external
         hosts:
         - host: "${T_ADDRESS}"
-        paths:
-        - path: /
-          pathType: Prefix
         integrations:
           traefik:
             enabled: false
