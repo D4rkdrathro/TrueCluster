@@ -33,7 +33,7 @@ spec:
     service:
       main:
         type: ExternalIP
-        externalIP: "${NAS_IP}"
+        externalIP: 192.168.1.134
         ports:
           main:
             protocol: https
