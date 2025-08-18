@@ -53,7 +53,7 @@ spec:
             auth:
               type: "authentik"
               internalHost: "authentik-http.authentik.svc.cluster.local:10230"
-              externalHost: "auth.${DOMAIN_0}"
+              externalHost: "jukebox.${DOMAIN_0}"
           traefik:
             enabled: false
       snapcast:
@@ -76,7 +76,7 @@ spec:
             auth:
               type: "authentik"
               internalHost: "authentik-http.authentik.svc.cluster.local:10230"
-              externalHost: "auth.${DOMAIN_0}"
+              externalHost: "snapcast.${DOMAIN_0}"
     service:
       main:
         enabled: true

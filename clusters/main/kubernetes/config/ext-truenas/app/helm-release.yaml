@@ -56,4 +56,4 @@ spec:
             auth:
               type: "authentik"
               internalHost: "authentik-http.authentik.svc.cluster.local:10230"
-              externalHost: "auth.${DOMAIN_0}"
+              externalHost: "truly.${DOMAIN_0}"
