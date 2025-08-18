@@ -75,8 +75,8 @@ spec:
         hosts:
         - host: ${AUTH_ADDRESS}
         - host: snapcast.${DOMAIN_0}
-        - host: truly.{DOMAIN_0}
-        - host: jukebox.{DOMAIN_0}
+        - host: truly.${DOMAIN_0}
+        - host: jukebox.${DOMAIN_0}
           paths:
           - path: "/outpost.goauthentik.io"
             pathType: ImplementationSpecific
