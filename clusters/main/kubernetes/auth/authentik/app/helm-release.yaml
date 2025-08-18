@@ -79,7 +79,7 @@ spec:
         - host: "snapcast.${DOMAIN_0}"
           paths:
           - path: "/outpost.goauthentik.io"
-            pathType: Prefix
+            pathType: ImplementationSpecific
     persistence:
       media:
         volsync:
