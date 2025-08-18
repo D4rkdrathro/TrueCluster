@@ -62,8 +62,6 @@ spec:
         hosts:
         - host: snapcast.${DOMAIN_0}
           paths:
-          - path: /
-            pathType: Prefix
             overrideService:
               name: snapcast
               port: 1780
