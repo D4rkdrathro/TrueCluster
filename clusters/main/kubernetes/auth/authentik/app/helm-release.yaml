@@ -76,7 +76,6 @@ spec:
         - host: ${AUTH_ADDRESS}
         - host: "${T_ADDRESS}"
         - host: "jukebox.${DOMAIN_0}"
-        - host: "snapcast.${DOMAIN_0}"
           paths:
           - path: "/outpost.goauthentik.io"
             pathType: ImplementationSpecific
