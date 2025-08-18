@@ -36,7 +36,7 @@ spec:
         externalIP: "${NAS_IP}"
         ports:
           main:
-            protocol: https
+            protocol: http
             port: 444
 
     ingress:
