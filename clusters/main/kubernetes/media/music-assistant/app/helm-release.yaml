@@ -59,7 +59,7 @@ spec:
 
       snapcast:
         enabled: true
-        ingressClassName: internal
+        ingressClassName: external
         hosts:
         - host: snapcast.${DOMAIN_0}
           paths:
