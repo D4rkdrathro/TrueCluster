@@ -44,7 +44,7 @@ spec:
         enabled: true
         ingressClassName: internal
         hosts:
-        - host: ${T_ADDRESS}
+        - host: "${T_ADDRESS}"
         integrations:
           traefik:
             enabled: false
@@ -53,10 +53,11 @@ spec:
             certificateIssuer: domain-0-le-prod
           nginx:
             enabled: true
-            auth:
-              type: "authentik"
-              internalHost: "authentik-http.authentik.svc.cluster.local:10230"
-              externalHost: "${T_ADDRESS}"
+
+#            auth:
+#              type: "authentik"
+#              internalHost: "authentik-http.authentik.svc.cluster.local:10230"
+#              externalHost: "${T_ADDRESS}"
 
 #        annotations:
 #          nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
