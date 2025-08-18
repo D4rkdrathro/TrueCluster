@@ -37,7 +37,7 @@ spec:
         ports:
           main:
             protocol: https
-            port: 444
+            port: 443
 
     ingress:
       main:
