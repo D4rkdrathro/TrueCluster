@@ -61,11 +61,12 @@ spec:
         ingressClassName: internal
         hosts:
         - host: snapcast.${DOMAIN_0}
-        #          paths:
-        #          - path: /
-        #            overrideService:
-        #              name: snapcast
-        #              port: 1780
+          paths:
+          - path: /
+            pathType: Prefix
+            overrideService:
+              name: snapcast
+              port: 1780
         integrations:
           certManager:
             enabled: true
