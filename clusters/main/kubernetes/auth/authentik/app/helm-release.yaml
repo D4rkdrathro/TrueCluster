@@ -73,7 +73,7 @@ spec:
             enabled: true
             certificateIssuer: domain-0-le-prod
         hosts:
-        - host: "${AUTH_ADDRESS}"
+        - host: ${AUTH_ADDRESS}
         - host: snapcast.${DOMAIN_0}
         - host: truly.{DOMAIN_0}
         - host: jukebox.{DOMAIN_0}
