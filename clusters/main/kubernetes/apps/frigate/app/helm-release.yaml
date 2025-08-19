@@ -65,30 +65,30 @@ spec:
             group: "Home"
             widget:
               enableRecentEvents: true
-    service:
-      main:
-        enabled: true
-        integrations:
+          #    service:
+          #      main:
+          #        enabled: true
+          #        integrations:
           #metallb:
           #enabled: true
-        loadBalancerIP: ""
-        ports:
-          main:
-            port: 10500
-            protocol: http
-        type: LoadBalancer
-      rtsp:
-        enabled: true
-        integrations:
+          #        loadBalancerIP: ""
+          #        ports:
+          #          main:
+          #            port: 10500
+          #            protocol: http
+          #        type: LoadBalancer
+          #      rtsp:
+          #        enabled: true
+          #        integrations:
           #metallb:
           #enabled: true
-        loadBalancerIP: "" #192.168.1.215
-        ports:
-          rtsp:
-            enabled: true
-            port: 8554
-            targetPort: 8554
-        type: LoadBalancer
+          #        loadBalancerIP: "" #192.168.1.215
+          #        ports:
+          #          rtsp:
+          #            enabled: true
+          #            port: 8554
+          #            targetPort: 8554
+          #        type: LoadBalancer
     persistence:
       media:
         enabled: true
