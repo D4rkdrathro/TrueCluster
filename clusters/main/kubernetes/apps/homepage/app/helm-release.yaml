@@ -76,8 +76,8 @@ spec:
           type: restic
           credentials: backblaze
           dest:
-            enabled: false
-          src:
             enabled: true
+          src:
+            enabled: false
             trigger:
               schedule: 10 0 * * *
