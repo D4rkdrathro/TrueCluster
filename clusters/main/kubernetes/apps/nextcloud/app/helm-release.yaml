@@ -117,10 +117,10 @@ spec:
           enabled: true
           credentials: backblaze
           retentionPolicy: "14d"
-          revision: "5"
+          revision: "6"
         recovery:
           credentials: backblaze
-          revision: "4"
+          revision: "5"
     resources:
       limits:
         cpu: 6000m
