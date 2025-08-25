@@ -77,8 +77,8 @@ spec:
         operator: Exists
         effect: NoSchedule
     serviceAccount:
-      system-upgrade:
-        forceRename: system-upgrade
+      create: true
+      name: system-upgrade
     persistence:
       tmp:
         type: emptyDir
