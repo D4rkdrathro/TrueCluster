@@ -1,0 +1,56 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: ext-immich
+  namespace: ext-immich
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: external-service
+      version: 16.3.2
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+      interval: 15m
+  timeout: 20m
+  maxHistory: 3
+  driftDetection:
+    mode: warn
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+
+    service:
+      main:
+        type: ExternalIP
+        externalIP: "192.168.1.134"
+        ports:
+          main:
+            protocol: http
+            port: 30041
+
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: external
+        hosts:
+        - host: photos.${DOMAIN_0}
+        integrations:
+          nginx:
+            enabled: true
+          traefik:
+            enabled: false
+          certManager:
+            enabled: true
+            certificateIssuer: domain-0-le-prod
