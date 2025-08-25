@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: openebs
-      version: 4.3.2
+      version: 4.2.0
       sourceRef:
         kind: HelmRepository
         name: home-ops-mirror
@@ -29,12 +29,6 @@ spec:
         volumeSnapshots:
           enabled: false
           keep: false
-    loki:
-      enabled: false
-    alloy:
-      enabled: false
-    minio:
-      enabled: false
 
     engines:
       local:
