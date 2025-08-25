@@ -2,14 +2,14 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: kubernetes-dashboard
-  namespace: kubernetes-dashboard
+  name: ext-truenas
+  namespace: ext-truenas
 spec:
   interval: 15m
   chart:
     spec:
-      chart: kubernetes-dashboard
-      version: 2.3.2
+      chart: external-service
+      version: 16.3.2
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -32,22 +32,32 @@ spec:
   values:
     service:
       main:
-        type: LoadBalancer
-        loadBalancerIP: ${DASHBOARD_IP}
+        type: ExternalIP
+        externalIP: "${NAS_IP}"
         ports:
           main:
-            port: 80
+            protocol: https
+            port: 444
+
     ingress:
       main:
         enabled: true
         ingressClassName: internal
         hosts:
-        - host: kdash.${DOMAIN_0}
+        - host: "${T_ADDRESS}"
+        paths:
+        - path: /
+          pathType: Prefix
         integrations:
-          nginx:
-            enabled: true
-          traefik:
-            enabled: false
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
+          nginx:
+            enabled: true
+        #            auth:
+        #              type: "authentik"
+        #              internalHost: "authentik-http.authentik.svc.cluster.local:10230"
+        #              externalHost: "${T_ADDRESS}"
+
+        annotations:
+          nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"

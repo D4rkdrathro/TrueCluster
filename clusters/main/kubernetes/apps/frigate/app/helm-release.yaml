@@ -1,0 +1,127 @@
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.zinn.ca/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: frigate
+  namespace: frigate
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: frigate
+      version: 18.5.2
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+      interval: 15m
+  timeout: 20m
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+
+    global:
+      stopAll: false
+
+    credentials:
+      backblaze:
+        type: s3
+        url: "${S3_ENDPOINT_URL}"
+        bucket: "${S3_BUCKET}-frigate"
+        accessKey: "${S3_ACCESS_KEY}"
+        secretKey: "${S3_SECRET_KEY}"
+        encrKey: "${S3_ENCRYPTION_KEY}"
+
+    metrics:
+      main:
+        enabled: false
+
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: internal
+        hosts:
+        - host: frigate.${DOMAIN_0}
+        integrations:
+          nginx:
+            enabled: true
+          traefik:
+            enabled: false
+          certManager:
+            enabled: true
+            certificateIssuer: domain-0-le-prod
+          homepage:
+            enabled: true
+            group: "Home"
+            widget:
+              enableRecentEvents: true
+          #    service:
+          #      main:
+          #        enabled: true
+          #        integrations:
+          #metallb:
+          #enabled: true
+          #        loadBalancerIP: ""
+          #        ports:
+          #          main:
+          #            port: 10500
+          #            protocol: http
+          #        type: LoadBalancer
+          #      rtsp:
+          #        enabled: true
+          #        integrations:
+          #metallb:
+          #enabled: true
+          #        loadBalancerIP: "" #192.168.1.215
+          #        ports:
+          #          rtsp:
+          #            enabled: true
+          #            port: 8554
+          #            targetPort: 8554
+          #        type: LoadBalancer
+    persistence:
+      media:
+        enabled: true
+        type: nfs
+        path: /mnt/Ottvault/Media
+        mountPath: /Media
+        server: ${NAS_IP}
+      config:
+        volsync:
+        - name: config
+          type: restic
+          credentials: backblaze
+          dest:
+            #VolSync Destination (Restore)
+            enabled: true
+          src:
+            #VolSync Source (Backup)
+            enabled: false
+            trigger:
+              schedule: 10 1 * * *
+
+        coralai:
+          enabled: true
+          type: device
+          hostPath: /dev/ttyACM0
+
+    securityContext:
+      container:
+        privileged: true
+    resources:
+      limits:
+        nvidia.com/gpu: 1
+    workload:
+      main:
+        podSpec:
+          runtimeClassName: "nvidia"
