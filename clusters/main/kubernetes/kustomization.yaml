@@ -8,5 +8,3 @@ resources:
   - kube-system
   - networking
   - system
-  - auth
-  - media
