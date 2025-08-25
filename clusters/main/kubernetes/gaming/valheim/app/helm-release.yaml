@@ -29,3 +29,10 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
+  values:
+    service:
+      valheim:
+        integrations:
+          metallb:
+            enabled: true
+        loadBalancerIP: "192.168.1.213"
