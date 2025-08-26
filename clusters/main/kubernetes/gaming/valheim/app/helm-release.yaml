@@ -31,6 +31,11 @@ spec:
     keepHistory: false
   values:
     service:
+      main:
+        integrations:
+          metallb:
+            enabled: true
+        loadBalancerIP: ""
       valheim:
         integrations:
           metallb:
