@@ -53,6 +53,17 @@ spec:
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
+      supervisor:
+        enabled: true
+        ingressClassName: internal
+        hosts:
+        - host: heimheim.${DOMAIN_0}
+        integrations:
+          nginx:
+            enabled: true
+          certManager:
+            enabled: true
+            certificateIssuer: domain-0-le-prod
     workload:
       main:
         podSpec:
