@@ -40,4 +40,33 @@ spec:
         integrations:
           metallb:
             enabled: true
-        loadBalancerIP: "192.168.1.213"
+        loadBalancerIP: "${VALHEIM_IP}"
+    ingress:
+      supervisor:
+        enabled: true
+        ingressClassName: internal
+        hosts:
+        - host: valheim.${DOMAIN_0}
+        integrations:
+          nginx:
+            enabled: true
+          certManager:
+            enabled: true
+            certificateIssuer: domain-0-le-pro
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                SERVER_NAME: Drathros Kingdom
+                WORLD_NAME: HeimHeimlich
+                SERVER_PUBLIC: false
+                UPDATE_INTERVAL: 10800
+                BACKUPS: true
+                BACKUPS_INTERVAL: 43200
+                BACKUPS_DIRECTORY: /backups
+                BACKUPS_MAX_AGE: 3
+                SUPERVISOR_HTTP_USER: ${VALHEIM_ADMIN}
+                SUPERVISOR_HTTP_PASS: ${VALHEIM_ADMIN_PASS}
+                SERVER_PASS: ${VALHEIM_SERVER_PASS}
