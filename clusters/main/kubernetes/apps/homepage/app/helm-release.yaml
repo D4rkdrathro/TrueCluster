@@ -59,18 +59,17 @@ spec:
     addons:
       codeserver:
         enabled: true
-        codeserver:
-          ingress:
-            enabled: true
-            ingressClassName: internal
-            hosts:
-            - homepage.code.${DOMAIN_0}
-            integrations:
-              nginx:
-                enabled: true
-              certManager:
-                enabled: true
-                certificateIssuer: domain-0-le-prod
+        ingress:
+          enabled: true
+          ingressClassName: internal
+          hosts:
+          - homepage.code.${DOMAIN_0}
+          integrations:
+            nginx:
+              enabled: true
+            certManager:
+              enabled: true
+              certificateIssuer: domain-0-le-prod
     persistence:
       config:
         volsync:
