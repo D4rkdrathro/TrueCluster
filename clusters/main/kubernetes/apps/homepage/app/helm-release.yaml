@@ -63,7 +63,7 @@ spec:
           enabled: true
           ingressClassName: internal
           hosts:
-          - homepage.code.${DOMAIN_0}
+          - host: homepage.code.${DOMAIN_0}
           integrations:
             nginx:
               enabled: true
