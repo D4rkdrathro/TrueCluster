@@ -42,7 +42,7 @@ spec:
             enabled: true
         loadBalancerIP: "${VALHEIM_IP}"
     ingress:
-      supervisor:
+      main:
         enabled: true
         ingressClassName: internal
         hosts:
