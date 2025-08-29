@@ -65,6 +65,10 @@ spec:
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
+    persistence:
+      data:
+        enabled: true
+        mountPath: "/opt/valheim"
     workload:
       main:
         podSpec:
