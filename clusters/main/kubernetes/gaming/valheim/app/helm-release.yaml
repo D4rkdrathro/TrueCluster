@@ -69,6 +69,12 @@ spec:
       data:
         enabled: true
         mountPath: "/opt/valheim"
+    resources:
+      limits:
+        cpu: 2000m
+        memory: 6144Mi
+      requests:
+        memory: 4096Mi
     workload:
       main:
         podSpec:
