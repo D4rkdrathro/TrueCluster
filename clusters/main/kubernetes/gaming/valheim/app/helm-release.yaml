@@ -72,9 +72,9 @@ spec:
     resources:
       limits:
         cpu: 2000m
-        memory: 6144Mi
+        memory: 6Gi
       requests:
-        memory: 4096Mi
+        memory: 4Gi
     workload:
       main:
         podSpec:
