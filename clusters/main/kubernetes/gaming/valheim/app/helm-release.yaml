@@ -35,7 +35,7 @@ spec:
       backblaze:
         type: s3
         url: "${S3_ENDPOINT_URL}"
-        bucket: "${S3_BUCKET}-mealie"
+        bucket: "${S3_BUCKET}-valheim"
         accessKey: "${S3_ACCESS_KEY}"
         secretKey: "${S3_SECRET_KEY}"
         encrKey: "${S3_ENCRYPTION_KEY}"
