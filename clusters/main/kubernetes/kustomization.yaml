@@ -11,4 +11,5 @@ resources:
 - system
 - auth
 - media
-- gaming
+
+#- gaming
