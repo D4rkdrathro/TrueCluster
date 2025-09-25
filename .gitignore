@@ -10,3 +10,4 @@ sopssecret*
 *sopssecret*
 mounts/
 ssh-public-key.txt
+.sops.yaml
