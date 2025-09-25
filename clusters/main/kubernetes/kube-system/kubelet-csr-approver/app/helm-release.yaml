@@ -9,17 +9,10 @@ spec:
   chart:
     spec:
       chart: kubelet-csr-approver
-      version: 2.3.2
+      version: 2.3.6
       sourceRef:
         kind: HelmRepository
         name: truecharts
         namespace: flux-system
       interval: 30m
-  values:
-    workload:
-      main:
-        enabled: true
-        replicas: 1
-    metrics:
-      main:
-        enabled: false
+  values: {}

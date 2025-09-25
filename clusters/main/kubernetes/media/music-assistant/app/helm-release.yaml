@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 15.4.9
+      version: 15.8.2
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -42,6 +42,9 @@ spec:
       main:
         enabled: true
         ingressClassName: external
+        annotations:
+          nginx.ingress.kubernetes.io/enable-cors: "true"
+          nginx.ingress.kubernetes.io/cors-allow-origin: "https://jukebox.${DOMAIN_0}, https://${AUTH_ADDRESS}"
         hosts:
         - host: "jukebox.${DOMAIN_0}"
         integrations:

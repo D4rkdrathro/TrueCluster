@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: nextcloud
-      version: 36.7.7
+      version: 36.7.15
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -117,10 +117,10 @@ spec:
           enabled: true
           credentials: backblaze
           retentionPolicy: "14d"
-          revision: "5"
+          revision: "8"
         recovery:
           credentials: backblaze
-          revision: "4"
+          revision: "7"
     resources:
       limits:
         cpu: 6000m

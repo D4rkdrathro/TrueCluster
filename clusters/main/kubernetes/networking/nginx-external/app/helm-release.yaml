@@ -39,7 +39,7 @@ spec:
           metallb.io/ip-allocated-from-pool: main
           metallb.io/loadBalancerIPs: ${NGINX_EXTERNAL_IP}
       ingressClassByName: true
-      watchIngressWithoutClass: true
+      watchIngressWithoutClass: false
       ingressClassResource:
         name: external
         default: false
@@ -60,7 +60,6 @@ spec:
         keep-alive: 120
         proxy-body-size: 0
         proxy-buffer-size: 16k
-        proxy-busy-buffers-size: 32k
         ssl-protocols: TLSv1.3 TLSv1.2
         use-forwarded-headers: "true"
       metrics:

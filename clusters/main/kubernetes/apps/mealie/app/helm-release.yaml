@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: mealie
-      version: 26.3.0
+      version: 26.7.0
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -56,7 +56,8 @@ spec:
           signup_enabled: false
           configuration_url: https://${AUTH_ADDRESS}/application/o/mealie/.well-known/openid-configuration
           client_id: ${MEALIE_AUTHENTIK_ID}
-          provider_name: "Oauth"
+          client_secret: "${MEALIE_CLIENT_SECRET}"
+          provider_name: "OAuth"
           user_group: "mealie users"
           admin_group: "mealie admins"
           remember_me: true
@@ -109,10 +110,10 @@ spec:
           singleNode: true
         mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
         backups:
-          enabled: false
+          enabled: true
           credentials: backblaze
           retentionPolicy: "14d"
-          revision: "5"
+          revision: "6"
         recovery:
           credentials: backblaze
-          revision: "4"
+          revision: "5"

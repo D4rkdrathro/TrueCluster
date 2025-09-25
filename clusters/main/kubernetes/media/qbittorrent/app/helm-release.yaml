@@ -9,7 +9,7 @@ spec:
     spec:
       # renovate: registryUrl=https://charts.truechartsoci.org
       chart: qbittorrent
-      version: 23.3.2
+      version: 23.6.0
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -68,10 +68,10 @@ spec:
           credentials: backblaze
           dest:
             #VolSync Destination (Restore)
-            enabled: true
+            enabled: false
           src:
             #VolSync Source (Backup)
-            enabled: false
+            enabled: true
             trigger:
               schedule: 40 1 * * *
       media:

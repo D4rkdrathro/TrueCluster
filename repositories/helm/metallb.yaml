@@ -3,9 +3,9 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: home-ops-mirror
+  name: metallb
   namespace: flux-system
 spec:
   type: oci
   interval: 2h
-  url: oci://ghcr.io/home-operations/charts-mirror
+  url: oci://quay.io/metallb/chart

@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: kubernetes-dashboard
-      version: 2.3.2
+      version: 2.3.5
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -34,20 +34,9 @@ spec:
       main:
         type: LoadBalancer
         loadBalancerIP: ${DASHBOARD_IP}
+        integrations:
+          metallb:
+            enabled: true
         ports:
           main:
             port: 80
-    ingress:
-      main:
-        enabled: true
-        ingressClassName: internal
-        hosts:
-        - host: kdash.${DOMAIN_0}
-        integrations:
-          nginx:
-            enabled: true
-          traefik:
-            enabled: false
-          certManager:
-            enabled: true
-            certificateIssuer: domain-0-le-prod
