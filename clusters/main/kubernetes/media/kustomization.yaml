@@ -9,7 +9,6 @@ resources:
 - jellyfin/ks.yaml
 - jellyseer/ks.yaml
 - bazarr/ks.yaml
-
-#- music-assistant/ks.yaml
+- music-assistant/ks.yaml
 
 #- calibre-web-auto/ks.yaml
