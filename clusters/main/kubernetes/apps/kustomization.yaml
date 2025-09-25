@@ -12,3 +12,4 @@ resources:
 - homepage/ks.yaml
 
 #- pikaraoke/ks.yaml
+- searxng/ks.yaml
