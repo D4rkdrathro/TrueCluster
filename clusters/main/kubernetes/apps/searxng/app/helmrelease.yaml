@@ -65,3 +65,17 @@ spec:
             enabled: true
             trigger:
               schedule: 30 0 * * *
+    addons:
+      codeserver:
+        enabled: true
+        ingress:
+          enabled: true
+          ingressClassName: internal
+          hosts:
+          - host: searxcode.${DOMAIN_0}
+          integrations:
+            nginx:
+              enabled: true
+            certManager:
+              enabled: true
+              certificateIssuer: domain-0-le-prod
