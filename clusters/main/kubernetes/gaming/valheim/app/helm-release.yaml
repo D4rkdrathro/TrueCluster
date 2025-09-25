@@ -48,7 +48,7 @@ spec:
       valheim:
         integrations:
           metallb:
-            enabled: false
+            enabled: true
         loadBalancerIP: "${VALHEIM_IP}"
     ingress:
       main:
@@ -84,10 +84,10 @@ spec:
           credentials: backblaze
           dest:
             #VolSync Destination (Restore)
-            enabled: false
+            enabled: true
           src:
             #VolSync Source (Backup)
-            enabled: true
+            enabled: false
     resources:
       limits:
         cpu: 2000m
