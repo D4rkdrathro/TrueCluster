@@ -48,7 +48,7 @@ spec:
       valheim:
         integrations:
           metallb:
-            enabled: true
+            enabled: false
         loadBalancerIP: "${VALHEIM_IP}"
     ingress:
       main:
