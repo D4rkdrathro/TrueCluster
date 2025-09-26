@@ -28,7 +28,7 @@ spec:
   values:
     image:
       repository: ghcr.io/music-assistant/server
-      tag: 2.5.8
+      tag: 2.6.0
       pullPolicy: IfNotPresent
     credentials:
       backblaze:
@@ -115,6 +115,9 @@ spec:
           src:
             #VolSync Source (Backup)
             enabled: false
+        cache:
+          enabled: true
+          mountPath: "/cache"
       media:
         enabled: true
         type: nfs

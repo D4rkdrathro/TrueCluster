@@ -1,6 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "recreateWhen": "never",
   "extends": [
     "config:recommended",
     "github>trueforge-org/truecharts//.github/renovate/main.json5"
