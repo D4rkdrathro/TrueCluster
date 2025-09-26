@@ -129,3 +129,6 @@ spec:
     securityContext:
       container:
         privileged: true
+        runAsUser: 0
+        runAsGroup: 0
+        readOnlyRootFilesystem: false
