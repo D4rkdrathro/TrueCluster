@@ -32,15 +32,15 @@ spec:
     metrics:
       main:
         enabled: false
-    workload:
-      main:
-        podSpec:
-          containers:
-            main:
-              env:
-                RADARR__AUTH__METHOD: external
-      exportarr:
-        enabled: false
+    #    workload:
+    #      main:
+    #        podSpec:
+    #          containers:
+    #            main:
+    #              env:
+    #                RADARR__AUTH__METHOD: external
+    #      exportarr:
+    #        enabled: false
     ingress:
       main:
         enabled: true
