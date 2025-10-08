@@ -33,7 +33,7 @@ spec:
     service:
       main:
         type: ExternalIP
-        externalIP: "{PROX_IP}"
+        externalIP: "${PROX_IP}"
         ports:
           main:
             protocol: http
