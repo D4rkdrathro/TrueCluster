@@ -36,15 +36,15 @@ spec:
         externalIP: "${PROX_IP}"
         ports:
           main:
-            protocol: http
+            protocol: https
             port: 8006
 
     ingress:
       main:
         enabled: true
         ingressClassName: internal
-#        annotations:
-#          nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+        annotations:
+          nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
         hosts:
         - host: prox.${DOMAIN_0}
         integrations:
