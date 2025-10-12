@@ -111,5 +111,5 @@ spec:
                 SUPERVISOR_HTTP_USER: ${VALHEIM_ADMIN}
                 SUPERVISOR_HTTP_PASS: ${VALHEIM_ADMIN_PASS}
                 SERVER_PASS: ${VALHEIM_SERVER_PASS}
-                SERVER_ARGS: "-console"
+                SERVER_ARGS: "console"
                 ADMINLIST_IDS: "${VALHEIM_ADMIN_ID}"
