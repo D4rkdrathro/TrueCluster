@@ -1,0 +1,82 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: calibre-web-auto
+  namespace: calibre-web-auto
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: app-template
+      version: 15.24.7
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+      strategy: rollback
+  uninstall:
+    keepHistory: false
+  values:
+    image:
+      repository: crocodilestick/calibre-web-automated
+      tag: V3.1.4
+      pullPolicy: IfNotPresent
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: internal
+        hosts:
+        - host: calwebauto.${DOMAIN_0}
+        integrations:
+          nginx:
+            enabled: true
+          traefik:
+            enabled: false
+          certManager:
+            enabled: true
+            certificateIssuer: domain-0-le-prod
+    service:
+      main:
+        enabled: true
+        loadBalancerIP: ""
+        ports:
+          main:
+            port: 8083
+            targetPort: 8083
+        type: LoadBalancer
+
+    securityContext:
+      container:
+        readOnlyRootFilesystem: false
+        runAsGroup: 0
+        runAsUser: 0
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              fixedEnv:
+                PUID: 1000
+                GUID: 1000
+    persistence:
+      config:
+        enabled: true
+        mountPath: "/config"
+      library:
+        enabled: true
+        mountPath: "/calibre-library"
+      ingest:
+        enabled: true
+        type: nfs
+        path: /mnt/Ottvault/Media/calibre
+        mountPath: /cwa-book-ingest
+        server: ${NAS_IP}

@@ -10,4 +10,4 @@ resources:
 - jellyseer/ks.yaml
 - bazarr/ks.yaml
 - music-assistant/ks.yaml
-- calibre-web/ks.yaml
+- calibre-web-auto/ks.yaml
