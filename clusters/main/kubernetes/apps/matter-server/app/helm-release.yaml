@@ -49,15 +49,18 @@ spec:
     service:
       main:
         enabled: true
+        type: LoadBalancer
         integrations:
           metallb:
             enabled: true
-        loadBalancerIP: "192.168.1.217"
+        loadBalancerIP: 192.168.1.217
         ports:
           main:
+            enabled: true
+            primary: true
+            protocol: HTTP
             port: 5580
             targetPort: 5580
-        type: LoadBalancer
 
     persistence:
       data:
