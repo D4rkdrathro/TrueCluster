@@ -58,7 +58,7 @@ spec:
           main:
             enabled: true
             primary: true
-            protocol: HTTP
+            protocol: http
             port: 5580
             targetPort: 5580
 
