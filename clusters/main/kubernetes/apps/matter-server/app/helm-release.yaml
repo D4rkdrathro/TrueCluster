@@ -54,6 +54,7 @@ spec:
           metallb:
             enabled: true
         loadBalancerIP: 192.168.1.217
+        externalIP: 192.168.1.217
         ports:
           main:
             enabled: true
