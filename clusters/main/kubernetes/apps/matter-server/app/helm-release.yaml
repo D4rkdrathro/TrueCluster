@@ -33,7 +33,7 @@ spec:
     global:
       stopAll: false
     service:
-      matter:
+      main:
         enabled: true
         type: LoadBalancer
         integrations:
@@ -43,7 +43,7 @@ spec:
             enabled: false
         loadBalancerIP: 192.168.1.217
         ports:
-          matter:
+          main:
             enabled: true
             primary: true
             protocol: http
