@@ -11,6 +11,6 @@ resources:
 - nextcloud/ks.yaml
 - homepage/ks.yaml
 - docuseal/ks.yaml
-- matter-server/ks.yaml
+#- matter-server/ks.yaml
 #- pikaraoke/ks.yaml
 #- searxng/ks.yaml
