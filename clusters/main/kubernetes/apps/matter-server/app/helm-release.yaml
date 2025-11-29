@@ -46,9 +46,8 @@ spec:
         enabled: true
         mountPath: "/data"
 
-    securityContext:
-      container:
-        privileged: true
-
-    podOptions:
-      hostNetwork: true
+#    securityContext:
+#      container:
+#        privileged: true
+#    podOptions:
+#      hostNetwork: true
