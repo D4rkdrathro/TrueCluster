@@ -35,19 +35,17 @@ spec:
     service:
       main:
         enabled: true
-        loadBalancerIP: "192.168.1.217"
         ports:
           main:
             port: 5580
-        type: LoadBalancer
 
     persistence:
       data:
         enabled: true
         mountPath: "/data"
 
-#    securityContext:
-#      container:
-#        privileged: true
-#    podOptions:
-#      hostNetwork: true
+    securityContext:
+      container:
+        privileged: true
+    podOptions:
+      hostNetwork: true
