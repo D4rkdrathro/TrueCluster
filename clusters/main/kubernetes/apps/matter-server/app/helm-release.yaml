@@ -35,20 +35,12 @@ spec:
     service:
       main:
         enabled: true
-        type: Loadbalancer
-        integrations:
-          metallb:
-            enabled: true
-          traefik:
-            enabled: false
-        loadBalancerIP: 192.168.1.217
+        loadBalancerIP: ""
         ports:
           main:
-            enabled: true
-            primary: true
-            protocol: http
             port: 5580
             targetPort: 5580
+        type: LoadBalancer
 
     persistence:
       data:
