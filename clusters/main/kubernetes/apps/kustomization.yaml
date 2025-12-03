@@ -12,5 +12,5 @@ resources:
 - homepage/ks.yaml
 - docuseal/ks.yaml
 - matter-server/ks.yaml
-#- pikaraoke/ks.yaml
+- pikaraoke/ks.yaml
 #- searxng/ks.yaml
