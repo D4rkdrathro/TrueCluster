@@ -31,7 +31,7 @@ spec:
       tag: 1.14.1
       pullPolicy: IfNotPresent
     global:
-      stopAll: true
+      stopAll: false
     ingress:
       main:
         enabled: true
