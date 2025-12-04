@@ -74,3 +74,4 @@ spec:
             main:
               args:
               - "-u https://karaoke.${DOMAIN_0}"
+              - "-l 10"
