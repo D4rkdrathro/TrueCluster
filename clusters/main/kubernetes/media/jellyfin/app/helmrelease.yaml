@@ -80,6 +80,17 @@ spec:
             enabled: true
             trigger:
               schedule: 30 0 * * *
+      data:
+        volsync:
+        - name: volsync
+          type: restic
+          credentials: s3
+          dest:
+            enabled: false
+          src:
+            enabled: true
+            trigger:
+              schedule: 30 0 * * *
       media:
         enabled: true
         type: nfs
