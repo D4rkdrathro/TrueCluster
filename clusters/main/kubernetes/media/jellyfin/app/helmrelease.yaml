@@ -71,7 +71,7 @@ spec:
     persistence:
       config:
         volsync:
-        - name: volsync
+        - name: config
           type: restic
           credentials: s3
           dest:
@@ -82,7 +82,7 @@ spec:
               schedule: 30 0 * * *
       data:
         volsync:
-        - name: volsync
+        - name: data
           type: restic
           credentials: s3
           dest:
