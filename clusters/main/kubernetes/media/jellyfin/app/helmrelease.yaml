@@ -90,7 +90,9 @@ spec:
         path: /mnt/Ottvault/Media/VideoVault
         mountPath: /media/videovault
         server: ${NAS_IP}
-
+      data:
+        enabled: true
+        mountPath: "/data"
     resources:
       limits:
         cpu: 4000m
