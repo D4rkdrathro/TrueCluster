@@ -42,9 +42,9 @@ spec:
       main:
         enabled: true
         ingressClassName: external
-        annotations:
-          nginx.ingress.kubernetes.io/enable-cors: "true"
-          nginx.ingress.kubernetes.io/cors-allow-origin: "https://jukebox.${DOMAIN_0}, https://${AUTH_ADDRESS}"
+#        annotations:
+#          nginx.ingress.kubernetes.io/enable-cors: "true"
+#          nginx.ingress.kubernetes.io/cors-allow-origin: "https://jukebox.${DOMAIN_0}, https://${AUTH_ADDRESS}"
         hosts:
         - host: "jukebox.${DOMAIN_0}"
         integrations:
@@ -53,10 +53,10 @@ spec:
             certificateIssuer: domain-0-le-prod
           nginx:
             enabled: true
-            auth:
-              type: "authentik"
-              internalHost: "authentik-http.authentik.svc.cluster.local:10230"
-              externalHost: "jukebox.${DOMAIN_0}"
+#            auth:
+#              type: "authentik"
+#              internalHost: "authentik-http.authentik.svc.cluster.local:10230"
+#              externalHost: "jukebox.${DOMAIN_0}"
           traefik:
             enabled: false
         #      snapcast:
