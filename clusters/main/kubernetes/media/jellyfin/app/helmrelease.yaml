@@ -71,7 +71,7 @@ spec:
     persistence:
       config:
         volsync:
-        - name: config
+        - name: volsync
           type: restic
           credentials: s3
           dest:
@@ -80,17 +80,28 @@ spec:
             enabled: true
             trigger:
               schedule: 30 0 * * *
-      data:
-        volsync:
-        - name: data
-          type: restic
-          credentials: s3
-          dest:
-            enabled: true
-          src:
-            enabled: true
-            trigger:
-              schedule: 30 0 * * *
+#      config:
+#        volsync:
+#        - name: config
+#          type: restic
+#          credentials: s3
+#          dest:
+#            enabled: true
+#          src:
+#            enabled: true
+#            trigger:
+#              schedule: 30 0 * * *
+#      data:
+#        volsync:
+#        - name: data
+#          type: restic
+#          credentials: s3
+#          dest:
+#            enabled: true
+#          src:
+#            enabled: true
+#            trigger:
+#              schedule: 30 0 * * *
       transcode:
         enabled: true
         mountPath: "/cache/transcodes"
@@ -110,3 +121,8 @@ spec:
       main:
         podSpec:
           runtimeClassName: "nvidia"
+          containers:
+            main:
+              env:
+                JELLYFIN_DATA_DIR: /config
+                JELLYFIN_CONFIG_DIR: /config/config
