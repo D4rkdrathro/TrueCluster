@@ -9,7 +9,7 @@ spec:
     spec:
       # renovate: registryUrl=https://charts.truechartsoci.org
       chart: jellyfin
-      version: 21.12.9
+      version: 22.2.11
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -42,7 +42,7 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: external
+        ingressClassName: internal
         hosts:
         - host: jelly.${DOMAIN_0}
         integrations:
@@ -75,20 +75,18 @@ spec:
           type: restic
           credentials: s3
           dest:
-            enabled: true
+            enabled: false
           src:
             enabled: true
             trigger:
               schedule: 30 0 * * *
       data:
-        enabled: true
-        mountPath: "/data"
         volsync:
         - name: data
           type: restic
           credentials: s3
           dest:
-            enabled: true
+            enabled: false
           src:
             enabled: true
             trigger:
@@ -112,8 +110,3 @@ spec:
       main:
         podSpec:
           runtimeClassName: "nvidia"
-          containers:
-            main:
-              env:
-                JELLYFIN_DATA_DIR: /config
-                JELLYFIN_CONFIG_DIR: /config/config
