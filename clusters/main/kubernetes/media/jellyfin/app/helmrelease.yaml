@@ -81,6 +81,7 @@ spec:
             trigger:
               schedule: 30 0 * * *
       data:
+        enabled: true
         volsync:
         - name: data
           type: restic
