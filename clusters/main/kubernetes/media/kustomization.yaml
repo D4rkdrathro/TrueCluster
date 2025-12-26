@@ -6,7 +6,7 @@ resources:
 - radarr/ks.yaml
 - sonarr/ks.yaml
 - qbittorrent/ks.yaml
-- jellyfin/ks.yaml
+#- jellyfin/ks.yaml
 - jellyseer/ks.yaml
 - bazarr/ks.yaml
 - music-assistant/ks.yaml
