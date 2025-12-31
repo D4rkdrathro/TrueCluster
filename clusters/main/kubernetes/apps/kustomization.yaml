@@ -13,4 +13,5 @@ resources:
 - docuseal/ks.yaml
 - matter-server/ks.yaml
 - ext-pikaraoke/ks.yaml
+- librespeed/ks.yaml
 #- pikaraoke/ks.yaml
