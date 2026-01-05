@@ -28,7 +28,7 @@ spec:
   values:
     image:
       repository: crocodilestick/calibre-web-automated
-      tag: dev@sha256:babc4ad1baa8cac3f80a9368b790f88ead30aaf1c1961f625c8c4190248ae994
+      tag: dev@sha256:bcbe733663da0801e9c8c70ee344dc8f4985b9249b1e4714c512bb937532f28a
       pullPolicy: IfNotPresent
     ingress:
       main:
