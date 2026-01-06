@@ -33,6 +33,12 @@ spec:
 
     global:
       stopAll: false
+    TZ: America/Los_Angeles
+    # for now until image is fixed
+    image:
+      repository: docker.io/homeassistant/home-assistant
+      pullPolicy: IfNotPresent
+      tag: 2025.12.5@sha256:9a5a3eb4a213dfb25932dee9dc6815c9305f78cecb5afa716fa2483163d8fb5b
 
     credentials:
       backblaze:
