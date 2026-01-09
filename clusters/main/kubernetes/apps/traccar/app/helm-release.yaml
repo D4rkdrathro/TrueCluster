@@ -2,14 +2,14 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: docuseal
-  namespace: docuseal
+  name: traccar
+  namespace: traccar
 spec:
   interval: 15m
   chart:
     spec:
-      chart: docuseal
-      version: 5.15.10
+      chart: traccar
+      version: 20.12.4
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -34,9 +34,9 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: external
+        ingressClassName: internal
         hosts:
-        - host: esign.${DOMAIN_0}
+        - host: mileage.${DOMAIN_0}
         integrations:
           nginx:
             enabled: true
