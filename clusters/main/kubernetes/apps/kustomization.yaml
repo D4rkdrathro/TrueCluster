@@ -10,7 +10,7 @@ resources:
 - frigate/ks.yaml
 - nextcloud/ks.yaml
 - homepage/ks.yaml
-#- traccar/ks.yaml
+- traccar/ks.yaml
 - matter-server/ks.yaml
 - ext-pikaraoke/ks.yaml
 - librespeed/ks.yaml
