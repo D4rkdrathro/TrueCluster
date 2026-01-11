@@ -68,7 +68,18 @@ spec:
       trusted_proxies:
       - 172.16.0.0/16
       - 172.17.0.0/16
-
+    addons:
+      codeserver:
+        enabled: true
+        ingress:
+          enabled: true
+          ingressClassName: internal
+          hosts:
+            - host: cs-hass.${DOMAIN_0}
+          integrations:
+            certManager:
+              enabled: true
+              certificateIssuer: domain-0-le-prod
     persistence:
       config:
         volsync:
