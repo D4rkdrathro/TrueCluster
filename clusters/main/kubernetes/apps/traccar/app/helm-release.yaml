@@ -30,7 +30,18 @@ spec:
   uninstall:
     keepHistory: false
   values:
-
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                MAIL_SMTP_HOST: ${CONFIG_EMAIL_SMTP}
+                MAIL_SMTP_PORT: 465
+                MAIL_SMTP_SSL_ENABLE: true
+                MAIL_SMTP_USERNAME: ${CONFIG_EMAIL}
+                MAIL_SMTP_PASSWORD: ${CONFIG_EMAIL_PASS}
+                MAIL_SMTP_FROM: ${CONFIG_EMAIL}
     ingress:
       main:
         enabled: true
