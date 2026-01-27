@@ -101,6 +101,12 @@ spec:
         path: /mnt/Ottvault/Media/VideoVault
         mountPath: /media/videovault
         server: ${NAS_IP}
+      music:
+        enabled: true
+        type: nfs
+        path: /mnt/Ottvault/Media/audio/music
+        mountPath: /media/music
+        server: ${NAS_IP}
     resources:
       limits:
         cpu: 4000m
