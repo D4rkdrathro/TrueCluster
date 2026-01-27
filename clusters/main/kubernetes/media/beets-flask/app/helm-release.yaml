@@ -140,7 +140,7 @@ spec:
                 GROUP_ID: 568
     securityContext:
       container:
-#        privileged: true
+        privileged: true
         runAsUser: 568
         runAsGroup: 568
         readOnlyRootFilesystem: false
