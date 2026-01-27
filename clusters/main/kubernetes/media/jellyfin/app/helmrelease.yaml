@@ -104,7 +104,7 @@ spec:
       music:
         enabled: true
         type: nfs
-        path: /mnt/Ottvault/Media/audio/music/baked
+        path: /mnt/Ottvault/Media/audio/music
         mountPath: /media/music
         server: ${NAS_IP}
     resources:
