@@ -4,6 +4,7 @@ resources:
 - prowlarr/ks.yaml
 - flaresolverr/ks.yaml
 - radarr/ks.yaml
+- lidarr/ks.yaml
 - sonarr/ks.yaml
 - qbittorrent/ks.yaml
 - jellyfin/ks.yaml
