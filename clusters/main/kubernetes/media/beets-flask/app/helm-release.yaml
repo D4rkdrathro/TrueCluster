@@ -126,13 +126,13 @@ spec:
         enabled: true
         type: nfs
         path: /mnt/Ottvault/Media/audio/music/raw
-        mountPath: /music/inbox
+        mountPath: /music/inbox_auto
         server: ${NAS_IP}
       library:
         enabled: true
         type: nfs
         path: /mnt/Ottvault/Media/audio/music/baked
-        mountPath: /music/clean
+        mountPath: /music/imported
         server: ${NAS_IP}
 #    workload:
 #      main:
