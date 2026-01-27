@@ -130,14 +130,14 @@ spec:
         path: /mnt/Ottvault/Media/audio/music/baked
         mountPath: /media/music/clean
         server: ${NAS_IP}
-    workload:
-      main:
-        podSpec:
-          containers:
-            main:
-              env:
-                USER_ID: 1000
-                GROUP_ID: 1000
+#    workload:
+#      main:
+#       podSpec:
+#          containers:
+#            main:
+#              env:
+#                USER_ID: 1000
+#                GROUP_ID: 1000
     securityContext:
       container:
         privileged: true
