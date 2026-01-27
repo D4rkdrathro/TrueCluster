@@ -130,8 +130,8 @@ spec:
         path: /mnt/Ottvault/Media/audio/music/baked
         mountPath: /media/music/clean
         server: ${NAS_IP}
-#    securityContext:
-#      container:
+    securityContext:
+      container:
 #        privileged: true
         runAsUser: 568
         runAsGroup: 568
