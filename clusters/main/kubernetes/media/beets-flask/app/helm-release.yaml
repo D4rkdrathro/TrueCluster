@@ -118,17 +118,21 @@ spec:
           src:
             #VolSync Source (Backup)
             enabled: false
+      dummy:
+        enabled: true
+        mountPath: "/music/dummy"
+        type: "pvc"
       ingest:
         enabled: true
         type: nfs
         path: /mnt/Ottvault/Media/audio/music/raw
-        mountPath: /media/music/inbox
+        mountPath: /media/music/inbox_auto
         server: ${NAS_IP}
       library:
         enabled: true
         type: nfs
         path: /mnt/Ottvault/Media/audio/music/baked
-        mountPath: /media/music/clean
+        mountPath: /media/music/imported
         server: ${NAS_IP}
 #    workload:
 #      main:
