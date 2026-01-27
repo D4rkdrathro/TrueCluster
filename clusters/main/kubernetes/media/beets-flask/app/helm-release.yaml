@@ -122,17 +122,25 @@ spec:
         enabled: true
         mountPath: "/music/dummy"
         type: "pvc"
+      inbox_auto:
+        enabled: true
+        mountPath: "/music/inbox_auto"
+        type: "pvc"
+      inbox_preview:
+        enabled: true
+        mountPath: "/music/inbox_preview"
+        type: "pvc"
       ingest:
         enabled: true
         type: nfs
         path: /mnt/Ottvault/Media/audio/music/raw
-        mountPath: /music/inbox_auto
+        mountPath: /music/ingest
         server: ${NAS_IP}
       library:
         enabled: true
         type: nfs
         path: /mnt/Ottvault/Media/audio/music/baked
-        mountPath: /music/imported
+        mountPath: /music/clean
         server: ${NAS_IP}
 #    workload:
 #      main:
