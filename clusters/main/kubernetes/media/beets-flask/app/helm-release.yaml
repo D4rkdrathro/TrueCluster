@@ -143,4 +143,4 @@ spec:
 #        privileged: true
         runAsUser: 568
         runAsGroup: 568
-#        readOnlyRootFilesystem: false
+        readOnlyRootFilesystem: false
