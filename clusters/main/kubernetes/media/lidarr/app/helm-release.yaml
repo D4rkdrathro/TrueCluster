@@ -72,7 +72,7 @@ spec:
             group: "Arr"
             widget:
               custom:
-                key: "${HP_API_RADARR}"
+                key: "${HP_API_LIDARR}"
     #    service:
     #      main:
     #        enabled: true
