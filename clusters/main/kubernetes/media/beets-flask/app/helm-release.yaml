@@ -138,9 +138,9 @@ spec:
 #              env:
 #                USER_ID: 1000
 #                GROUP_ID: 1000
-#    securityContext:
-#      container:
-#        privileged: true
-#        runAsUser: 0
-#        runAsGroup: 0
-#        readOnlyRootFilesystem: false
+    securityContext:
+      container:
+        privileged: true
+        runAsUser: 0
+        runAsGroup: 0
+        readOnlyRootFilesystem: false
