@@ -122,11 +122,11 @@ spec:
         enabled: true
         mountPath: "/music/dummy"
         type: "pvc"
-      inbox_auto:
+      inbox-auto:
         enabled: true
         mountPath: "/music/inbox_auto"
         type: "pvc"
-      inbox_preview:
+      inbox-preview:
         enabled: true
         mountPath: "/music/inbox_preview"
         type: "pvc"
