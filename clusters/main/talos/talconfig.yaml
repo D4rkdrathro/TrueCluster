@@ -67,6 +67,7 @@ nodes:
           systemExtensions:
               officialExtensions:
                   - siderolabs/util-linux-tools
+                  - siderolabs/iscsi-tools
 controlPlane:
   patches:
   - '@./patches/controlplane.yaml'
