@@ -7,16 +7,6 @@ metadata:
   namespace: radarr
 spec:
   interval: 15m
-  affinity:
-    nodeAffinity:
-      prefferedDuringSchedulingIgnoreDuringExecution:
-      - weight: 1
-        preference:
-          matchExpressions:
-          - key: kubernetes.io/hostname
-            operator: In
-            values:
-            - k8s-worker-0
   chart:
     spec:
       chart: radarr
@@ -111,3 +101,13 @@ spec:
         path: /mnt/Ottvault/Media
         mountPath: /Media
         server: ${NAS_IP}
+    affinity:
+      nodeAffinity:
+        prefferedDuringSchedulingIgnoreDuringExecution:
+        - weight: 1
+          preference:
+            matchExpressions:
+            - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - k8s-worker-0
