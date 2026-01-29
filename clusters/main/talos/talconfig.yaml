@@ -51,7 +51,7 @@ nodes:
   patches:
   - "@./patches/nvidia.yaml"
 - hostname: k8s-worker-0
-  ipAddress: 192.168.1.43
+  ipAddress: 192.168.1.7
   nameservers:
     - ${BLOCKY_IP}
     - 1.1.1.1
