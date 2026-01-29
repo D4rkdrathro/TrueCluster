@@ -6,16 +6,6 @@ metadata:
   namespace: valheim
 spec:
   interval: 15m
-  affinity:
-    nodeAffinity:
-      prefferedDuringSchedulingIgnoreDuringExecution:
-      - weight: 1
-        preference:
-          matchExpressions:
-          - key: kubernetes.io/hostname
-            operator: In
-            values:
-            - k8s-worker-0
   chart:
     spec:
       chart: valheim
@@ -124,3 +114,14 @@ spec:
                 SUPERVISOR_HTTP_PASS: ${VALHEIM_ADMIN_PASS}
                 SERVER_PASS: ${VALHEIM_SERVER_PASS}
                 ADMINLIST_IDS: ${VALHEIM_ADMIN_ID}
+    podOptions:
+      affinity:
+        nodeAffinity:
+          prefferedDuringSchedulingIgnoreDuringExecution:
+          - weight: 1
+            preference:
+              matchExpressions:
+              - key: kubernetes.io/hostname
+              operator: In
+              values:
+              - k8s-worker-0
