@@ -100,3 +100,6 @@ spec:
             operator: In
             values:
             - k8s-worker-0
+    resources:
+      limits:
+        cpu: 100m
