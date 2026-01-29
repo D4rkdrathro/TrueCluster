@@ -68,6 +68,9 @@ nodes:
               officialExtensions:
                   - siderolabs/util-linux-tools
                   - siderolabs/iscsi-tools
+                  - siderolabs/i915
+                  - siderolabs/intel-ucode
+                  - siderolabs/mei
 controlPlane:
   patches:
   - '@./patches/controlplane.yaml'
