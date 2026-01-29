@@ -53,8 +53,9 @@ nodes:
 - hostname: k8s-worker-0
   ipAddress: 192.168.1.7
   nameservers:
-    - ${BLOCKY_IP}
+    #- ${BLOCKY_IP}
     - 1.1.1.1
+    - 8.8.8.8
   installDiskSelector:
     size:  ">= 100GB"
   machineSpec:
