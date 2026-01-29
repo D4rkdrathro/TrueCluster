@@ -6,6 +6,16 @@ metadata:
   name: bazarr
   namespace: bazarr
 spec:
+  affinity:
+    nodeAffinity:
+      prefferedDuringSchedulingIgnoreDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - k8s-worker-0
   interval: 15m
   chart:
     spec:
