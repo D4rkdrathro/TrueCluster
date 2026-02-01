@@ -31,7 +31,7 @@ spec:
     TZ: America/Los_Angeles
     image:
       repository: crocodilestick/calibre-web-automated
-      tag: v4.0.2@sha256:fac65096c8c69b392dc26e9f0681e928d0580931473e330faa1ab125b8374dd7
+      tag: v4.0.4@sha256:758f6dd9248c130fe084e93023b10b993ec84d8647dd5ffc9917fc5925b3a50c
       pullPolicy: IfNotPresent
     ingress:
       main:
