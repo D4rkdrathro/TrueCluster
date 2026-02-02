@@ -7,16 +7,6 @@ metadata:
   namespace: prowlarr
 spec:
   interval: 15m
-  affinity:
-    nodeAffinity:
-      prefferedDuringSchedulingIgnoreDuringExecution:
-      - weight: 1
-        preference:
-          matchExpressions:
-          - key: kubernetes.io/hostname
-            operator: In
-            values:
-            - k8s-worker-0
   chart:
     spec:
       chart: prowlarr
