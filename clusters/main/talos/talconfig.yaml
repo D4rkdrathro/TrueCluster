@@ -50,27 +50,28 @@ nodes:
         - siderolabs/nvidia-container-toolkit-lts
   patches:
   - "@./patches/nvidia.yaml"
-- hostname: k8s-worker-0
-  ipAddress: 192.168.1.7
-  nameservers:
-    - ${BLOCKY_IP}
-    - 1.1.1.1
-  installDiskSelector:
-    size:  ">= 100GB"
-  machineSpec:
-    mode: metal
-    arch: amd64
-    useUKI: true
-    secureboot: true
-  schematic:
-      customization:
-          systemExtensions:
-              officialExtensions:
-                  - siderolabs/util-linux-tools
-                  - siderolabs/iscsi-tools
-                  - siderolabs/i915
-                  - siderolabs/intel-ucode
-                  - siderolabs/mei
+#- hostname: k8s-worker-0
+#  ipAddress: 192.168.1.7
+#  nameservers:
+    #- ${BLOCKY_IP}
+#    - 1.1.1.1
+#    - 8.8.8.8
+#  installDiskSelector:
+#    size:  ">= 100GB"
+#  machineSpec:
+#    mode: metal
+#    arch: amd64
+#    useUKI: true
+#    secureboot: true
+#  schematic:
+#      customization:
+#          systemExtensions:
+#              officialExtensions:
+#                  - siderolabs/util-linux-tools
+#                  - siderolabs/iscsi-tools
+#                  - siderolabs/i915
+#                  - siderolabs/intel-ucode
+#                  - siderolabs/mei
 controlPlane:
   patches:
   - '@./patches/controlplane.yaml'

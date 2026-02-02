@@ -90,3 +90,16 @@ spec:
 #              main:
 #                  port: 9696
 #          type: LoadBalancer
+    affinity:
+      nodeAffinity:
+        prefferedDuringSchedulingIgnoreDuringExecution:
+        - weight: 1
+          preference:
+            matchExpressions:
+            - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - k8s-worker-0
+    resources:
+      limits:
+        cpu: 100m

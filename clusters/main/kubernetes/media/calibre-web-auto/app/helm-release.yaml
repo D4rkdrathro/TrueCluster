@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 15.29.78
+      version: 15.29.80
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -31,7 +31,7 @@ spec:
     TZ: America/Los_Angeles
     image:
       repository: crocodilestick/calibre-web-automated
-      tag: dev@sha256:ac233b3e898deb9f3e68503aee1b79fd822c7e78053162b9a3ef0f6692cc5e9a
+      tag: v4.0.5@sha256:e4d31ce6e5850bf978bbea22641df19adaf66dd55112e9bfe22211895803651f
       pullPolicy: IfNotPresent
     ingress:
       main:

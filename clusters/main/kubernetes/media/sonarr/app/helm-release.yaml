@@ -101,3 +101,16 @@ spec:
         path: /mnt/Ottvault/Media
         mountPath: /Media
         server: ${NAS_IP}
+    affinity:
+      nodeAffinity:
+        prefferedDuringSchedulingIgnoreDuringExecution:
+        - weight: 1
+          preference:
+            matchExpressions:
+            - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - k8s-worker-0
+    resources:
+      limits:
+        cpu: 100m
