@@ -48,5 +48,5 @@ spec:
         enabled: true
         type: nfs
         path: /mnt/Ottvault/Media
-        mountPath: /Media
+        mountPath: /music
         server: ${NAS_IP}
