@@ -3,14 +3,14 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: bazarr
-  namespace: bazarr
+  name: navidrome
+  namespace: navidrome
 spec:
   interval: 15m
   chart:
     spec:
-      chart: bazarr
-      version: 23.2.20
+      chart: navidrome
+      version: 22.16.0
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -29,24 +29,12 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    metrics:
-      main:
-        enabled: false
-    #    workload:
-    #      main:
-    #        podSpec:
-    #          containers:
-    #            main:
-    #              env:
-    #                RADARR__AUTH__METHOD: external
-    #      exportarr:
-    #        enabled: false
     ingress:
       main:
         enabled: true
         ingressClassName: internal
         hosts:
-        - host: bazarr.${DOMAIN_0}
+        - host: sonic.${DOMAIN_0}
         integrations:
           nginx:
             enabled: true
@@ -55,27 +43,10 @@ spec:
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
-          homepage:
-            enabled: true
-            group: "Arr"
-            widget:
-              custom:
-                key: "${HP_API_BAZARR}"
-    #    service:
-    #      main:
-    #        enabled: true
-    #        loadBalancerIP: ""
-    #        ports:
-    #          main:
-    #            port: 7878
-    #        type: LoadBalancer
     persistence:
-      media:
+      music:
         enabled: true
         type: nfs
         path: /mnt/Ottvault/Media
         mountPath: /Media
         server: ${NAS_IP}
-    resources:
-      limits:
-        cpu: 100m
