@@ -43,6 +43,14 @@ spec:
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
+          homepage:
+            enabled: true
+            group: "Media"
+            widget:
+              custom:
+                user: "${HP_API_NAVI_USER}"
+                token: "${HP_API_NAVI_TOKEN}"
+                salt: "${HP_API_NAVI_SALT}"
     persistence:
       music:
         enabled: true
