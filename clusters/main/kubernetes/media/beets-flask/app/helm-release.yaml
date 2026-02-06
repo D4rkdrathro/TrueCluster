@@ -86,3 +86,15 @@ spec:
         path: /mnt/Ottvault/Media/audio/music/ingest
         mountPath: /mnt/Ottvault/Media/audio/music/ingest
         server: ${NAS_IP}
+    addons:
+      codeserver:
+        enabled: true
+        ingress:
+          enabled: true
+          ingressClassName: internal
+          hosts:
+            - host: cs-beets.${DOMAIN_0}
+          integrations:
+            certManager:
+              enabled: true
+              certificateIssuer: domain-0-le-prod
