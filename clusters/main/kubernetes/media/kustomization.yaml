@@ -13,3 +13,4 @@ resources:
 - music-assistant/ks.yaml
 - calibre-web-auto/ks.yaml
 - navidrome/ks.yaml
+- beets-flask/ks.yaml

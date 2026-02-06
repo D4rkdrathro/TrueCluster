@@ -1,0 +1,88 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: beets-flask
+  namespace: beets-flask
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: app-template
+      version: 15.29.83
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+      strategy: rollback
+  uninstall:
+    keepHistory: false
+  values:
+    global:
+      stopAll: false
+    TZ: America/Los_Angeles
+    image:
+      repository: ghcr.io/pSpitzner/beets-flask
+      tag: v1.2.1@sha256:98b8b87281e0526f3b9ee517ed1a75da76ae77bfc16564999c5e72d413d1ec50
+      pullPolicy: IfNotPresent
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: internal
+        hosts:
+        - host: beets.${DOMAIN_0}
+        integrations:
+          nginx:
+            enabled: true
+          traefik:
+            enabled: false
+          certManager:
+            enabled: true
+            certificateIssuer: domain-0-le-prod
+    service:
+      main:
+        enabled: true
+        loadBalancerIP: ""
+        ports:
+          main:
+            port: 5001
+            targetPort: 5001
+        type: LoadBalancer
+
+    securityContext:
+      container:
+        readOnlyRootFilesystem: false
+        runAsGroup: 0
+        runAsUser: 0
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              fixedEnv:
+                PUID: 568
+                GUID: 568
+    persistence:
+      config:
+        enabled: true
+        mountPath: "/config"
+      library:
+        enabled: true
+        type: nfs
+        path: /mnt/Ottvault/Media/audio/music/library
+        mountPath: /mnt/Ottvault/Media/audio/music/library
+        server: ${NAS_IP}
+      ingest:
+        enabled: true
+        type: nfs
+        path: /mnt/Ottvault/Media/audio/music/ingest
+        mountPath: /mnt/Ottvault/Media/audio/music/ingest
+        server: ${NAS_IP}
