@@ -73,10 +73,10 @@ spec:
         hosts:
         - host: ${AUTH_ADDRESS}
         #- host: "${T_ADDRESS}"
-        - host: "jukebox.${DOMAIN_0}"
-          paths:
-          - path: "/outpost.goauthentik.io"
-            pathType: ImplementationSpecific
+#        - host: "jukebox.${DOMAIN_0}"
+#          paths:
+#          - path: "/outpost.goauthentik.io"
+#            pathType: ImplementationSpecific
     persistence:
       media:
         volsync:
