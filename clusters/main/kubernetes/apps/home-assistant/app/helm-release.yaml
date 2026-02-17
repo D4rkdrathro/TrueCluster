@@ -34,12 +34,6 @@ spec:
     global:
       stopAll: false
     TZ: America/Los_Angeles
-    # for now until image is fixed
-    image:
-      repository: docker.io/homeassistant/home-assistant
-      pullPolicy: IfNotPresent
-      tag: 2026.2.2@sha256:3e2dff545c46e91f4ab2b21597016011d76d0de58bc8eaf51d75e841f337bf88
-
     credentials:
       backblaze:
         type: s3
@@ -88,7 +82,7 @@ spec:
           credentials: backblaze
           dest:
             #VolSync Destination (Restore)
-            enabled: false
+            enabled: true
           src:
             #VolSync Source (Backup)
             enabled: true
@@ -103,15 +97,15 @@ spec:
       main:
         cluster:
           singleNode: true
-        #mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
+        mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
         backups:
           enabled: true
           credentials: backblaze
           retentionPolicy: "14d"
-          revision: "6"
+          revision: "7"
         recovery:
           credentials: backblaze
-          revision: "5"
+          revision: "6"
     podOptions:
       hostNetwork: true
     securityContext:
