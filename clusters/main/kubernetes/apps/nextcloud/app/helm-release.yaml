@@ -88,7 +88,7 @@ spec:
           enabled: true
           ingressClassName: internal
           hosts:
-          - host: cs-nextcloud.${DOMAIN_0}
+          - host: 'cs-nextcloud.${DOMAIN_0}'
           integrations:
             nginx:
               enabled: true
