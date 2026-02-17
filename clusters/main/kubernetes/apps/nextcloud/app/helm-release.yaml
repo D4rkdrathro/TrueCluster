@@ -67,7 +67,7 @@ spec:
         enabled: true
         ingressClassName: external
         annotations:
-          nginx.ingress.kubernetes.io/proxy‑read‑timeout: "1800s"
+          nginx.ingress.kubernetes.io/proxy-read-timeout: "1800s"
         hosts:
         - host: cloud.${DOMAIN_0}
           paths:
