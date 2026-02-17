@@ -114,7 +114,7 @@ spec:
           credentials: backblaze
           dest:
             #VolSync Destination (Restore)
-            enabled: false
+            enabled: true
           src:
             #VolSync Source (Backup)
             enabled: true
@@ -133,10 +133,10 @@ spec:
           enabled: true
           credentials: backblaze
           retentionPolicy: "14d"
-          revision: "8"
+          revision: "9"
         recovery:
           credentials: backblaze
-          revision: "7"
+          revision: "8"
     resources:
       limits:
         cpu: 6000m
