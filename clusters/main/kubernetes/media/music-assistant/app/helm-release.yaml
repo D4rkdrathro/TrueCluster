@@ -28,7 +28,7 @@ spec:
   values:
     image:
       repository: ghcr.io/music-assistant/server
-      tag: 2.7.10
+      tag: 2.7.11
       pullPolicy: IfNotPresent
     credentials:
       backblaze:
