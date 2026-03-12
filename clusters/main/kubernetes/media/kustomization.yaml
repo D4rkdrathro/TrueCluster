@@ -8,7 +8,7 @@ resources:
 - sonarr/ks.yaml
 - qbittorrent/ks.yaml
 - jellyfin/ks.yaml
-- jellyseer/ks.yaml
+#- jellyseer/ks.yaml
 - seerr/ks.yaml
 - bazarr/ks.yaml
 - music-assistant/ks.yaml
