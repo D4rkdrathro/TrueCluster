@@ -42,6 +42,14 @@ spec:
                 MAIL_SMTP_USERNAME: ${CONFIG_EMAIL}
                 MAIL_SMTP_PASSWORD: ${CONFIG_EMAIL_PASS}
                 MAIL_SMTP_FROM: ${CONFIG_EMAIL}
+    credentials:
+      s3:
+        type: s3
+        url: ${S3_ENDPOINT_URL}
+        bucket: "${S3_BUCKET}-traccar"
+        accessKey: "${S3_ACCESS_KEY}"
+        secretKey: "${S3_SECRET_KEY}"
+        encrKey: "${S3_ENCRYPTION_KEY}"    
     ingress:
       main:
         enabled: true
@@ -56,3 +64,17 @@ spec:
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
+    persistence:
+      data:
+        enabled: true
+        mountPath: "/opt/traccar/data"
+        volsync:
+        - name: config
+          type: restic
+          credentials: s3
+          dest:
+            #VolSync Destination (Restore)
+            enabled: false
+          src:
+            #VolSync Source (Backup)
+            enabled: true
