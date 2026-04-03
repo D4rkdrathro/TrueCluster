@@ -58,3 +58,10 @@ spec:
         path: /mnt/Ottvault/Media/audio/music/library
         mountPath: /music
         server: ${NAS_IP}
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                ND_SCANNER_PURGEMISSING: "always"
