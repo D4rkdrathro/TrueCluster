@@ -164,6 +164,7 @@ spec:
         recovery:
           credentials: backblaze
           revision: "6"
+        pgVersion: 15
 
     securityContext:
       container:
