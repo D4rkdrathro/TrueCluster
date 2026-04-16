@@ -9,6 +9,6 @@ resources:
 - kube-system
 - networking
 - system
-- auth
+#- auth
 - media
 - gaming
