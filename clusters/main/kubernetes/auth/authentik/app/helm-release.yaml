@@ -160,11 +160,10 @@ spec:
           enabled: true
           credentials: backblaze
           retentionPolicy: "14d"
-          revision: "6"
+          revision: "7"
         recovery:
           credentials: backblaze
           revision: "6"
-        pgVersion: 15
 
     securityContext:
       container:
