@@ -51,7 +51,7 @@ spec:
         host: ${CONFIG_EMAIL_SMTP}
         port: 587
         username: ${CONFIG_EMAIL}
-        password: ${ONFIG_EMAIL_PASS}
+        password: ${CONFIG_EMAIL_PASS}
         useTLS: true
         useSSL: false
         timeout: 10
