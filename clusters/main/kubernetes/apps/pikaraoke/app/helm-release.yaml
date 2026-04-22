@@ -37,7 +37,7 @@ spec:
         enabled: true
         ingressClassName: internal
         hosts:
-        - host: karaoke.${DOMAIN_0}
+        - host: localkaraoke.${DOMAIN_0}
         integrations:
           nginx:
             enabled: true
@@ -74,7 +74,7 @@ spec:
           containers:
             main:
               args:
-              - "-u https://karaoke.${DOMAIN_0}"
+              - "-u https://localkaraoke.${DOMAIN_0}"
               - "-l 10"
 #    resources:
 #      limits:
