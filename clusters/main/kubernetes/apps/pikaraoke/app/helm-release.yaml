@@ -30,8 +30,9 @@ spec:
       repository: vicwomg/pikaraoke
       tag: 1.19.0
       pullPolicy: IfNotPresent
+    #Disable All Pods
     global:
-      stopAll: false
+      stopAll: true
     ingress:
       main:
         enabled: true
