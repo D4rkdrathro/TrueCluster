@@ -59,25 +59,23 @@ spec:
 #              externalHost: "jukebox.${DOMAIN_0}"
           traefik:
             enabled: false
-        #      snapcast:
-        #        enabled: true
-        #        ingressClassName: external
-        #        hosts:
-        #        - host: snapcast.${DOMAIN_0}
-        #          paths:
-        #          - path: /
-        #            pathType: Prefix
-
-        #            overrideService:
-        #              name: snapcast
-        #              port: 1780
-
-        #        integrations:
-        #          certManager:
-        #            enabled: true
-        #            certificateIssuer: domain-0-le-prod
-        #          nginx:
-        #            enabled: true
+      snapcast:
+        enabled: true
+        ingressClassName: external
+        hosts:
+        - host: snapcast.${DOMAIN_0}
+        paths:
+        - path: /
+          pathType: Prefix
+          overrideService:
+            name: snapcast
+            port: 1705
+        integrations:
+          certManager:
+            enabled: true
+            certificateIssuer: domain-0-le-prod
+          nginx:
+            enabled: true
         #            auth:
         #              type: "authentik"
         #              internalHost: "authentik-http.authentik.svc.cluster.local:10230"
