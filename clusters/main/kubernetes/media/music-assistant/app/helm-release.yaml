@@ -69,7 +69,7 @@ spec:
           pathType: Prefix
           overrideService:
             name: snapcast
-            port: 1705
+            port: 1780
         integrations:
           certManager:
             enabled: true
@@ -96,8 +96,8 @@ spec:
         ports:
           snapcast:
             enabled: true
-            port: 1705
-            targetPort: 1705
+            port: 1780
+            targetPort: 1780
         type: LoadBalancer
     persistence:
       data:
