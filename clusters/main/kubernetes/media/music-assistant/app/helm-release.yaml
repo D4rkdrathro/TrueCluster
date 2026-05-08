@@ -67,15 +67,17 @@ spec:
         paths:
         - path: /
           pathType: Prefix
-          overrideService:
-            name: snapcast
-            port: 1780
+#          overrideService:
+#            name: snapcast
+#            port: 1780
         integrations:
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
           nginx:
             enabled: true
+          traefik:
+            enabled: false
         #            auth:
         #              type: "authentik"
         #              internalHost: "authentik-http.authentik.svc.cluster.local:10230"
