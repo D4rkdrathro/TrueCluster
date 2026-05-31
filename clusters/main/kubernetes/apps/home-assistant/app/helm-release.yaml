@@ -82,7 +82,7 @@ spec:
           credentials: backblaze
           dest:
             #VolSync Destination (Restore)
-            enabled: true
+            enabled: false
           src:
             #VolSync Source (Backup)
             enabled: true
@@ -97,15 +97,15 @@ spec:
       main:
         cluster:
           singleNode: true
-        mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
+        #mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
         backups:
           enabled: true
           credentials: backblaze
           retentionPolicy: "14d"
-          revision: "7"
+          revision: "1"
         recovery:
           credentials: backblaze
-          revision: "7"
+          revision: "1"
     podOptions:
       hostNetwork: true
     securityContext:
