@@ -95,7 +95,7 @@ spec:
             enabled: false
           src:
             #VolSync Source (Backup)
-            enabled: true
+            enabled: false
         #service:
         #main:
         #enabled: true
@@ -112,8 +112,5 @@ spec:
         backups:
           enabled: true
           credentials: backblaze
-          retentionPolicy: "14d"
-          revision: "6"
         recovery:
           credentials: backblaze
-          revision: "5"

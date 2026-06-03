@@ -89,7 +89,7 @@ spec:
             enabled: false
           src:
             #VolSync Source (Backup)
-            enabled: true
+            enabled: false
     resources:
       limits:
         cpu: 2000m
