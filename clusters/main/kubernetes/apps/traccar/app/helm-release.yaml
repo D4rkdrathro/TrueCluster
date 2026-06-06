@@ -43,14 +43,13 @@ spec:
                 MAIL_SMTP_PASSWORD: ${CONFIG_EMAIL_PASS}
                 MAIL_SMTP_FROM: ${CONFIG_EMAIL}
     service:
-      freematics:
-        enabled: true
+      main:
         integrations:
           metallb:
             enabled: true
         loadBalancerIP: "192.168.1.217"
         ports:
-          port-name:
+          freematics:
             enabled: true
             port: 5170
             protocol: UDP
