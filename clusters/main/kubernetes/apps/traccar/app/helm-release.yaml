@@ -52,7 +52,7 @@ spec:
           freematics:
             enabled: true
             port: 5170
-            protocol: UDP
+            protocol: udp
             targetPort: 5170
     credentials:
       s3:
