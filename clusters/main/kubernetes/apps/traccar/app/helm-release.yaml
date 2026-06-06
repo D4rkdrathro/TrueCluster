@@ -42,6 +42,19 @@ spec:
                 MAIL_SMTP_USERNAME: ${CONFIG_EMAIL}
                 MAIL_SMTP_PASSWORD: ${CONFIG_EMAIL_PASS}
                 MAIL_SMTP_FROM: ${CONFIG_EMAIL}
+    service:
+      freematics:
+        enabled: true
+        integrations:
+          metallb:
+            enabled: true
+        loadBalancerIP: "192.168.1.217"
+        ports:
+          port-name:
+            enabled: true
+            port: 5170
+            protocol: UDP
+            targetPort: 5170
     credentials:
       s3:
         type: s3
