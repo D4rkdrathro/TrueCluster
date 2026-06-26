@@ -1,0 +1,55 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: radar-dashboard
+  namespace: kubernetes-dashboard
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: radar
+      version: 1.7.9
+      sourceRef:
+        kind: HelmRepository
+        name: skyhook-io
+        namespace: flux-system
+      interval: 15m
+  timeout: 20m
+  maxHistory: 3
+  driftDetection:
+    mode: warn
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    service:
+      main:
+        enabled: true
+        type: ClusterIP
+        #type: LoadBalancer
+        #loadBalancerIP: ${DASHBOARD_IP}
+        ports:
+          main:
+            port: 9280
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: internal
+        hosts:
+        - host: rdash.${DOMAIN_0}
+        integrations:
+          nginx:
+            enabled: true
+          traefik:
+            enabled: false
+          certManager:
+            enabled: true
+            certificateIssuer: domain-0-le-prod
