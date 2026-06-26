@@ -13,4 +13,5 @@ resources:
   - prometheus-community.yaml
   - spegel.yaml
   - truecharts.yaml
+  - skyhook-io.yaml
 # more goes here!
