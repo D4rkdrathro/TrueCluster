@@ -34,22 +34,25 @@ spec:
       main:
         enabled: true
         type: ClusterIP
+        primary: true
         #type: LoadBalancer
         #loadBalancerIP: ${DASHBOARD_IP}
         ports:
           main:
+            primary: true
+            enabled: true
             port: 9280
-    ingress:
-      main:
-        enabled: true
-        ingressClassName: internal
-        hosts:
-        - host: rdash.${DOMAIN_0}
-        integrations:
-          nginx:
-            enabled: true
-          traefik:
-            enabled: false
-          certManager:
-            enabled: true
-            certificateIssuer: domain-0-le-prod
+#    ingress:
+#      main:
+#        enabled: true
+#        ingressClassName: internal
+#        hosts:
+#        - host: rdash.${DOMAIN_0}
+#        integrations:
+#          nginx:
+#            enabled: true
+#          traefik:
+#            enabled: false
+#          certManager:
+#            enabled: true
+#            certificateIssuer: domain-0-le-prod

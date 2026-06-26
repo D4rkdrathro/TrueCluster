@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: radar-dashboard
+  namespace: radar-dashboard
+  annotations:
+    cert-manager.io/cluster-issuer: domain-0-le-prod
+    cert-manager.io/private-key-rotation-policy: Always
+spec:
+  rules:
+  - host: rdash.${DOMAIN_0}
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: skyhook-io-radar
+            port:
+              number: 9280
+  tls:
+  - hosts:
+    - radar-dashboard.${DOMAIN_0}
+    secretName: radar-dashboard-tls-0
