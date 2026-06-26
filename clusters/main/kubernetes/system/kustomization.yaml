@@ -16,4 +16,3 @@ resources:
 - nvidia-device-plugin/ks.yaml
 - intel-device-plugin-gpu/ks.yaml
 - intel-device-plugin-operator/ks.yaml
-#- system-upgrade-controller/ks.yaml
