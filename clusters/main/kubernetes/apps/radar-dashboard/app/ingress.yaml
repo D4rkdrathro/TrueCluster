@@ -20,5 +20,5 @@ spec:
               number: 9280
   tls:
   - hosts:
-    - radar-dashboard.${DOMAIN_0}
-    secretName: radar-dashboard-tls-0
+    - rdash.${DOMAIN_0}
+    secretName: rdash-tls-0
