@@ -15,7 +15,7 @@ spec:
         path: /
         backend:
           service:
-            name: skyhook-io-radar
+            name: radar-dashboard
             port:
               number: 9280
   tls:
