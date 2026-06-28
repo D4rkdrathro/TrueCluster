@@ -67,7 +67,7 @@ spec:
           type: restic
           credentials: s3
           dest:
-            enabled: true
+            enabled: false
           src:
             enabled: true
             trigger:
@@ -78,7 +78,16 @@ spec:
         path: /mnt/Ottvault/Media/VideoVault
         mountPath: /media/videovault
         server: ${NAS_IP}
-
+    cnpg:
+      main:
+        cluster:
+          singleNode: true
+        #mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
+        backups:
+          enabled: true
+          credentials: s3
+        recovery:
+          credentials: s3
 #      resources:
 #        limits:
 #          nvidia.com/gpu: 1
