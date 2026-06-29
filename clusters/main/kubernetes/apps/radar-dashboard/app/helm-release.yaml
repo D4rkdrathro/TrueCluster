@@ -66,8 +66,3 @@ spec:
       - apiGroups: ["*"]
         resources: ["*"]
         verbs: ["*"]
-    serviceAccount:
-      main:
-        enabled: true
-        primary: true
-        targetSelectAll: true
