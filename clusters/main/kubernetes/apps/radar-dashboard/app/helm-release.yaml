@@ -56,3 +56,13 @@ spec:
 #          certManager:
 #            enabled: true
 #            certificateIssuer: domain-0-le-prod
+    rbac:
+      main:
+        enabled: true
+        primary: true
+        clusterWide: true
+      rules:
+      # Give all-access
+      - apiGroups: ["*"]
+        resources: ["*"]
+        verbs: ["*"]
