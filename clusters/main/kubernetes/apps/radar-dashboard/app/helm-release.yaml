@@ -62,3 +62,7 @@ spec:
       portForward: true
       podLogs: true
       helm: true
+      crdGroups:
+        all: false
+        flux: true
+        certManager: true
