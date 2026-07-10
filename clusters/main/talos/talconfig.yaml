@@ -32,7 +32,7 @@ nodes:
     size: <= 2000GB
   networkInterfaces:
   # suffix is the adapter mac adres.
-  - interface: ens18
+  - interface: eth0
     addresses:
     - ${MASTER1IP_CIDR}
     routes:
