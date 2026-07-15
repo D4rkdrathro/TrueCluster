@@ -44,10 +44,10 @@ nodes:
     customization:
       systemExtensions:
         officialExtensions:
-        - siderolabs/util-linux-tools
-        - siderolabs/iscsi-tools
-        - siderolabs/nonfree-kmod-nvidia-lts
-        - siderolabs/nvidia-container-toolkit-lts
+          - siderolabs/util-linux-tools
+          - siderolabs/iscsi-tools
+          - siderolabs/nonfree-kmod-nvidia-lts
+          - siderolabs/nvidia-container-toolkit-lts
   patches:
   - "@./patches/nvidia.yaml"
   - '@./patches/gc.yaml'
@@ -86,9 +86,9 @@ controlPlane:
       - net.ifnames=0
       systemExtensions:
         officialExtensions:
-        - siderolabs/util-linux-tools
-        - siderolabs/iscsi-tools
-        - siderolabs/qemu-guest-agent
+          - siderolabs/util-linux-tools
+          - siderolabs/iscsi-tools
+          - siderolabs/qemu-guest-agent
   machineFiles:
   - content: |
       [plugins."io.containerd.cri.v1.images"]
@@ -117,9 +117,9 @@ worker:
     customization:
       systemExtensions:
         officialExtensions:
-        - siderolabs/util-linux-tools
-        - siderolabs/iscsi-tools
-        - siderolabs/qemu-guest-agent
+          - siderolabs/util-linux-tools
+          - siderolabs/iscsi-tools
+          - siderolabs/qemu-guest-agent
   machineFiles:
   - content: |
       [plugins."io.containerd.cri.v1.images"]
