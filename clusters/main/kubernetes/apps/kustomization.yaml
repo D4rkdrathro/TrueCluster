@@ -14,5 +14,5 @@ resources:
 - matter-server/ks.yaml
 - ext-pikaraoke/ks.yaml
 - librespeed/ks.yaml
-- pikaraoke/ks.yaml
+#- pikaraoke/ks.yaml
 - radar-dashboard/ks.yaml
