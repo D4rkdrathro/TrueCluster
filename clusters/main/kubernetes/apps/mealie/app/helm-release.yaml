@@ -92,10 +92,10 @@ spec:
           credentials: backblaze
           dest:
             #VolSync Destination (Restore)
-            enabled: true
+            enabled: false
           src:
             #VolSync Source (Backup)
-            enabled: false
+            enabled: true
         #service:
         #main:
         #enabled: true
@@ -108,7 +108,7 @@ spec:
       main:
         cluster:
           singleNode: true
-        mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
+        #mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
         backups:
           enabled: true
           credentials: backblaze
