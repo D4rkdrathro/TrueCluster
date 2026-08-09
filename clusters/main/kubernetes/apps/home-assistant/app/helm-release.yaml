@@ -58,10 +58,10 @@ spec:
             enabled: true
             certificateIssuer: domain-0-le-prod
 
-    homeassistant:
-      trusted_proxies:
-      - 172.16.0.0/16
-      - 172.17.0.0/16
+#    homeassistant:
+#     trusted_proxies:
+#      - 172.16.0.0/16
+#      - 172.17.0.0/16
     addons:
       codeserver:
         enabled: true
