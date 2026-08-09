@@ -82,10 +82,10 @@ spec:
           credentials: backblaze
           dest:
             #VolSync Destination (Restore)
-            enabled: false
+            enabled: true
           src:
             #VolSync Source (Backup)
-            enabled: true
+            enabled: false
             trigger:
               schedule: 20 1 * * *
       zigbee:
@@ -97,7 +97,7 @@ spec:
       main:
         cluster:
           singleNode: true
-        #mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
+        mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
         backups:
           enabled: true
           credentials: backblaze
