@@ -12,3 +12,4 @@ resources:
 - auth
 - media
 - gaming
+- observability
