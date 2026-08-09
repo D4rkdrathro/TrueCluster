@@ -10,7 +10,7 @@ resources:
 - jellyfin/ks.yaml
 - seerr/ks.yaml
 #- bazarr/ks.yaml
-- music-assistant/ks.yaml
+#- music-assistant/ks.yaml
 #- calibre-web-auto/ks.yaml
 - navidrome/ks.yaml
 - beets-flask/ks.yaml
