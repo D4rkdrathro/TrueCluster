@@ -46,7 +46,7 @@ spec:
         annotations:
           nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
         hosts:
-        - host: prox.${DOMAIN_0}
+        - host: "prox.${DOMAIN_0}"
         paths:
         - path: /
           pathType: Prefix
