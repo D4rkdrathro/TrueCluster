@@ -27,13 +27,7 @@ spec:
   values:
     global:
       stopAll: false
-    workload:
-      main:
-        podSpec:
-          containers:
-            main:
-              env:
-                HOMEPAGE_ALLOWED_HOSTS: "home.${DOMAIN_0}"
+
     credentials:
       backblaze:
         type: s3
@@ -82,3 +76,29 @@ spec:
             enabled: true
             trigger:
               schedule: 10 0 * * *
+              
+    workload:
+      main:
+        podSpec:
+          automountServiceAccountToken: true
+          containers:
+            main:
+              env:
+                HOMEPAGE_ALLOWED_HOSTS: "home.${DOMAIN_0}"
+              probes:
+                liveness:
+                  path:  /api/healthcheck
+                  httpHeaders:
+                    Host: localhost:3000
+                readiness:
+                  path:  /api/healthcheck
+                  httpHeaders:
+                    Host: localhost:3000
+                startup:
+                  path:  /api/healthcheck
+                  httpHeaders:
+                    Host: localhost:3000
+
+    resources:
+      requests:
+        cpu: 10m
