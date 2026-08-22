@@ -10,6 +10,6 @@ spec:
 
   maintenance:
     windows:
-      - start: "0 18 * * 6"
+      - start: "0 11 * * 7"
         duration: "4h"
         timezone: "UTC"
