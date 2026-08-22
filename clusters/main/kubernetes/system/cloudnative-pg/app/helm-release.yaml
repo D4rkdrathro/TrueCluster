@@ -27,7 +27,7 @@ spec:
     crds:
       create: true
 #    replicaCount: 2
-    # monitoring:
-    #   podMonitorEnabled: false
+    monitoring:
+      podMonitorEnabled: true
     #   grafanaDashboard:
     #     create: true
