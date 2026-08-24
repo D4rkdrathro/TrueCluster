@@ -65,3 +65,4 @@ spec:
             main:
               env:
                 ND_SCANNER_PURGEMISSING: "always"
+                ND_SCANNER_GROUPALBUMRELEASES: true
