@@ -33,6 +33,14 @@ spec:
       repository: ghcr.io/pspitzner/beets-flask
       tag: v1.2.1@sha256:98b8b87281e0526f3b9ee517ed1a75da76ae77bfc16564999c5e72d413d1ec50
       pullPolicy: IfNotPresent
+    credentials:
+      s3:
+        type: s3
+        url: ${S3_ENDPOINT_URL}
+        bucket: "${S3_BUCKET}-beets"
+        accessKey: "${S3_ACCESS_KEY}"
+        secretKey: "${S3_SECRET_KEY}"
+        encrKey: "${S3_ENCRYPTION_KEY}"
     ingress:
       main:
         enabled: true
@@ -74,6 +82,16 @@ spec:
       config:
         enabled: true
         mountPath: "/config"
+        volsync:
+        - name: config
+          type: restic
+          credentials: s3
+          dest:
+            enabled: false
+          src:
+            enabled: true
+            trigger:
+              schedule: 30 0 * * *
       library:
         enabled: true
         type: nfs
