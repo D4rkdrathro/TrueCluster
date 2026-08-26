@@ -34,7 +34,7 @@ spec:
     service:
       main:
         type: ExternalIP
-        externalIP: "${NAS_IP}"
+        externalIP: "192.168.1.9"
         ports:
           main:
             protocol: http
