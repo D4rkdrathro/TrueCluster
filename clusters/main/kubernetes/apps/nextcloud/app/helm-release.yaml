@@ -128,7 +128,7 @@ spec:
         enabled: true
         type: nfs
         path: /mnt/Ottvault/Media/audio/music/ingest
-        mountPath: /Media/audio/music/ingest
+        mountPath: /mnt/Ottvault/Media/audio/music/ingest
         server: ${NAS_IP}
 
     cnpg:
