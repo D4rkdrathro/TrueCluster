@@ -143,5 +143,5 @@ spec:
           credentials: backblaze
     resources:
       limits:
-        cpu: 6000m
-        memory: 10Gi
+        cpu: 4000m
+        memory: 8Gi
