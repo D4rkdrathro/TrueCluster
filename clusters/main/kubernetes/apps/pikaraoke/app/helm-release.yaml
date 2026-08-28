@@ -59,18 +59,18 @@ spec:
             port: 5555
             targetPort: 5555
         type: LoadBalancer
-    addons:
-      codeserver:
-        enabled: true
-        ingress:
-          enabled: true
-          ingressClassName: internal
-          hosts:
-            - host: cs-pikaraoke.${DOMAIN_0}
-          integrations:
-            certManager:
-              enabled: true
-              certificateIssuer: domain-0-le-prod
+#    addons:
+#      codeserver:
+#        enabled: true
+#        ingress:
+#          enabled: true
+#          ingressClassName: internal
+#          hosts:
+#            - host: cs-pikaraoke.${DOMAIN_0}
+#          integrations:
+#            certManager:
+#              enabled: true
+#              certificateIssuer: domain-0-le-prod
 
     persistence:
       data:
