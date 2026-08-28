@@ -91,7 +91,7 @@ spec:
             main:
               args:
               - "-u https://localkaraoke.${DOMAIN_0}:443"
-              - "--streaming-format mp4"
+              - "--streaming-format=mp4"
               - "-l 10"
 #    resources:
 #      limits:
