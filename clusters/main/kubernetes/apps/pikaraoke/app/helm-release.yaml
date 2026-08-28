@@ -32,7 +32,7 @@ spec:
       pullPolicy: IfNotPresent
     #Disable All Pods
     global:
-      stopAll: false
+      stopAll: true
     ingress:
       main:
         enabled: true
@@ -91,8 +91,7 @@ spec:
             main:
               args:
               - "-u=https://localkaraoke.${DOMAIN_0}"
-#              - "--streaming-format=mp4"
-              - "-l=20"
+              - "-l=10"
 #    resources:
 #      limits:
 #        cpu: 4000m
