@@ -32,7 +32,7 @@ spec:
       pullPolicy: IfNotPresent
     #Disable All Pods
     global:
-      stopAll: true
+      stopAll: false
     ingress:
       main:
         enabled: true
