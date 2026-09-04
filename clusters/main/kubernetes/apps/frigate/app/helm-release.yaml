@@ -114,7 +114,8 @@ spec:
           enabled: true
           type: device
           hostPath: /dev/ttyACM0
-
+    podOptions:
+      hostNetwork: true
     securityContext:
       container:
         privileged: true
