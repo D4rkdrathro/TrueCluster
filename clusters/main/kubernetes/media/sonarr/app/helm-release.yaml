@@ -101,3 +101,8 @@ spec:
         path: /mnt/Ottvault/Media
         mountPath: /Media
         server: ${NAS_IP}
+
+
+    resources:
+      requests:
+        cpu: 10m

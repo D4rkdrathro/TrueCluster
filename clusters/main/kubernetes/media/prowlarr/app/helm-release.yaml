@@ -91,3 +91,8 @@ spec:
 #              main:
 #                  port: 9696
 #          type: LoadBalancer
+
+
+    resources:
+      requests:
+        cpu: 10m
