@@ -64,12 +64,11 @@ spec:
     workload:
       main:
         podSpec:
-#          runtimeClassName: "nvidia"
           containers:
             main:
               env:
-              OIDC_REQUIRES_EMAIL_VERIFICATION: "false"
-              LOG_LEVEL: "debug"
+                OIDC_REQUIRES_EMAIL_VERIFICATION: "false"
+                LOG_LEVEL: "debug"
     metrics:
       main:
         enabled: false
