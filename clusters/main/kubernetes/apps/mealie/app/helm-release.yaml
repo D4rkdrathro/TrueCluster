@@ -61,6 +61,7 @@ spec:
           user_group: "mealie users"
           admin_group: "mealie admins"
           remember_me: true
+          OIDC_REQUIRES_EMAIL_VERIFICATION: false
     metrics:
       main:
         enabled: false
