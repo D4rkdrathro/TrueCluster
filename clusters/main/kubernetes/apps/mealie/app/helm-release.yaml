@@ -67,9 +67,9 @@ spec:
 #          runtimeClassName: "nvidia"
           containers:
             main:
-              args:
-              - "OIDC_REQUIRES_EMAIL_VERIFICATION=false"
-              - "LOG_LEVEL=debug"
+              env:
+              OIDC_REQUIRES_EMAIL_VERIFICATION: false
+              LOG_LEVEL: debug
     metrics:
       main:
         enabled: false
