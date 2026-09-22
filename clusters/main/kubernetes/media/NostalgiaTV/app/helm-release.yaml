@@ -30,7 +30,7 @@ spec:
       stopAll: false
     TZ: America/Los_Angeles
     image:
-      repository: ghcr.io/purestream711/nostalgiatv-server
+      repository: purestream711/nostalgiatv-server
       tag: 0.10.3@sha256:74644ec9a7305cbe8ba9371bf8ae67c79eb2f3db9b12b422a415d5edcc6a404f
       pullPolicy: IfNotPresent
     credentials:
@@ -89,7 +89,7 @@ spec:
           dest:
             enabled: false
           src:
-            enabled: true
+            enabled: false
             trigger:
               schedule: 30 0 * * *
       data:
@@ -102,7 +102,7 @@ spec:
           dest:
             enabled: false
           src:
-            enabled: true
+            enabled: false
             trigger:
               schedule: 30 0 * * *
       logos:
@@ -115,7 +115,7 @@ spec:
           dest:
             enabled: false
           src:
-            enabled: true
+            enabled: false
             trigger:
               schedule: 30 0 * * *
 #    addons:
