@@ -72,6 +72,7 @@ spec:
     workload:
       main:
         podSpec:
+          runtimeClassName: "nvidia"
           containers:
             main:
               fixedEnv:
@@ -117,15 +118,6 @@ spec:
             enabled: false
             trigger:
               schedule: 30 0 * * *
-#    addons:
-#      codeserver:
-#        enabled: true
-#        ingress:
-#          enabled: true
-#          ingressClassName: internal
-#          hosts:
-#            - host: cs-beets.${DOMAIN_0}
-#          integrations:
-#            certManager:
-#              enabled: true
-#              certificateIssuer: domain-0-le-prod
+    resources:
+      limits:
+        nvidia.com/gpu: 1
