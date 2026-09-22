@@ -58,12 +58,11 @@ spec:
     service:
       main:
         enabled: true
-        loadBalancerIP: ""
         ports:
           main:
             port: 19850
             targetPort: 19850
-        type: LoadBalancer
+        type: ClusterIP
 
     securityContext:
       container:
