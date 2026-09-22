@@ -44,9 +44,9 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: internal
+        ingressClassName: external
         hosts:
-        - host: nostalgiatv.${DOMAIN_0}
+        - host: ntv.${DOMAIN_0}
         integrations:
           nginx:
             enabled: true
