@@ -31,7 +31,7 @@ spec:
     TZ: America/Los_Angeles
     image:
       repository: purestream711/nostalgiatv-server
-      tag: 0.10.3@sha256:74644ec9a7305cbe8ba9371bf8ae67c79eb2f3db9b12b422a415d5edcc6a404f
+      tag: 0.10.5@sha256:3182df0a0707222850c537715b5287c0b6082ed30368304b2f53b93ffed245d9
       pullPolicy: IfNotPresent
     credentials:
       s3:
