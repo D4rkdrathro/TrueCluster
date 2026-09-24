@@ -115,17 +115,17 @@ spec:
                 SERVER_PASS: ${VALHEIM_SERVER_PASS}
                 ADMINLIST_IDS: ${VALHEIM_ADMIN_ID}
 
-    addons:
-      codeserver:
-        enabled: true
-        ingress:
-          enabled: true
-          ingressClassName: internal
-          hosts:
-          - host: csheim.${DOMAIN_0}
-          integrations:
-            nginx:
-              enabled: true
-            certManager:
-              enabled: true
-              certificateIssuer: domain-0-le-prod
+#    addons:
+#      codeserver:
+#        enabled: true
+#        ingress:
+#          enabled: true
+#          ingressClassName: internal
+#          hosts:
+#          - host: csheim.${DOMAIN_0}
+#          integrations:
+#            nginx:
+#              enabled: true
+#            certManager:
+#              enabled: true
+#              certificateIssuer: domain-0-le-prod
