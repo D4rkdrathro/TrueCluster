@@ -114,3 +114,16 @@ spec:
                 SUPERVISOR_HTTP_PASS: ${VALHEIM_ADMIN_PASS}
                 SERVER_PASS: ${VALHEIM_SERVER_PASS}
                 ADMINLIST_IDS: ${VALHEIM_ADMIN_ID}
+
+    addons:
+      codeserver:
+        enabled: true
+        ingress:
+          enabled: true
+          ingressClassName: internal
+          hosts:
+            - host: cs-heim.${DOMAIN_0}
+          integrations:
+            certManager:
+              enabled: true
+              certificateIssuer: domain-0-le-prod
