@@ -122,8 +122,10 @@ spec:
           enabled: true
           ingressClassName: internal
           hosts:
-            - host: cs-heim.${DOMAIN_0}
+          - host: csheim.${DOMAIN_0}
           integrations:
+            nginx:
+              enabled: true
             certManager:
               enabled: true
               certificateIssuer: domain-0-le-prod
