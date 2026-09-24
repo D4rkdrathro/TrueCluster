@@ -14,4 +14,3 @@ resources:
 #- calibre-web-auto/ks.yaml
 - navidrome/ks.yaml
 - beets-flask/ks.yaml
-- NostalgiaTV/ks.yaml
