@@ -121,3 +121,7 @@ spec:
       main:
         podSpec:
           runtimeClassName: "nvidia"
+          containers:
+            main:
+              env:
+                TZ: "America/Los_Angeles"
