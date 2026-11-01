@@ -19,4 +19,5 @@ resources:
   - spegel.yaml
   - truecharts.yaml
   - skyhook-io.yaml
+  - ingress-nginx.yaml
 # more goes here!
