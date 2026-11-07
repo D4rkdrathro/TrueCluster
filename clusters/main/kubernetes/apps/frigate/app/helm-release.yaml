@@ -63,10 +63,10 @@ spec:
           homepage:
             enabled: true
             group: "Home"
-            widget:
-              type: frigate
-              custom:
-                enableRecentEvents: true
+            #widget:
+              #type: frigate
+              #custom:
+                #enableRecentEvents: true
           #    service:
           #      main:
           #        enabled: true
