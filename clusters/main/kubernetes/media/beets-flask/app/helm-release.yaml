@@ -77,7 +77,7 @@ spec:
             main:
               fixedEnv:
                 PUID: 568
-                GUID: 568
+#                GUID: 568
     persistence:
       config:
         enabled: true
