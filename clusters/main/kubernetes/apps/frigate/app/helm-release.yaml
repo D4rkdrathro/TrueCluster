@@ -112,10 +112,10 @@ spec:
             trigger:
               schedule: 10 1 * * *
 
-      coralai:
-        enabled: true
-        type: device
-        hostPath: /dev/ttyACM0
+#      coralai:
+#        enabled: true
+#        type: device
+#        hostPath: /dev/ttyACM0
 #    podOptions:
 #      hostNetwork: true
     securityContext:
