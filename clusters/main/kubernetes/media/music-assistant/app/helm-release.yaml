@@ -115,9 +115,9 @@ spec:
           src:
             #VolSync Source (Backup)
             enabled: true
-        cache:
-          enabled: true
-          mountPath: "/cache"
+      cache:
+        enabled: true
+        mountPath: "/cache"
       media:
         enabled: true
         type: nfs
