@@ -65,8 +65,8 @@ spec:
             group: "Home"
             widget:
               type: frigate
-              enableRecentEvents:
-              - value: true
+              custom:
+                enableRecentEvents: true
           #    service:
           #      main:
           #        enabled: true
