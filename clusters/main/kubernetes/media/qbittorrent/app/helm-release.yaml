@@ -102,6 +102,6 @@ spec:
             OPENVPN_PASSWORD: "${OPENVPN_PASSWORD}"
             OPENVPN_USER: "${OPENVPN_USER}"
             SERVER_HOSTNAMES: "${OPENVPN_HOSTNAME}"
-            SERVER_REGIONS: "${OPENVPN_REGION}"
+#            SERVER_REGIONS: "${OPENVPN_REGION}"
             VPN_SERVICE_PROVIDER: "${OPENVPN_PROVIDER}"
             VPN_TYPE: "openvpn"
