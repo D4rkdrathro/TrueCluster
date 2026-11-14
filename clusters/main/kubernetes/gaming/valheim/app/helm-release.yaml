@@ -42,11 +42,11 @@ spec:
         secretKey: "${S3_SECRET_KEY}"
         encrKey: "${S3_ENCRYPTION_KEY}"
     service:
-      main:
-        integrations:
-          metallb:
-            enabled: true
-        loadBalancerIP: ""
+#      main:
+#        integrations:
+#          metallb:
+#            enabled: true
+#        loadBalancerIP: ""
       valheim:
         integrations:
           metallb:
