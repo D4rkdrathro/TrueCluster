@@ -104,7 +104,7 @@ spec:
           credentials: backblaze
           dest:
             #VolSync Destination (Restore)
-            enabled: true
+            enabled: false
           src:
             #VolSync Source (Backup)
             enabled: true
@@ -115,10 +115,10 @@ spec:
           credentials: backblaze
           dest:
             #VolSync Destination (Restore)
-            enabled: true
+            enabled: false
           src:
             #VolSync Source (Backup)
-            enabled: false
+            enabled: true
       data:
         enabled: true
         type: nfs
