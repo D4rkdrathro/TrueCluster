@@ -53,7 +53,7 @@ spec:
             enabled: true
         loadBalancerIP: "${VALHEIM_IP}"
     ingress:
-      main:
+      valheim:
         enabled: true
         ingressClassName: internal
         hosts:
