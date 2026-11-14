@@ -66,6 +66,7 @@ spec:
             certificateIssuer: domain-0-le-prod
       supervisor:
         enabled: true
+        primary: true
         ingressClassName: internal
         hosts:
         - host: heimheim.${DOMAIN_0}
