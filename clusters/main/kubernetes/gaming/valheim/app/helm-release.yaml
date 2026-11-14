@@ -53,20 +53,20 @@ spec:
             enabled: true
         loadBalancerIP: "${VALHEIM_IP}"
     ingress:
-#      main:
-#        enabled: true
-#        ingressClassName: internal
-#        hosts:
-#        - host: valheim.${DOMAIN_0}
-#        integrations:
-#          nginx:
-#            enabled: true
-#          certManager:
-#            enabled: true
-#            certificateIssuer: domain-0-le-prod
+      main:
+        enabled: true
+        ingressClassName: internal
+        hosts:
+        - host: valheim.${DOMAIN_0}
+        integrations:
+          nginx:
+            enabled: true
+          certManager:
+            enabled: true
+            certificateIssuer: domain-0-le-prod
       supervisor:
         enabled: true
-        primary: true
+#        primary: true
         ingressClassName: internal
         hosts:
         - host: heimheim.${DOMAIN_0}
