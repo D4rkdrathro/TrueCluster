@@ -130,7 +130,10 @@ spec:
         path: /mnt/Ottvault/Media/audio/music/ingest
         mountPath: /media/audio/music/ingest
         server: ${NAS_IP}
-
+#    dependencies:
+#      postgresql:
+#        operator:
+#        pgVersion: 16
     cnpg:
       main:
         cluster:
