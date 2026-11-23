@@ -132,14 +132,15 @@ spec:
         server: ${NAS_IP}
 #    dependencies:
 #      postgresql:
+#        enabled: true
 #        operator:
-#          cluster:
-#            singleNode: true
-#            instances: 1
-#        backups:
-#          enabled: true
-#          credentials: backblaze
-#        pgVersion: 16
+ #         cluster:
+ #           singleNode: true
+ #           instances: 1
+ #       backups:
+ #         enabled: true
+ #         credentials: backblaze
+ #       pgVersion: 16
     cnpg:
       main:
         cluster:
