@@ -95,6 +95,7 @@ spec:
       main:
         cluster:
           singleNode: true
+          instances: 1
         #mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
         backups:
           enabled: true
