@@ -143,7 +143,6 @@ spec:
           backups:
             enabled: true
             credentials: backblaze
-
         cluster:
           singleNode: true
           instances: 1
