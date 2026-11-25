@@ -91,17 +91,34 @@ spec:
           src:
             #VolSync Source (Backup)
             enabled: true
-    cnpg:
-      main:
+    dependencies:
+      postgresql:
+        enabled: true
+        mode: operator
+        operator:
+#          pgVersion: 16
+          mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions
+          recovery:
+            method: object_store
+            credentials: s3
+          backups:
+            enabled: true
+            credentials: s3
         cluster:
           singleNode: true
-          instances: 1
-        #mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
-        backups:
-          enabled: true
-          credentials: s3
-          retentionPolicy: "14d"
-          revision: "1"
-        recovery:
-          credentials: s3
-          revision: "1"    
+          instances: 1    
+    
+#    cnpg:
+#      main:
+#        cluster:
+#          singleNode: true
+#          instances: 1
+#        #mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions 
+#        backups:
+#          enabled: true
+#          credentials: s3
+#          retentionPolicy: "14d"
+#          revision: "1"
+#        recovery:
+#          credentials: s3
+#          revision: "1"    
