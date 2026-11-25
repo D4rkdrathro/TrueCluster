@@ -44,6 +44,10 @@ spec:
       main:
         enabled: true
         ingressClassName: external
+        annotations:
+          nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+          nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+          nginx.ingress.kubernetes.io/proxy-body-size: "10G"
         hosts:
         - host: photos.${DOMAIN_0}
         integrations:
