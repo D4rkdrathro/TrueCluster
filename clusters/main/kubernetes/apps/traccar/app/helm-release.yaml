@@ -96,7 +96,7 @@ spec:
         enabled: true
         mode: operator
         operator:
-#          pgVersion: 16
+          pgVersion: 16
           mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions
           recovery:
             method: object_store
