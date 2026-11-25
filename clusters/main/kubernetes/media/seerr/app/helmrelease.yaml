@@ -92,9 +92,9 @@ spec:
           backups:
             enabled: true
             credentials: s3
-        cluster:
-          singleNode: true
-          instances: 1    
+          cluster:
+            singleNode: true
+            instances: 1    
 #    cnpg:
 #      main:
 #        cluster:
