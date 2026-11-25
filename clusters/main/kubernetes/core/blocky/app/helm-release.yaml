@@ -71,6 +71,6 @@ spec:
       datasource:
         enabled: false
 
-    dependencies:
-      postgresql:
-        enabled: false
+#    dependencies:
+#      postgresql:
+#        enabled: false
