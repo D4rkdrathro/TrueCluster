@@ -90,7 +90,8 @@ spec:
       qbitportforward:
         enabled: false
     gluetunImage:
-      tag: "3.41.3@sha256:9f64b09c9ac35a5b3c66b0044efe5ad57f574140db91c408b5a32c7834151e91"
+      repository: oci.trueforge.org/tccr/gluetun
+      tag: "v3.40.0@sha256:a8189e29155e0f8142be1500ae068a92b189b1b25abbba036321e74d6389bf2b"
     addons:
       gluetun:
         enabled: true
