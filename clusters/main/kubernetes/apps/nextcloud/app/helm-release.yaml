@@ -1,5 +1,5 @@
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.zinn.ca/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+# yaml-language-server: $schema=https://github.com/trueforge-org/truecharts/blob/master/charts/stable/nextcloud/values.schema.json
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
@@ -130,29 +130,37 @@ spec:
         path: /mnt/Ottvault/Media/audio/music/ingest
         mountPath: /media/audio/music/ingest
         server: ${NAS_IP}
-#    dependencies:
-#      postgresql:
-#        enabled: true
-#        operator:
- #         cluster:
- #           singleNode: true
- #           instances: 1
- #       backups:
- #         enabled: true
- #         credentials: backblaze
- #       pgVersion: 16
-    cnpg:
-      main:
+    dependencies:
+      postgresql:
+        enabled: true
+        mode: operator
+        operator:
+          pgVersion: 16
+          mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions
+          recovery:
+            method: object_store
+            credentials: backblaze
+          backups:
+            enabled: true
+            credentials: backblaze
+
         cluster:
           singleNode: true
           instances: 1
+          
+
+#    cnpg:
+#      main:
+#        cluster:
+#          singleNode: true
+#          instances: 1
         #mode: recovery # Set to 'recovery' when recovery from S3, also change the revisions
-        backups:
-          enabled: true
-          credentials: backblaze
-        recovery:
-          credentials: backblaze
-    resources:
-      limits:
-        cpu: 4000m
-        memory: 8Gi
+#        backups:
+#          enabled: true
+#          credentials: backblaze
+#        recovery:
+#          credentials: backblaze
+#    resources:
+#      limits:
+#        cpu: 4000m
+#        memory: 8Gi
